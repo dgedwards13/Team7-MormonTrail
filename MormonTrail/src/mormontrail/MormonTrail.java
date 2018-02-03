@@ -45,9 +45,11 @@ public class MormonTrail {
          
          regularSceneTypeOne.setDescription("rock fall on trail");
          regularSceneTypeOne.setName("River crossing");
+         regularSceneTypeOne.setCoordinates(10);
          
          String regularSceneTypeOneDescription = regularSceneTypeOne.getDescription();
-         String regularSceneTypeOneName = regularSceneTypeOne.getName();
+         String regularSceneTypeOneName = regularSceneTypeOne.getName(); 
+         double regularSceneTypeOneCoordinates = regularSceneTypeOne.getCoordinates();
          
          System.out.println(regularSceneTypeOne.toString());
     } 
