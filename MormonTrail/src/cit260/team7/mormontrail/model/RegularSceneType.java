@@ -49,9 +49,9 @@ public class RegularSceneType implements Serializable{
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 11 * hash + Objects.hashCode(this.description);
-        hash = 11 * hash + Objects.hashCode(this.name);
-        hash = 11 * hash + (int) (Double.doubleToLongBits(this.coordinates) ^ (Double.doubleToLongBits(this.coordinates) >>> 32));
+        hash = 37 * hash + Objects.hashCode(this.description);
+        hash = 37 * hash + Objects.hashCode(this.name);
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.coordinates) ^ (Double.doubleToLongBits(this.coordinates) >>> 32));
         return hash;
     }
 
@@ -73,8 +73,13 @@ public class RegularSceneType implements Serializable{
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        return Objects.equals(this.name, other.name);
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        return true;
     }
+
+   
 
     @Override
     public String toString() {
