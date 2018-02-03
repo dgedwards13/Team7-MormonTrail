@@ -11,6 +11,8 @@ package mormontrail;
  */
 
 import cit260.team7.mormontrail.model.Character;
+import cit260.team7.mormontrail.model.Event;
+import cit260.team7.mormontrail.model.RegularSceneType;
 
 public class MormonTrail {
 
@@ -27,6 +29,27 @@ public class MormonTrail {
          double characterOneMoney = characterOne.getMoney();
          
          System.out.println(characterOne.toString());
+         
+         Event eventOne = new Event();
+         
+         eventOne.setDescription("Heavy rain fall");
+         eventOne.setHealthImpact(20);
+         
+         String eventOneDescription = eventOne.getDescription();
+         double eventOneHealthImpact = eventOne.getHealthImpact();
+         
+         System.out.println(eventOne.toString());
+         
+         
+         RegularSceneType regularSceneTypeOne = new  RegularSceneType();
+         
+         regularSceneTypeOne.setDescription("rock fall on trail");
+         regularSceneTypeOne.setName("River crossing");
+         
+         String regularSceneTypeOneDescription = regularSceneTypeOne.getDescription();
+         String regularSceneTypeOneName = regularSceneTypeOne.getName();
+         
+         System.out.println(regularSceneTypeOne.toString());
     } 
-    
+      
 }
