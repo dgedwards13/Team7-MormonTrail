@@ -12,15 +12,14 @@ import java.util.Objects;
  *
  * @author Astley Shaw, Savannah Fish, Daniel Edwards
  */
-public class GeneralStore implements Serializable{
+public class GeneralStoreItem implements Serializable{
     
     private String itemName;
     private double price;
     private String description; 
-    private String recommendation;
+    private double recommendation;
     
-    public GeneralStore(){
-        
+    public GeneralStoreItem(){
     }
 
     public String getItemName() {
@@ -47,21 +46,21 @@ public class GeneralStore implements Serializable{
         this.description = description;
     }
 
-    public String getRecommendation() {
+    public double getRecommendation() {
         return recommendation;
     }
 
-    public void setRecommendation(String recommendation) {
+    public void setRecommendation(double recommendation) {
         this.recommendation = recommendation;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Objects.hashCode(this.itemName);
-        hash = 31 * hash + (int) (Double.doubleToLongBits(this.price) ^ (Double.doubleToLongBits(this.price) >>> 32));
-        hash = 31 * hash + Objects.hashCode(this.description);
-        hash = 31 * hash + Objects.hashCode(this.recommendation);
+        int hash = 5;
+        hash = 29 * hash + Objects.hashCode(this.itemName);
+        hash = 29 * hash + (int) (Double.doubleToLongBits(this.price) ^ (Double.doubleToLongBits(this.price) >>> 32));
+        hash = 29 * hash + Objects.hashCode(this.description);
+        hash = 29 * hash + (int) (Double.doubleToLongBits(this.recommendation) ^ (Double.doubleToLongBits(this.recommendation) >>> 32));
         return hash;
     }
 
@@ -76,8 +75,11 @@ public class GeneralStore implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final GeneralStore other = (GeneralStore) obj;
+        final GeneralStoreItem other = (GeneralStoreItem) obj;
         if (Double.doubleToLongBits(this.price) != Double.doubleToLongBits(other.price)) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.recommendation) != Double.doubleToLongBits(other.recommendation)) {
             return false;
         }
         if (!Objects.equals(this.itemName, other.itemName)) {
@@ -86,16 +88,15 @@ public class GeneralStore implements Serializable{
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (!Objects.equals(this.recommendation, other.recommendation)) {
-            return false;
-        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "GeneralStore{" + "itemName=" + itemName + ", price=" + price + ", description=" + description + ", recommendation=" + recommendation + '}';
+        return "GeneralStoreItem{" + "itemName=" + itemName + ", price=" + price + ", description=" + description + ", recommendation=" + recommendation + '}';
     }
+
+    
     
     
     

@@ -20,7 +20,6 @@ public class Location implements Serializable{
     private double amountRemaining;
     
     public Location(){
-        
     }
 
     public String getVisited() {

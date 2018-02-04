@@ -12,6 +12,10 @@ package mormontrail;
 
 import cit260.team7.mormontrail.model.Character;
 import cit260.team7.mormontrail.model.Event;
+import cit260.team7.mormontrail.model.GeneralStoreItem;
+import cit260.team7.mormontrail.model.InventoryItem;
+import cit260.team7.mormontrail.model.Location;
+import cit260.team7.mormontrail.model.Map;
 import cit260.team7.mormontrail.model.RegularSceneType;
 
 public class MormonTrail {
@@ -30,7 +34,7 @@ public class MormonTrail {
          
          System.out.println(characterOne.toString());
          
-         Event eventOne = new Event();
+        Event eventOne = new Event();
          
          eventOne.setDescription("Heavy rain fall");
          eventOne.setHealthImpact(20);
@@ -41,7 +45,7 @@ public class MormonTrail {
          System.out.println(eventOne.toString());
          
          
-         RegularSceneType regularSceneTypeOne = new  RegularSceneType();
+        RegularSceneType regularSceneTypeOne = new  RegularSceneType();
          
          regularSceneTypeOne.setDescription("rock fall on trail");
          regularSceneTypeOne.setName("River crossing");
@@ -52,6 +56,58 @@ public class MormonTrail {
          double regularSceneTypeOneCoordinates = regularSceneTypeOne.getCoordinates();
          
          System.out.println(regularSceneTypeOne.toString());
+        
+        Map mapOne = new Map();
+            
+            mapOne.setDescription("Description of the Map");
+            mapOne.setColumnCount(10);
+            mapOne.setRowCount(10);
+            
+            String mapOneDescription = mapOne.getDescription();
+            double mapOneColumnCount = mapOne.getColumnCount();
+            double mapOneRowCount = mapOne.getRowCount();
+            
+            System.out.println(mapOne.toString());
+        
+        Location locationOne = new Location();
+            
+            locationOne.setVisited("yes");
+            locationOne.setRow(2);
+            locationOne.setColunm(4);
+            locationOne.setAmountRemaining(21);
+            
+            String locationOneVisited = locationOne.getVisited();
+            double locationOneRow = locationOne.getRow();
+            double locationOneColumn = locationOne.getColunm();
+            double locationOneAmountRemaining = locationOne.getAmountRemaining();
+            
+            System.out.println(locationOne.toString());
+        
+        GeneralStoreItem generalStoreItemOne = new GeneralStoreItem();
+            
+            generalStoreItemOne.setItemName("Something Awesome");
+            generalStoreItemOne.setPrice(45);
+            generalStoreItemOne.setDescription("Really great stuff.");
+            generalStoreItemOne.setRecommendation(3);
+            
+            String generalStoreItemOneName = generalStoreItemOne.getItemName();
+            double generalStoreItemOnePrice = generalStoreItemOne.getPrice();
+            String generalStoreItemOneDescription = generalStoreItemOne.getDescription();
+            double generalStoreItemOneRecommendation = generalStoreItemOne.getRecommendation();
+            
+            System.out.println(generalStoreItemOne.toString());
+        
+        InventoryItem inventoryItemOne = new InventoryItem();
+            
+            inventoryItemOne.setItem("Something Awesome");
+            inventoryItemOne.setAmount(4);
+            inventoryItemOne.setItemWeight(32);
+            
+            String inventoryItemOneItem = inventoryItemOne.getItem();
+            double inventoryItemOneAmount = inventoryItemOne.getAmount();
+            double inventoryItemOneItemWeight = inventoryItemOne.getItemWeight();
+            
+            System.out.println(inventoryItemOne.toString());
     } 
       
 }

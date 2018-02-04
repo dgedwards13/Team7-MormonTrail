@@ -19,7 +19,6 @@ public class InventoryItem implements Serializable{
     private double itemWeight;
     
     public InventoryItem(){
-        
     }
 
     public String getItem() {

@@ -19,7 +19,6 @@ public class Map implements Serializable{
     private double columnCount;
     
     public Map(){
-        
     }
 
     public String getDescription() {
