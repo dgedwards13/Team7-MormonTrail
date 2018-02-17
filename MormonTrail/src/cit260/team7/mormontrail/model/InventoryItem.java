@@ -17,10 +17,22 @@ public class InventoryItem implements Serializable{
     private String item;
     private double amount;
     private double itemWeight;
+    private double price;
     
-    public InventoryItem(){
+    public InventoryItem(String i, double a, double w) {
+        item = i;
+        amount = a;
+        itemWeight = w;
     }
 
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+    
     public String getItem() {
         return item;
     }
@@ -47,10 +59,11 @@ public class InventoryItem implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 59 * hash + Objects.hashCode(this.item);
-        hash = 59 * hash + (int) (Double.doubleToLongBits(this.amount) ^ (Double.doubleToLongBits(this.amount) >>> 32));
-        hash = 59 * hash + (int) (Double.doubleToLongBits(this.itemWeight) ^ (Double.doubleToLongBits(this.itemWeight) >>> 32));
+        int hash = 7;
+        hash = 71 * hash + Objects.hashCode(this.item);
+        hash = 71 * hash + (int) (Double.doubleToLongBits(this.amount) ^ (Double.doubleToLongBits(this.amount) >>> 32));
+        hash = 71 * hash + (int) (Double.doubleToLongBits(this.itemWeight) ^ (Double.doubleToLongBits(this.itemWeight) >>> 32));
+        hash = 71 * hash + (int) (Double.doubleToLongBits(this.price) ^ (Double.doubleToLongBits(this.price) >>> 32));
         return hash;
     }
 
@@ -72,6 +85,9 @@ public class InventoryItem implements Serializable{
         if (Double.doubleToLongBits(this.itemWeight) != Double.doubleToLongBits(other.itemWeight)) {
             return false;
         }
+        if (Double.doubleToLongBits(this.price) != Double.doubleToLongBits(other.price)) {
+            return false;
+        }
         if (!Objects.equals(this.item, other.item)) {
             return false;
         }
@@ -80,8 +96,10 @@ public class InventoryItem implements Serializable{
 
     @Override
     public String toString() {
-        return "InventoryItem{" + "item=" + item + ", amount=" + amount + ", itemWeight=" + itemWeight + '}';
+        return "InventoryItem{" + "item=" + item + ", amount=" + amount + ", itemWeight=" + itemWeight + ", price=" + price + '}';
     }
+
+
     
     
 }

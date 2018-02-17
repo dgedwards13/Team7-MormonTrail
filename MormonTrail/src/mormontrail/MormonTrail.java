@@ -97,11 +97,7 @@ public class MormonTrail {
             
             System.out.println(generalStoreItemOne.toString());
         
-        InventoryItem inventoryItemOne = new InventoryItem();
-            
-            inventoryItemOne.setItem("Something Awesome");
-            inventoryItemOne.setAmount(4);
-            inventoryItemOne.setItemWeight(32);
+        InventoryItem inventoryItemOne = new InventoryItem("Something Awesome", 4, 32);
             
             String inventoryItemOneItem = inventoryItemOne.getItem();
             double inventoryItemOneAmount = inventoryItemOne.getAmount();
