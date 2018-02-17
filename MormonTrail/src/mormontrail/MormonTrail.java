@@ -7,7 +7,7 @@ package mormontrail;
 
 /**
  *
- * @author dgedw
+ * @author Astley Shaw, Savannah Fish, Daniel Edwards
  */
 
 import cit260.team7.mormontrail.model.Character;
@@ -97,11 +97,12 @@ public class MormonTrail {
             
             System.out.println(generalStoreItemOne.toString());
         
-        InventoryItem inventoryItemOne = new InventoryItem("Something Awesome", 4, 32);
+        InventoryItem inventoryItemOne = new InventoryItem("Something Awesome", 4, 32, 1.00);
             
             String inventoryItemOneItem = inventoryItemOne.getItem();
             double inventoryItemOneAmount = inventoryItemOne.getAmount();
             double inventoryItemOneItemWeight = inventoryItemOne.getItemWeight();
+            double inventoryItemOnePrice = inventoryItemOne.getPrice();
             
             System.out.println(inventoryItemOne.toString());
     } 

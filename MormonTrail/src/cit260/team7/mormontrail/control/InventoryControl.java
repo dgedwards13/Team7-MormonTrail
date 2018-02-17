@@ -9,7 +9,7 @@ import cit260.team7.mormontrail.model.InventoryItem;
 
 /**
  *
- * @author dgedw
+ * @author Astley Shaw, Savannah Fish, Daniel Edwards
  */
 public class InventoryControl {
     static InventoryItem itemWheat;

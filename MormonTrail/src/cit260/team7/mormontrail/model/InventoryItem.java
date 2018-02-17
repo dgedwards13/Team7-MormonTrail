@@ -12,6 +12,7 @@ import java.util.Objects;
  *
  * @author Astley Shaw, Savannah Fish, Daniel Edwards
  */
+
 public class InventoryItem implements Serializable{
     
     private String item;
