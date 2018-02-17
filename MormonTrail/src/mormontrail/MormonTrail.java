@@ -17,6 +17,8 @@ import cit260.team7.mormontrail.model.InventoryItem;
 import cit260.team7.mormontrail.model.Location;
 import cit260.team7.mormontrail.model.Map;
 import cit260.team7.mormontrail.model.RegularSceneType;
+import cit260.team7.mormontrail.control.InventoryControl;
+import java.util.Arrays;
 
 public class MormonTrail {
 
@@ -105,6 +107,37 @@ public class MormonTrail {
             double inventoryItemOnePrice = inventoryItemOne.getPrice();
             
             System.out.println(inventoryItemOne.toString());
+            
+        //
+        // Testing Inventory Control
+        //
+        
+        // Set Inventory Values
+        InventoryControl.setInventory();
+        
+        // Write Inventory to an Array
+        InventoryItem[] inventoryArray = InventoryControl.getInventory();
+        
+        // Write Array to Console
+        System.out.println(Arrays.toString(inventoryArray));
+        
+        // Purchase 5 Wheat. Amount should now read "9", Money amount should read 988.75
+        String test = InventoryControl.changeInventory("Wheat", 5, true);
+        
+        System.out.println(test);
+        System.out.println(Arrays.toString(inventoryArray));
+        
+        // Purchase 1 Nonexistant item. Should return error. Array will not change.
+        test = InventoryControl.changeInventory("Whet", 1, true);
+        
+        System.out.println(test);
+        System.out.println(Arrays.toString(inventoryArray));
+        
+        // It rained. Obtained 3 Water. Amount should now read "11", Money amount should not change.
+        test = InventoryControl.changeInventory("Water", 3, false);
+        
+        System.out.println(test);
+        System.out.println(Arrays.toString(inventoryArray));
     } 
       
 }

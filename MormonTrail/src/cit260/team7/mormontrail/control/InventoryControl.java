@@ -26,7 +26,7 @@ public class InventoryControl {
     
     public static InventoryItem[] getInventory(){
  
-        InventoryItem[] inventoryArray = new InventoryItem[3];
+        InventoryItem[] inventoryArray = new InventoryItem[4];
 
         inventoryArray[0] = itemWheat;
         inventoryArray[1] = itemWater;
@@ -50,24 +50,19 @@ public class InventoryControl {
         // Count the number of items in inventory
         int invLength = inventoryArray.length;
         
-        // Initialize valid variable
-        boolean valid;
-        
         // Check if item exists
+        int search = 0;
         for( int i = 0; i < invLength; i++ ) {
             String testValue = inventoryArray[i].getItem();
-            if(testValue.equals(itemName)) {
-                valid = true;
-                break;
-            } else {
-                valid = false;
+            if(testValue == itemName) {
+                search = 1;
             }
         }
-        
-        if (valid = false) {
+        if (search == 0) {
             return "Item does not exist";
         }
 
+        
         int index = -1;
             for( int i = 0; (i < invLength) && (index == -1); i++) {
                 String testValue = inventoryArray[i].getItem();
@@ -88,6 +83,7 @@ public class InventoryControl {
             }
             double wallet = inventoryArray[moneyIndex].getAmount();
             double price = inventoryArray[index].getPrice();
+            price = price * amount;
             inventoryArray[moneyIndex].setAmount(wallet - price);
         }
         
