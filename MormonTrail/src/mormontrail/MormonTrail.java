@@ -138,6 +138,12 @@ public class MormonTrail {
         
         System.out.println(test);
         System.out.println(Arrays.toString(inventoryArray));
+        
+        // Got sick. Used medicine. Amount should now read "1", Money amount should not change.
+        test = InventoryControl.changeInventory("Medicine", -1, false);
+        
+        System.out.println(test);
+        System.out.println(Arrays.toString(inventoryArray));
     } 
       
 }
