@@ -54,7 +54,7 @@ public class InventoryControl {
         int search = 0;
         for( int i = 0; i < invLength; i++ ) {
             String testValue = inventoryArray[i].getItem();
-            if(testValue == itemName) {
+            if(testValue.equals(itemName)) {
                 search = 1;
             }
         }
@@ -66,7 +66,7 @@ public class InventoryControl {
         int index = -1;
             for( int i = 0; (i < invLength) && (index == -1); i++) {
                 String testValue = inventoryArray[i].getItem();
-                if(testValue == itemName) {
+                if(testValue.equals(itemName)) {
                     index = i;
                 }
             }
@@ -77,7 +77,7 @@ public class InventoryControl {
             int moneyIndex = -1;
             for( int i = 0; (i < invLength) && (moneyIndex == -1); i++) {
                 String testValue = inventoryArray[i].getItem();
-                if(testValue == "Money") {
+                if("Money".equals(testValue)) {
                     moneyIndex = i;
                 }
             }

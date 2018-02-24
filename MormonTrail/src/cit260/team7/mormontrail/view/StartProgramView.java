@@ -5,13 +5,16 @@
  */
 package cit260.team7.mormontrail.view;
 import java.util.Scanner;
+import cit260.team7.mormontrail.control.InventoryControl;
+import cit260.team7.mormontrail.model.InventoryItem;
+import java.util.Arrays;
 /**
  *z
  * @author Savannah
  */
 public class StartProgramView {
     
-    public StartProgramView(){
+    public StartProgramView() {
             boolean endOfView = false;
           do{
               String[] inputs = this.getInputs();
@@ -25,45 +28,47 @@ public class StartProgramView {
     
     
     private String[] getInputs() {
-        String[] inputs = new String[1];
-        System.out.println("Description of Fred");
+        String[] inputs = new String[3];
         boolean valid = false;
         
-        
-        while (valid == false){
-            throws java.io.IOExeption {
+        while (valid == false) {
             
-        
-            char ch, answer = 'j';
-        
+            Scanner keyboard = new Scanner(System.in);
             
-            System.out.println("Fred");
-//            static Scanner scanner = new Scanner(System.in);
-//            static String inputString = Scanner.;
-            ch = (char) System.in.read();
-        }
-            //String noBlank = new String();
-            //Trim off leading and trailing blanks from the value
+            System.out.println("Your inventory currently contains:");
+            InventoryControl.setInventory();
+            InventoryItem[] inventoryArray = InventoryControl.getInventory();
+            System.out.println(Arrays.toString(inventoryArray));
             
-            if(inputs.length < 1){
+            System.out.println("Enter the name of the item you would like to purchase:");
+            String item = keyboard.nextLine();
+            
+            item = item.trim();
+            
+            if(item.length() < 1){
                 System.out.println("You must enter a non-blank value");
                 continue;
             }
             
-            inputs[1] = ;
+            System.out.println("The item you entered is " + item);
+            
+            inputs[0] = item;
+            
+            valid = true;
         }
-
-//        System.out.println("*** getInputs() called ***");
-        
-//        String[] inputs = new String[1];
-//        inputs[0] = "testInput";
-//        
-//        return inputs;
+        return inputs;
     }
 
     private boolean doAction(String[] inputs) {
+        
+        InventoryItem[] inventoryArray = InventoryControl.getInventory();
+        String test = InventoryControl.changeInventory(inputs[0], 1, true);
+        
         System.out.println("*** doAction() called ***");
         System.out.println("\tinputs = " + inputs[0]);
+        
+        System.out.println(test);
+        System.out.println(Arrays.toString(inventoryArray));
         
         return true;
     }
