@@ -28,31 +28,47 @@ public class StartProgramView {
     
     
     private String[] getInputs() {
-        String[] inputs = new String[3];
+        String[] inputs = new String[1];
         boolean valid = false;
         
         while (valid == false) {
             
             Scanner keyboard = new Scanner(System.in);
             
-            System.out.println("Your inventory currently contains:");
-            InventoryControl.setInventory();
-            InventoryItem[] inventoryArray = InventoryControl.getInventory();
-            System.out.println(Arrays.toString(inventoryArray));
+            System.out.println("Please enter your name:");
+            String name = keyboard.nextLine();
             
-            System.out.println("Enter the name of the item you would like to purchase:");
-            String item = keyboard.nextLine();
+            name = name.trim();
             
-            item = item.trim();
-            
-            if(item.length() < 1){
+            if(name.length() < 1){
                 System.out.println("You must enter a non-blank value");
                 continue;
             }
             
-            System.out.println("The item you entered is " + item);
+            System.out.println("Welcome, " + name + "!");
+            System.out.println("");
+            System.out.println("=========================================");
+            System.out.println("Welcome to the Mormon Trail!");
+            System.out.println("FILLER TEXT");
+            System.out.println("FILLER TEXT");
+            System.out.println("FILLER TEXT");
+            System.out.println("FILLER TEXT");
+            System.out.println("=========================================");
             
-            inputs[0] = item;
+            System.out.println("Choose One:");
+            System.out.println("1 | Start a New Game");
+            System.out.println("2 | Reload a Saved Game");
+            
+            String in = keyboard.nextLine();
+            
+            in = in.trim();
+            
+            if(in.length() < 1){
+                System.out.println("You must enter a non-blank value");
+                continue;
+            }
+            
+            inputs[0] = in;
             
             valid = true;
         }
@@ -61,14 +77,11 @@ public class StartProgramView {
 
     private boolean doAction(String[] inputs) {
         
-        InventoryItem[] inventoryArray = InventoryControl.getInventory();
-        String test = InventoryControl.changeInventory(inputs[0], 1, true);
-        
         System.out.println("*** doAction() called ***");
         System.out.println("\tinputs = " + inputs[0]);
         
-        System.out.println(test);
-        System.out.println(Arrays.toString(inventoryArray));
+        
+        
         
         return true;
     }
