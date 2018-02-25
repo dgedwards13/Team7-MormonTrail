@@ -4,8 +4,10 @@
  * and open the template in the editor.
  */
 package cit260.team7.mormontrail.view;
+import cit260.team7.mormontrail.control.GameControl;
 import java.util.Scanner;
 import java.util.Arrays;
+import cit260.team7.mormontrail.view.MainMenuView;
 /**
  *z
  * @author Savannah
@@ -54,8 +56,8 @@ public class StartProgramView {
             System.out.println("=========================================");
             
             System.out.println("Choose One:");
-            System.out.println("N | Start a New Game");
-            System.out.println("R | Reload a Saved Game");
+            System.out.println("1 | Start a New Game");
+            System.out.println("2 | Reload a Saved Game");
             
             String in = keyboard.nextLine();
             
@@ -66,10 +68,10 @@ public class StartProgramView {
                 continue;
             }
             
-            boolean v = in.equalsIgnoreCase("n") || in.equalsIgnoreCase("r");
+            boolean v = in.equalsIgnoreCase("1") || in.equalsIgnoreCase("2");
             
             if(v != true) {
-                System.out.println("The letter entered must correlate with the menu items.");
+                System.out.println("The number entered must correlate with the menu items.");
                 continue;
             }
             
@@ -82,11 +84,15 @@ public class StartProgramView {
 
     private boolean doAction(String[] inputs) {
         
-        System.out.println("*** doAction() called ***");
-        System.out.println("\tinputs = " + inputs[0]);
+        if(inputs[0].equalsIgnoreCase("1")) {
+            GameControl.startNewGame();
+            return true;
+        }
         
-        
-        
+        if(inputs[0].equalsIgnoreCase("2")) {
+            GameControl.retrieveGame();
+            return true;
+        }
         
         return true;
     }

@@ -25,7 +25,22 @@ public class GameControl {
     //create a game object with data from the file
     //return game object
     
-  Game game =new Game();
-  return game;
-}
+    MainMenuView mainMenuView = new MainMenuView();
+    mainMenuView.display();
+    
+    Game game = new Game();
+    return game;
+  }
+  
+  public static void loadGame(){
+      System.out.println("Game Loaded.");
+      MainMenuView mainMenuView = new MainMenuView();
+      mainMenuView.display();
+  }
+
+  public static void saveGame(){
+      System.out.println("Game Saved.");    
+      MainMenuView mainMenuView = new MainMenuView();
+      mainMenuView.display();
+  } 
 }
