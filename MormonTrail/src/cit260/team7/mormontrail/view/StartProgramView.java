@@ -5,8 +5,6 @@
  */
 package cit260.team7.mormontrail.view;
 import java.util.Scanner;
-import cit260.team7.mormontrail.control.InventoryControl;
-import cit260.team7.mormontrail.model.InventoryItem;
 import java.util.Arrays;
 /**
  *z
@@ -49,15 +47,15 @@ public class StartProgramView {
             System.out.println("");
             System.out.println("=========================================");
             System.out.println("Welcome to the Mormon Trail!");
-            System.out.println("FILLER TEXT");
-            System.out.println("FILLER TEXT");
-            System.out.println("FILLER TEXT");
-            System.out.println("FILLER TEXT");
+            System.out.println("You are a Mormon pioneer and will begin your journey in Nauvoo, Illinois. Your destination is Salt Lake Valley.");
+            System.out.println("Your party will use your resources to purchase supplies and tools for your adventure. Any remaining money can be used along the way.");
+            System.out.println("Your survival depends on your skills, traits and decisions  as you face random events as well as obstacles. Success means reaching Salt Lake Valley.");
+            System.out.println("Are you ready to try your luck on the Mormon Trail?!");
             System.out.println("=========================================");
             
             System.out.println("Choose One:");
-            System.out.println("1 | Start a New Game");
-            System.out.println("2 | Reload a Saved Game");
+            System.out.println("N | Start a New Game");
+            System.out.println("R | Reload a Saved Game");
             
             String in = keyboard.nextLine();
             
@@ -65,6 +63,13 @@ public class StartProgramView {
             
             if(in.length() < 1){
                 System.out.println("You must enter a non-blank value");
+                continue;
+            }
+            
+            boolean v = in.equalsIgnoreCase("n") || in.equalsIgnoreCase("r");
+            
+            if(v != true) {
+                System.out.println("The letter entered must correlate with the menu items.");
                 continue;
             }
             
