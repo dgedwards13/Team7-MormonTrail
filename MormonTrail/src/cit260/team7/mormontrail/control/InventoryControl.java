@@ -95,4 +95,25 @@ public class InventoryControl {
         inventoryArray[index].setAmount(currentAmount + amount);
         return "Success!";
     }
+    
+    public static double calCurrentWeight(double wagonSize) {
+        double currentWeight;
+        InventoryControl.setInventory();
+        InventoryItem[] inventoryArray = InventoryControl.getInventory();
+        int invCount = inventoryArray.length;      
+        double invItemWeight = 0;
+        for (int i= 0; i < invCount; i++){
+            double w = inventoryArray[i].getItemWeight();
+            double a = inventoryArray[i].getAmount();
+            double wa = w * a;
+            invItemWeight = invItemWeight + wa;
+        }
+        if(invItemWeight < 0 || invItemWeight > wagonSize) {
+            currentWeight = -1;
+            return currentWeight;
+        } else {
+            currentWeight = invItemWeight;
+            return currentWeight;
+        }
+    }
 }

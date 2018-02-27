@@ -30,7 +30,7 @@ public class CalCurrentWeightControlTest {
         // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
 
-System.out.println("\tTest case 2");
+        System.out.println("\tTest case 2");
         wagonSize = 50;
         expResult = -1;
         result = CalCurrentWeightControl.calCurrentWeight(wagonSize);
@@ -38,7 +38,7 @@ System.out.println("\tTest case 2");
         // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
 
-System.out.println("\tTest case 3");
+        System.out.println("\tTest case 3");
         wagonSize = 54;
         expResult = 54;
         result = CalCurrentWeightControl.calCurrentWeight(wagonSize);
@@ -46,7 +46,7 @@ System.out.println("\tTest case 3");
         // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
 
-System.out.println("\tTest case 4");
+        System.out.println("\tTest case 4");
         wagonSize = 30;
         expResult = -1;
         result = CalCurrentWeightControl.calCurrentWeight(wagonSize);
