@@ -39,7 +39,7 @@ public class RiverCrossingView {
             
             System.out.println("=================================================================================");
             System.out.println("==                    You have made it to the " + riverName +" .              ==");
-            System.out.println("==               The river currently has a depth of " + depth + " feet.        ==");
+            System.out.println("==               The river currently has a depth of " + depth + " feet.                 ==");
             System.out.println("==             You now have a choice before; risk crossing the river now,      ==");
             System.out.println("==     waiting a day, or leave some of your supplies on the side of the river  ==");
             System.out.println("==                    to reduce the changes of your wagon sinking.             ==");
@@ -59,7 +59,7 @@ public class RiverCrossingView {
                 continue;
             }
             
-            boolean v = in.equalsIgnoreCase("1") || in.equalsIgnoreCase("2") || in.equalsIgnoreCase("3") || in.equalsIgnoreCase("4");
+            boolean v = in.equalsIgnoreCase("1") || in.equalsIgnoreCase("2") || in.equalsIgnoreCase("3");
                     
             if(v != true) {
                 System.out.println("The number entered must correlate with the menu items.");
@@ -90,8 +90,8 @@ public class RiverCrossingView {
                 break;
             case "2":
                 System.out.println("Go back and think about it");
-                DailyTrailStopSceneView dailyTrailStopSceneView = new DailyTrailStopSceneView();
-                dailyTrailStopSceneView.display();
+//                DailyTrailStopSceneView dailyTrailStopSceneView = new DailyTrailStopSceneView();
+//                dailyTrailStopSceneView.display();
                 break;
             case "3":
                 System.out.println("Drop Supplies");
@@ -103,4 +103,5 @@ public class RiverCrossingView {
            
         return true;
 }
+     public void display() {}
 }

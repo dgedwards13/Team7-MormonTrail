@@ -43,4 +43,8 @@ public class GameControl {
       MainMenuView mainMenuView = new MainMenuView();
       mainMenuView.display();
   } 
+  
+  public static void setPace(String pace){
+  
+  }
 }

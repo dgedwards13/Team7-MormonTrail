@@ -5,15 +5,16 @@
  */
 package cit260.team7.mormontrail.view;
 
+import cit260.team7.mormontrail.control.GameControl;
 import java.util.Scanner;
 
 /**
  *
- * @author dgedw
+ * @author Shaw-Laptop
  */
-public class GamePlayView {
+public class PaceView {
     
-    public GamePlayView(){
+    public PaceView(){
          boolean endOfView = false;
           do{
               String[] inputs = this.getInputs();
@@ -33,10 +34,11 @@ public class GamePlayView {
             
             Scanner keyboard = new Scanner(System.in);
             
-            System.out.println("View Testing");
-            System.out.println("1 | River Crossing View");
-            System.out.println("2 | Pace View");
-            System.out.println("3 | General Store View");
+            System.out.println("How fast do you want to go?");
+            System.out.println( "slow");
+            System.out.println("medium");
+            System.out.println("fast");
+           
              
             String in = keyboard.nextLine();
             
@@ -47,15 +49,14 @@ public class GamePlayView {
                 continue;
             }
             
-            boolean v = in.equalsIgnoreCase("1") || in.equalsIgnoreCase("2") || in.equalsIgnoreCase("3");
+            boolean v = in.equalsIgnoreCase("slow") || in.equalsIgnoreCase("medium") || in.equalsIgnoreCase("fast");
                     
             if(v != true) {
-                System.out.println("The number entered must correlate with the menu items.");
+                System.out.println("Please enter slow, medium, or fast.");
                 continue;
             }
             
             inputs[0] = in;
-            
             valid = true;
         }
         return inputs;
@@ -64,27 +65,34 @@ public class GamePlayView {
     private boolean doAction(String[] inputs) {
         
         switch(inputs[0]) {
-            case "1":
-                RiverCrossingView riverCrossingView = new RiverCrossingView();
-                riverCrossingView.display();
+            case "slow":
+                GameControl.setPace("slow");
+                System.out.println("pace set to slow");
+                GamePlayView gamePlayView = new GamePlayView();
+                gamePlayView.display();
                 break;
-            case "2":
-                PaceView paceView = new PaceView();
-                paceView.display();
-//                DailyTrailStopSceneView dailyTrailStopSceneView = new DailyTrailStopSceneView();
-//                dailyTrailStopSceneView.display();
+            case "medium":
+                GameControl.setPace("medium");
+                System.out.println("pace set to medium");
+                gamePlayView = new GamePlayView();
+                gamePlayView.display();
                 break;
-//            case "3":
-//                GeneralStoreView generalStoreView = new GeneralStoreView();
-//                generalStoreView.display();
-//                break;
-                
+            case "fast":
+                GameControl.setPace("fast");
+                System.out.println("pace set to fast");
+                gamePlayView = new GamePlayView();
+                gamePlayView.display();
+                break;
         }
            
         return true;
     }
-    
+
     public void display() {
         
     }
 }
+
+        
+        
+ 
