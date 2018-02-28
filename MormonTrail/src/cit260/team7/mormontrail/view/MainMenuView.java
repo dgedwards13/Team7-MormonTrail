@@ -6,6 +6,7 @@
 package cit260.team7.mormontrail.view;
 
 import cit260.team7.mormontrail.control.GameControl;
+import cit260.team7.mormontrail.control.InventoryControl;
 import java.util.Scanner;
 
 /**
@@ -67,6 +68,7 @@ public class MainMenuView {
         
         switch(inputs[0]) {
             case "1":
+                InventoryControl.setInventory();
                 GamePlayView gamePlayView = new GamePlayView();
                 gamePlayView.display();
                 break;

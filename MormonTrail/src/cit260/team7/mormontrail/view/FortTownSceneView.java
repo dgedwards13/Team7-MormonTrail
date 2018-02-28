@@ -5,16 +5,14 @@
  */
 package cit260.team7.mormontrail.view;
 
-import cit260.team7.mormontrail.control.InventoryControl;
 import java.util.Scanner;
 
 /**
  *
  * @author dgedw
  */
-public class GamePlayView {
-    
-    public GamePlayView(){
+public class FortTownSceneView {
+    public FortTownSceneView(){
          boolean endOfView = false;
           do{
               String[] inputs = this.getInputs();
@@ -34,14 +32,16 @@ public class GamePlayView {
             
             Scanner keyboard = new Scanner(System.in);
             
-            System.out.println("View Testing");
-            System.out.println("1 | River Crossing View");
-            System.out.println("2 | Pace View");
-            System.out.println("3 | Daily Trail Stop Scene");
-            System.out.println("4 | General Store View");
-            
+            System.out.println("================================================================================");
+            System.out.println("==                                                                            ==");
+            System.out.println("==                            Welcome to Sometown!                            ==");
+            System.out.println("==                                                                            ==");
+            System.out.println("================================================================================");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("1 | Back to GamePlayView");
+
             String in = keyboard.nextLine();
-            
             in = in.trim();
             
             if(in.length() < 1){
@@ -49,42 +49,25 @@ public class GamePlayView {
                 continue;
             }
             
-            boolean v = in.equalsIgnoreCase("1") || in.equalsIgnoreCase("2") || in.equalsIgnoreCase("3") || in.equalsIgnoreCase("4");
-                    
+            boolean v = in.equalsIgnoreCase("1");
             if(v != true) {
-                System.out.println("The number entered must correlate with the menu items.");
+                System.out.println("The number entered must correlate with the available options.");
                 continue;
             }
             
             inputs[0] = in;
-            
             valid = true;
         }
         return inputs;
     }
 
     private boolean doAction(String[] inputs) {
-        
-        
-        switch(inputs[0]) {
+           switch(inputs[0]) {
             case "1":
-                RiverCrossingView riverCrossingView = new RiverCrossingView();
-                riverCrossingView.display();
-                break;
-            case "2":
-                PaceView paceView = new PaceView();
-                paceView.display();
-                break;
-            case "3":
-                DailyTrailStopSceneView dailyTrailStopSceneView = new DailyTrailStopSceneView();
-                dailyTrailStopSceneView.display();
-                break;
-            case "4":
-                GeneralStoreView generalStoreView = new GeneralStoreView();
-                generalStoreView.display();
+                GamePlayView gamePlayView = new GamePlayView();
+                gamePlayView.display();
                 break;
         }
-           
         return true;
     }
     
