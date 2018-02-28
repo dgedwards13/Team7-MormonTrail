@@ -101,6 +101,7 @@ public class Game implements Serializable{
     public String toString() {
         return "Game{" + "dayOnTrail=" + dayOnTrail + ", pace=" + pace + ", milesTraveled=" + milesTraveled + ", currentMoneyBalance=" + currentMoneyBalance + '}';
     }
+   
     
  
 }
