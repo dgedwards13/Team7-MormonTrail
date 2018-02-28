@@ -65,25 +65,25 @@ public class InventoryControlTest {
         System.out.println("\tTest case 1");
         double wagonSize = 1000;
         double expResult = 54;
-        double result = CalCurrentWeightControl.calCurrentWeight(wagonSize);
+        double result = InventoryControl.calCurrentWeight(wagonSize);
         assertEquals(expResult, result, 0.0);
 
         System.out.println("\tTest case 2");
         wagonSize = 50;
         expResult = -1;
-        result = CalCurrentWeightControl.calCurrentWeight(wagonSize);
+        result = InventoryControl.calCurrentWeight(wagonSize);
         assertEquals(expResult, result, 0.0);
         
         System.out.println("\tTest case 3");
         wagonSize = 54;
         expResult = 54;
-        result = CalCurrentWeightControl.calCurrentWeight(wagonSize);
+        result = InventoryControl.calCurrentWeight(wagonSize);
         assertEquals(expResult, result, 0.0);
        
         System.out.println("\tTest case 4");
         wagonSize = 30;
         expResult = -1;
-        result = CalCurrentWeightControl.calCurrentWeight(wagonSize);
+        result = InventoryControl.calCurrentWeight(wagonSize);
         assertEquals(expResult, result, 0.0);
     }
 }
