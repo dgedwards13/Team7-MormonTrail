@@ -47,4 +47,9 @@ public class GameControl {
   public static void setPace(String pace){
   
   }
+  
+  public static void setDailyRest(int rest){
+      
+  }
+  
 }
