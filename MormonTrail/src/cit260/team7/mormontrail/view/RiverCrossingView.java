@@ -90,7 +90,8 @@ public class RiverCrossingView {
                 break;
             case "2":
                 System.out.println("Go back and think about it");
-                
+                DailyTrailStopSceneView dailyTrailStopSceneView = new DailyTrailStopSceneView();
+                dailyTrailStopSceneView.display();
                 break;
             case "3":
                 System.out.println("Drop Supplies");
