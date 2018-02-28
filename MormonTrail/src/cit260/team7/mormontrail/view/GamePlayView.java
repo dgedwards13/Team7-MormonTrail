@@ -33,8 +33,10 @@ public class GamePlayView {
             
             Scanner keyboard = new Scanner(System.in);
             
-            System.out.println("Game Play Menu");
-            System.out.println("1 | Return to Previous Menu");
+            System.out.println("View Testing");
+            System.out.println("1 | River Crossing View");
+            System.out.println("2 | Daily Trail Stop View");
+            System.out.println("3 | General Store View");
              
             String in = keyboard.nextLine();
             
@@ -45,7 +47,7 @@ public class GamePlayView {
                 continue;
             }
             
-            boolean v = in.equalsIgnoreCase("1");
+            boolean v = in.equalsIgnoreCase("1") || in.equalsIgnoreCase("2") || in.equalsIgnoreCase("3");
                     
             if(v != true) {
                 System.out.println("The number entered must correlate with the menu items.");
@@ -63,8 +65,16 @@ public class GamePlayView {
         
         switch(inputs[0]) {
             case "1":
-                MainMenuView mainMenuView = new MainMenuView();
-                mainMenuView.display();
+                RiverCrossingView riverCrossingView = new RiverCrossingView();
+                riverCrossingView.display();
+                break;
+            case "2":
+                DailyTrailStopSceneView dailyTrailStopSceneView = new DailyTrailStopSceneView();
+                dailyTrailStopSceneView.display();
+                break;
+            case "3":
+                GeneralStoreView generalStoreView = new GeneralStoreView();
+                generalStoreView.display();
                 break;
         }
            
