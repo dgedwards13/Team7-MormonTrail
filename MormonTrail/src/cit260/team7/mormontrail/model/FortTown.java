@@ -58,6 +58,9 @@ public class FortTown implements Serializable{
     public String toString() {
         return "FortTown{" + "hasHotel=" + hasHotel + '}';
     }
+
+
+   
     
     
 }
