@@ -45,11 +45,11 @@ public class ViewSuppliesView {
             int i = 1;
             for (InventoryItem inv : inventoryArray) {
                     if(inv.getAmount() > 0 && !inv.getItem().equalsIgnoreCase("money")) {
-                    System.out.println(i + " | " + inv.getItem() + "(QTY : " + inv.getAmount() + ")");
-                    
-                    i++;
+                        int intAmount = (int) Math.round(inv.getAmount());
+                        System.out.println(i + " | " + inv.getItem() + " (QTY : " + intAmount + ")");
+                        i++;
                     }
-                }
+            }
             System.out.println(i + " | Return to Previous Menu");
             System.out.println("You currently have $" + InventoryControl.countItem("money"));
             System.out.println("Which item (if any) would you like to sell?");

@@ -49,7 +49,7 @@ public class InventoryControl {
         
     }
     
-    public static double countItem(String itemName) {
+    public static int countItem(String itemName) {
         InventoryItem[] inventoryArray = getInventory();
         int invLength = inventoryArray.length;
         int index = -1;
@@ -60,7 +60,8 @@ public class InventoryControl {
             }
         }
         double amount = inventoryArray[index].getAmount();
-        return amount;
+        int rounded = (int) Math.round(amount);
+        return rounded;
     }
     
     public static String changeInventory(String itemName, double amount, boolean purchase) {
