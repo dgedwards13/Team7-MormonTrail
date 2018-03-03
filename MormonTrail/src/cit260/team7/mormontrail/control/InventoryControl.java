@@ -59,24 +59,20 @@ public class InventoryControl {
                 index = i;
             }
         }
-        double amount = inventoryArray[index].getAmount();
-        int rounded = (int) Math.round(amount);
-        return rounded;
+        if(index == -1) {
+            return 0;
+        } else {
+            double amount = inventoryArray[index].getAmount();
+            int rounded = (int) Math.round(amount);
+            return rounded;
+        }
     }
     
     public static String changeInventory(String itemName, double amount, boolean purchase) {
-        
         // Build Inventory Array
-        
         InventoryItem[] inventoryArray = getInventory();
-
-        
-        
-        // Data Validation
-
         // Count the number of items in inventory
         int invLength = inventoryArray.length;
-        
         // Check if item exists
         int search = 0;
         for( int i = 0; i < invLength; i++ ) {
@@ -88,8 +84,6 @@ public class InventoryControl {
         if (search == 0) {
             return "Item does not exist";
         }
-
-        
         int index = -1;
             for( int i = 0; (i < invLength) && (index == -1); i++) {
                 String testValue = inventoryArray[i].getItem();
@@ -97,9 +91,7 @@ public class InventoryControl {
                     index = i;
                 }
             }
-        
-        // Test for purchase
-        
+        // Test for purchase  
         if(purchase) {
             int moneyIndex = -1;
             for( int i = 0; (i < invLength) && (moneyIndex == -1); i++) {
@@ -116,11 +108,7 @@ public class InventoryControl {
             }
             inventoryArray[moneyIndex].setAmount(wallet - price);
         }
-        
-        
-        
-        // Adding / Removing Items
-        
+        // Adding / Removing Items   
         double currentAmount = inventoryArray[index].getAmount();
         inventoryArray[index].setAmount(currentAmount + amount);
         return "Success!";
@@ -128,7 +116,6 @@ public class InventoryControl {
     
     public static double calCurrentWeight(double wagonSize) {
         double currentWeight;
-        InventoryControl.setInventory();
         InventoryItem[] inventoryArray = InventoryControl.getInventory();
         int invCount = inventoryArray.length;      
         double invItemWeight = 0;

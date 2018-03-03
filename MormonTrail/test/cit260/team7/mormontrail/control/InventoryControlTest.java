@@ -23,7 +23,7 @@ public class InventoryControlTest {
      */
     @Test
     public void testSetInventory() {
-        System.out.println("setInventory");
+        System.out.println("\tsetInventory");
         InventoryControl.setInventory();
     }
 
@@ -32,13 +32,17 @@ public class InventoryControlTest {
      */
     @Test
     public void testGetInventory() {
-        System.out.println("getInventory");
+        System.out.println("\tgetInventory");
         InventoryControl.setInventory();
-        InventoryItem[] expResult = new InventoryItem[4];
-        expResult[0] = new InventoryItem("Wheat", 4, 3, 2.25);
-        expResult[1] = new InventoryItem("Water", 8, 5, 4.00);
-        expResult[2] = new InventoryItem("Medicine", 2, 1, 9.50);
-        expResult[3] = new InventoryItem("Money", 1000, 0, 0);
+        InventoryItem[] expResult = new InventoryItem[8];
+        expResult[0] = new InventoryItem("Money", 3500, 0, 0);
+        expResult[1] = new InventoryItem("Oxen", 0, 0, 30);
+        expResult[2] = new InventoryItem("Small Wagon", 0, 0, 100);
+        expResult[3] = new InventoryItem("Medium Wagon", 0, 0, 150);
+        expResult[4] = new InventoryItem("Large Wagon", 0, 0, 200);
+        expResult[5] = new InventoryItem("Food", 0, 1, 10);
+        expResult[6] = new InventoryItem("Spare Parts", 0, 10, 50);
+        expResult[7] = new InventoryItem("Ammunition", 0, 5, 10);
         InventoryItem[] result = InventoryControl.getInventory();
         assertArrayEquals(expResult, result);
     }
@@ -48,12 +52,28 @@ public class InventoryControlTest {
      */
     @Test
     public void testChangeInventory() {
-        System.out.println("changeInventory");
-        String itemName = "Wheat";
+        System.out.println("\tChangeInventory Test case 1");
+        String itemName = "Ammunition";
         double amount = 5;
         boolean purchase = true;
         String expResult = "Success!";
         String result = InventoryControl.changeInventory(itemName, amount, purchase);
+        assertEquals(expResult, result);
+        
+        System.out.println("\tChangeInventory Test case 2");
+        itemName = "Ammo";
+        amount = 5;
+        purchase = true;
+        expResult = "Item does not exist";
+        result = InventoryControl.changeInventory(itemName, amount, purchase);
+        assertEquals(expResult, result);
+        
+        System.out.println("\tChangeInventory Test case 3");
+        itemName = "Money";
+        amount = 50;
+        purchase = false;
+        expResult = "Success!";
+        result = InventoryControl.changeInventory(itemName, amount, purchase);
         assertEquals(expResult, result);
     }
 
@@ -62,28 +82,57 @@ public class InventoryControlTest {
      */
     @Test
     public void testCalCurrentWeight() {
-        System.out.println("\tTest case 1");
+        InventoryItem[] InventoryArray = InventoryControl.getInventory();
+        String t1 = InventoryControl.changeInventory("Food", 50, true);
+        String t2 = InventoryControl.changeInventory("Ammunition", 10, true);
+        String t3 = InventoryControl.changeInventory("Spare Parts", 2, true);
+        
+        System.out.println("\tCurrentWeight Test case 1");
         double wagonSize = 1000;
-        double expResult = 54;
+        double expResult = 120;
         double result = InventoryControl.calCurrentWeight(wagonSize);
         assertEquals(expResult, result, 0.0);
 
-        System.out.println("\tTest case 2");
+        System.out.println("\tCurrentWeight Test case 2");
         wagonSize = 50;
         expResult = -1;
         result = InventoryControl.calCurrentWeight(wagonSize);
         assertEquals(expResult, result, 0.0);
         
-        System.out.println("\tTest case 3");
-        wagonSize = 54;
-        expResult = 54;
+        System.out.println("\tCurrentWeight Test case 3");
+        wagonSize = 120;
+        expResult = 120;
         result = InventoryControl.calCurrentWeight(wagonSize);
         assertEquals(expResult, result, 0.0);
        
-        System.out.println("\tTest case 4");
+        System.out.println("\tCurrentWeight Test case 4");
         wagonSize = 30;
         expResult = -1;
         result = InventoryControl.calCurrentWeight(wagonSize);
         assertEquals(expResult, result, 0.0);
+    }
+
+    /**
+     * Test of countItem method, of class InventoryControl.
+     */
+    @Test
+    public void testCountItem() {
+        System.out.println("\tCountItem Test case 1");
+        String itemName = "Money"; // We have $3500
+        int expResult = 3500;
+        int result = InventoryControl.countItem(itemName);
+        assertEquals(expResult, result);
+        
+        System.out.println("\tCountItem Test case 2");
+        itemName = "Oxen"; // Game starts with 0
+        expResult = 0;
+        result = InventoryControl.countItem(itemName);
+        assertEquals(expResult, result);
+        
+        System.out.println("\tCountItem Test case 3");
+        itemName = "Mana"; // Invalid Item, therefore will return 0
+        expResult = 0;
+        result = InventoryControl.countItem(itemName);
+        assertEquals(expResult, result);
     }
 }
