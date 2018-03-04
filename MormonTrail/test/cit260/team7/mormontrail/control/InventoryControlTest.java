@@ -130,7 +130,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result);
         
         System.out.println("\tCountItem Test case 3");
-        itemName = "Mana"; // Invalid Item, therefore will return 0
+        itemName = "Manna"; // Invalid Item, therefore will return 0
         expResult = 0;
         result = InventoryControl.countItem(itemName);
         assertEquals(expResult, result);
