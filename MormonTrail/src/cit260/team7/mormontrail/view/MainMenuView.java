@@ -26,7 +26,16 @@ public class MainMenuView {
           }
           while (endOfView != true);
     }
-    
+//    private final String MENU = "\n"
+//            +"\n------------------------------------------"
+//            +"\n| Main Menu                              |"
+//            +"\n------------------------------------------"
+//            +"\n1| Start game"
+//            +"\n2| Help Menu"
+//            +"\n3| Save Game"
+//            +"\n4| Load Game"
+//            +"\n5| Exit"
+//            +"\n------------------------------------------";
     private String[] getInputs() {
         String[] inputs = new String[1];
         boolean valid = false;
