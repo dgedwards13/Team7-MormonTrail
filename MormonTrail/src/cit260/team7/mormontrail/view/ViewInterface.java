@@ -11,6 +11,6 @@ package cit260.team7.mormontrail.view;
  */
 public interface ViewInterface {
     public void display();
-    public String getInput();
+    public String getInputs(int numOfInputs);
     public boolean doAction(String value);
 }
