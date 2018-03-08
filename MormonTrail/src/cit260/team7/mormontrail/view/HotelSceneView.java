@@ -12,6 +12,7 @@ import cit260.team7.mormontrail.model.Character;
  *
  * @author Savannah
  */
+
 public class HotelSceneView{
     public HotelSceneView(){
         boolean endOfView = false;
