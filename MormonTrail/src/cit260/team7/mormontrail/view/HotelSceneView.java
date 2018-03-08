@@ -5,17 +5,16 @@
  */
 package cit260.team7.mormontrail.view;
 
-import cit260.team7.mormontrail.control.InventoryControl;
 import java.util.Scanner;
-
+import cit260.team7.mormontrail.control.HotelControl;
+import cit260.team7.mormontrail.model.Character;
 /**
  *
- * @author dgedw
+ * @author Savannah
  */
-public class GamePlayView {
-    
-    public GamePlayView(){
-         boolean endOfView = false;
+public class HotelSceneView{
+    public HotelSceneView(){
+        boolean endOfView = false;
           do{
               String[] inputs = this.getInputs();
                       if (inputs == null || inputs.length < 1){
@@ -31,16 +30,16 @@ public class GamePlayView {
         boolean valid = false;
         
         while (valid == false) {
-            
             Scanner keyboard = new Scanner(System.in);
             
-            System.out.println("View Testing");
-            System.out.println("1 | River Crossing View");
-            System.out.println("2 | Pace View");
-            System.out.println("3 | Daily Trail Stop Scene");
-            System.out.println("4 | General Store View");
-            System.out.println("5 | Fort or Town Scene");
-            
+            System.out.println("=================================================================================");
+            System.out.println("==                            Welcome to the Hotel!                            ==");
+            System.out.println("==                    Here, you can pick up another traveler.             ==");
+            System.out.println("=================================================================================");
+        
+        System.out.println("1 | List of available characters");
+            System.out.println("2 | Exit hotel");
+    
             String in = keyboard.nextLine();
             
             in = in.trim();
@@ -50,7 +49,7 @@ public class GamePlayView {
                 continue;
             }
             
-            boolean v = in.equalsIgnoreCase("1") || in.equalsIgnoreCase("2") || in.equalsIgnoreCase("3") || in.equalsIgnoreCase("4") || in.equalsIgnoreCase("5");
+            boolean v = in.equalsIgnoreCase("1") || in.equalsIgnoreCase("2") || in.equalsIgnoreCase("3");
                     
             if(v != true) {
                 System.out.println("The number entered must correlate with the menu items.");
@@ -63,36 +62,26 @@ public class GamePlayView {
         }
         return inputs;
     }
-
+    
     private boolean doAction(String[] inputs) {
-        
         
         switch(inputs[0]) {
             case "1":
-                RiverCrossingView riverCrossingView = new RiverCrossingView();
-                riverCrossingView.display();
+                System.out.println("These are the characters who are willing to journey with you!");
+                Character[] characterArray = HotelControl.getCharacter();
+            int i = 1;
+            for (Character chara : characterArray) {
+                        System.out.println(i + " | " + chara.getName());
+                        i++;
+                    }
                 break;
             case "2":
-                PaceView paceView = new PaceView();
-                paceView.display();
-                break;
-            case "3":
-                DailyTrailStopSceneView dailyTrailStopSceneView = new DailyTrailStopSceneView();
-                dailyTrailStopSceneView.display();
-                break;
-            case "4":
-                GeneralStoreView generalStoreView = new GeneralStoreView();
-                generalStoreView.display();
-                break;
-            case"5":
                 FortTownSceneView fortTownSceneView = new FortTownSceneView();
                 fortTownSceneView.display();
                 break;
         }
-           
         return true;
     }
-    
     public void display() {
         
     }

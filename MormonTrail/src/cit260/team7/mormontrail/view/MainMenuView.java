@@ -7,68 +7,36 @@ package cit260.team7.mormontrail.view;
 
 import cit260.team7.mormontrail.control.GameControl;
 import cit260.team7.mormontrail.control.InventoryControl;
+import cit260.team7.mormontrail.control.HotelControl;
 import java.util.Scanner;
 
 /**
  *
  * @author Shaw-Laptop
  */
-public class MainMenuView {
+
+public class MainMenuView extends View {
     
     public MainMenuView(){
-         boolean endOfView = false;
-          do{
-              String[] inputs = this.getInputs();
-                      if (inputs == null || inputs.length < 1){
-                          return;
-                      }
-                      endOfView = doAction(inputs);
-          }
-          while (endOfView != true);
+        super( "\n"
+            +"\n------------------------------------------"
+            +"\n| Main Menu                              |"
+            +"\n------------------------------------------"
+            +"\n1| Start game"
+            +"\n2| Help Menu"
+            +"\n3| Save Game"
+            +"\n4| Load Game"
+            +"\n5| Exit"
+            +"\n------------------------------------------", 5);
     }
-    
-    private String[] getInputs() {
-        String[] inputs = new String[1];
-        boolean valid = false;
+   
+@Override
+    public boolean doAction(String inputs) {
         
-        while (valid == false) {
-            
-            Scanner keyboard = new Scanner(System.in);
-            
-            System.out.println("Main Menu");
-            System.out.println("1 | Start Game");
-            System.out.println("2 | Help Menu");
-            System.out.println("3 | Save Game");
-            System.out.println("4 | Load Game");
-            System.out.println("5 | Exit");
-             
-            String in = keyboard.nextLine();
-            
-            in = in.trim();
-            
-            if(in.length() < 1){
-                System.out.println("You must enter a non-blank value");
-                continue;
-            }
-            
-            boolean v = in.equalsIgnoreCase("1") || in.equalsIgnoreCase("2") || in.equalsIgnoreCase("3") || in.equalsIgnoreCase("4") || in.equalsIgnoreCase("5");
-                    
-            if(v != true) {
-                System.out.println("The number entered must correlate with the menu items.");
-                continue;
-            }
-            
-            inputs[0] = in;
-            valid = true;
-        }
-        return inputs;
-    }
-
-    private boolean doAction(String[] inputs) {
-        
-        switch(inputs[0]) {
+        switch(inputs) {
             case "1":
                 InventoryControl.setInventory();
+                HotelControl.setCharacter();
                 GamePlayView gamePlayView = new GamePlayView();
                 gamePlayView.display();
                 break;
@@ -120,9 +88,7 @@ public class MainMenuView {
         return true;
     }
 
-    public void display() {
-        
-    }
+    
 }
 
         

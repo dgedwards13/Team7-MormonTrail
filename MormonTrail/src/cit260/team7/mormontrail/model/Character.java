@@ -21,8 +21,13 @@ public class Character implements Serializable{
     private double currentHealth;
 
     
-    public Character(){
-        
+    public Character(String charName, double charMoney, double charHuntingSkill, double charGatheringSkill, double charDailyStaminaDraw, double charCurrentHealth){
+        name = charName;
+        money = charMoney;
+        huntingSkill = charHuntingSkill;
+        gatheringSkill = charGatheringSkill;
+        dailyStaminaDraw = charDailyStaminaDraw;
+        currentHealth = charCurrentHealth;
     }
         
     public double getMoney() {
