@@ -12,14 +12,24 @@ import java.util.Scanner;
  * @author dgedw
  */
 public class GeneralStoreView {
-    private String menu;
-    private int numOfInputs;
+    private String menu = "\n"
+          + "================================================================================"
+        + "\n==                               GENERAL STORE                                =="
+        + "\n==                                                                            =="
+        + "\n==  Welcome to the General Store! We have all the supplies that you may need  =="
+        + "\n==   for your journey! Stock up now, because you never know when you'll get   =="
+        + "\n==                              another chance!                               =="
+        + "\n================================================================================"
+        + "\n\n"
+        + "\n1 | View or Sell Current Supplies"
+        + "\n2 | Buy Supplies"
+        + "\n3 | Exit Store";
+    private int numOfInputs = 3;
     
     public GeneralStoreView(){
-        this.menu = "\n";
          boolean endOfView = false;
           do{
-              System.out.println(this.buildMenu());
+              System.out.println(menu);
               String[] inputs = this.getInputs(numOfInputs);
                       if (inputs == null || inputs.length < 1){
                           return;
@@ -27,22 +37,6 @@ public class GeneralStoreView {
                       endOfView = doAction(inputs);
           }
           while (endOfView != true);
-    }
-    
-    private String buildMenu() {
-        menu += "\n================================================================================";
-        menu += "\n==                               GENERAL STORE                                ==";
-        menu += "\n==                                                                            ==";
-        menu += "\n==  Welcome to the General Store! We have all the supplies that you may need  ==";
-        menu += "\n==   for your journey! Stock up now, because you never know when you'll get   ==";
-        menu += "\n==                              another chance!                               ==";
-        menu += "\n================================================================================";
-        menu += "\n\n";
-        menu += "\n1 | View or Sell Current Supplies";
-        menu += "\n2 | Buy Supplies";
-        menu += "\n3 | Exit Store";
-        numOfInputs = 3;
-        return menu;
     }
     
     private String[] getInputs(int numOfInputs) {
