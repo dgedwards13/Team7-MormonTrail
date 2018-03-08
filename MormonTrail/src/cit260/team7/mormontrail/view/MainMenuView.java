@@ -7,6 +7,7 @@ package cit260.team7.mormontrail.view;
 
 import cit260.team7.mormontrail.control.GameControl;
 import cit260.team7.mormontrail.control.InventoryControl;
+import cit260.team7.mormontrail.control.HotelControl;
 import java.util.Scanner;
 
 /**
@@ -35,6 +36,7 @@ public class MainMenuView extends View {
         switch(inputs) {
             case "1":
                 InventoryControl.setInventory();
+                HotelControl.setCharacter();
                 GamePlayView gamePlayView = new GamePlayView();
                 gamePlayView.display();
                 break;
