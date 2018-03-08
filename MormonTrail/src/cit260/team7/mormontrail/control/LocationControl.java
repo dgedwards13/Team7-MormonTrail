@@ -5,6 +5,8 @@
  */
 package cit260.team7.mormontrail.control;
 
+import java.util.Arrays;
+
 /**
  *
  * @author rherrerajr
@@ -15,4 +17,7 @@ public class LocationControl {
         return "fort";
     }
     
+    public static String fortTown(){
+        return "town";
+    }
 }

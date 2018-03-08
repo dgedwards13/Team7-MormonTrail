@@ -39,6 +39,7 @@ public class GamePlayView {
             System.out.println("2 | Pace View");
             System.out.println("3 | Daily Trail Stop Scene");
             System.out.println("4 | General Store View");
+            System.out.println("5 | Fort or Town Scene");
             
             String in = keyboard.nextLine();
             
@@ -49,7 +50,7 @@ public class GamePlayView {
                 continue;
             }
             
-            boolean v = in.equalsIgnoreCase("1") || in.equalsIgnoreCase("2") || in.equalsIgnoreCase("3") || in.equalsIgnoreCase("4");
+            boolean v = in.equalsIgnoreCase("1") || in.equalsIgnoreCase("2") || in.equalsIgnoreCase("3") || in.equalsIgnoreCase("4") || in.equalsIgnoreCase("5");
                     
             if(v != true) {
                 System.out.println("The number entered must correlate with the menu items.");
@@ -82,6 +83,10 @@ public class GamePlayView {
             case "4":
                 GeneralStoreView generalStoreView = new GeneralStoreView();
                 generalStoreView.display();
+                break;
+            case"5":
+                FortTownSceneView fortTownSceneView = new FortTownSceneView();
+                fortTownSceneView.display();
                 break;
         }
            

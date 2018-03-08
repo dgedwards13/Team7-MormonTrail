@@ -7,6 +7,7 @@ package cit260.team7.mormontrail.view;
 
 import java.util.Scanner;
 
+
 /**
  *
  * @author dgedw
