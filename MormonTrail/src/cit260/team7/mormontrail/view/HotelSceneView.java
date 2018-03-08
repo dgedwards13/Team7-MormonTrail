@@ -34,7 +34,7 @@ public class HotelSceneView{
             
             System.out.println("=================================================================================");
             System.out.println("==                            Welcome to the Hotel!                            ==");
-            System.out.println("==                    Here, you can pick up another traveler.             ==");
+            System.out.println("==                    Here, you can pick up another traveler.                  ==");
             System.out.println("=================================================================================");
         
         System.out.println("1 | List of available characters");
@@ -69,9 +69,9 @@ public class HotelSceneView{
             case "1":
                 System.out.println("These are the characters who are willing to journey with you!");
                 Character[] characterArray = HotelControl.getCharacter();
-            int i = 1;
-            for (Character chara : characterArray) {
-                        System.out.println(i + " | " + chara.getName());
+                int i = 1;
+                for (Character ch : characterArray) {
+                        System.out.println(i + " | " + ch.getName() + "\n\t Character Money: " + ch.getMoney() + "\n\t Character Hunting Skill: " + ch.getHuntingSkill() + "\n\t Character Gathering Skill" + ch.getGatheringSkill() + "\n\t Character Stamina: " + ch.getDailyStaminaDraw() + "\n\t Character Health: " + ch.getCurrentHealth());
                         i++;
                     }
                 break;
