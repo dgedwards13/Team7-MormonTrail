@@ -53,7 +53,7 @@ public class ViewSuppliesView {
             System.out.println(i + " | Return to Previous Menu");
             System.out.println("You currently have $" + InventoryControl.countItem("money"));
             System.out.println("Which item (if any) would you like to sell?");
-
+            
             String in = keyboard.nextLine();
             in = in.trim();
             
