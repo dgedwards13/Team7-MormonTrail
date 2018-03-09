@@ -18,6 +18,21 @@ public class LocationControl {
     }
     
     public static String fortTown(){
-        return "town";
+        String nearby = nearby();
+        String output = "";
+            if (nearby.equals("town")){
+                output += "==                            Welcome to Sometown!                            ==";
+                output += "1 | Visit the Hotel";
+                output += "2 | Visit the General Store";
+                output += "4 | Back to GamePlayView";
+            }
+ 
+             else if (nearby.equals("fort")){
+                output += "==                            Welcome to Somefort!                            ==";
+                output += "1 | Visit the General Store";
+                output += "2 | Return to the Trail";
+                output += "3 | Back to GamePlayView";
+             }
+            return output;
     }
 }

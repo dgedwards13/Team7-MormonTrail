@@ -6,6 +6,7 @@
 package cit260.team7.mormontrail.view;
 
 import cit260.team7.mormontrail.control.GameControl;
+import cit260.team7.mormontrail.control.InventoryControl;
 import java.util.Scanner;
 
 /**
@@ -22,8 +23,8 @@ public class DropSuppliesView extends View{
             +"\n If you do go to the Inventory list. "
             + "\n If you not want to drop your supplies Go back to the river crossing page."      
             +"\n------------------------------------------"
-            +"\n1 | Inventory list"
-            +"\n2 | Go back"
+            +"\n | Inventory list"
+            +"\n Go back"
        
             +"\n------------------------------------------", 2, true);
     }
