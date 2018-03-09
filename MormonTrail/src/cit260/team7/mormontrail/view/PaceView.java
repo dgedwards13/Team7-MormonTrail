@@ -12,59 +12,25 @@ import java.util.Scanner;
  *
  * @author Shaw-Laptop
  */
-public class PaceView {
+public class PaceView extends View{
     
     public PaceView(){
-         boolean endOfView = false;
-          do{
-              String[] inputs = this.getInputs();
-                      if (inputs == null || inputs.length < 1){
-                          return;
-                      }
-                      endOfView = doAction(inputs);
-          }
-          while (endOfView != true);
+      super( "\n"
+            +"\n------------------------------------------"       
+            +"\n How fast do you want to go?"      
+            +"\n------------------------------------------"
+            +"\n | Slow"
+            +"\n | Medium"
+            +"\n | Fast"
+       
+            +"\n------------------------------------------",3, false); 
     }
     
-    private String[] getInputs() {
-        String[] inputs = new String[1];
-        boolean valid = false;
-        
-        while (valid == false) {
-            
-            Scanner keyboard = new Scanner(System.in);
-            
-            System.out.println("How fast do you want to go?");
-            System.out.println( "slow");
-            System.out.println("medium");
-            System.out.println("fast");
-           
-             
-            String in = keyboard.nextLine();
-            
-            in = in.trim();
-            
-            if(in.length() < 1){
-                System.out.println("You must enter a non-blank value");
-                continue;
-            }
-            
-            boolean v = in.equalsIgnoreCase("slow") || in.equalsIgnoreCase("medium") || in.equalsIgnoreCase("fast");
-                    
-            if(v != true) {
-                System.out.println("Please enter slow, medium, or fast.");
-                continue;
-            }
-            
-            inputs[0] = in;
-            valid = true;
-        }
-        return inputs;
-    }
 
-    private boolean doAction(String[] inputs) {
+@Override
+    public boolean doAction(String inputs) {
         
-        switch(inputs[0]) {
+        switch(inputs) {
             case "slow":
                 GameControl.setPace("slow");
                 System.out.println("pace set to slow");
@@ -88,9 +54,7 @@ public class PaceView {
         return true;
     }
 
-    public void display() {
-        
-    }
+   
 }
 
         
