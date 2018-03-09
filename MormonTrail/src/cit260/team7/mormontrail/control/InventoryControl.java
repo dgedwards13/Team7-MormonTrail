@@ -134,19 +134,29 @@ public class InventoryControl {
         }
     }
     
-    public static String buildInvMenu() {
+    public static String buildInvMenu(String application) {
         InventoryItem[] inventoryArray = getInventory();
         String invList = "";
         int i = 1;
-        for (InventoryItem inv : inventoryArray) {
-            if(inv.getAmount() > 0 && !inv.getItem().equalsIgnoreCase("money")) {
-                int intAmount = (int) Math.round(inv.getAmount());
-                invList += "\n" + i + " | " + inv.getItem() + " (QTY : " + intAmount + ")";
-                i++;
+        if(application.equalsIgnoreCase("generalstore")) {
+            for (InventoryItem inv : inventoryArray) {
+                if(inv.getAmount() > 0 && !inv.getItem().equalsIgnoreCase("money")) {
+                    int intAmount = (int) Math.round(inv.getAmount());
+                    invList += "\n" + i + " | " + inv.getItem() + " (QTY : " + intAmount + ")";
+                    i++;
+                }
+            }
+        } else if(application.equalsIgnoreCase("river")) {
+            for (InventoryItem inv : inventoryArray) {
+                boolean stuff = !inv.getItem().equalsIgnoreCase("money") || !inv.getItem().equalsIgnoreCase("small wagon") || !inv.getItem().equalsIgnoreCase("medium wagon") || !inv.getItem().equalsIgnoreCase("large wagon") || !inv.getItem().equalsIgnoreCase("oxen");
+                if(inv.getAmount() > 0 && stuff) {
+                    int intAmount = (int) Math.round(inv.getAmount());
+                    invList += "\n" + i + " | " + inv.getItem() + " (QTY : " + intAmount + ", " + inv.getItemWeight() + " lbs)";
+                    i++;
+                }
             }
         }
         invList += "\n" + i + " | Return to Previous Menu";
-        invList += "\nYou currently have $" + countItem("money");
         return invList;
     }
     
