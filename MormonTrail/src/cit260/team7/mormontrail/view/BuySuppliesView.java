@@ -6,6 +6,7 @@
 package cit260.team7.mormontrail.view;
 
 import cit260.team7.mormontrail.control.InventoryControl;
+import cit260.team7.mormontrail.control.PurchaseControl;
 import java.util.Scanner;
 
 /**
@@ -73,74 +74,18 @@ public class BuySuppliesView {
     private boolean doAction(String[] inputs) {
            switch(inputs[0]) {
             case "1":
-                boolean valid = false;
-                int numInput = 0;
-                while (valid == false) {
-                    Scanner keyboard = new Scanner(System.in);
-                    System.out.println("================================================================================");
-                    System.out.println("==                               GENERAL STORE                                ==");
-                    System.out.println("==                                                                            ==");
-                    System.out.println("==                                 -- OXEN --                                 ==");
-                    System.out.println("==                 How many Oxen would you like to purchase?                  ==");
-                    System.out.println("==                   Each Ox can pull a maximum of 1500lbs.                   ==");
-                    System.out.println("==                                                                            ==");
-                    System.out.println("================================================================================");
-                    System.out.println("");
-                    System.out.println("");
-                    System.out.println("You currently have $" + InventoryControl.countItem("money") + ", and " + InventoryControl.countItem("oxen") + " Oxen.");
-                    String in = keyboard.nextLine();
-                    in = in.trim();
-                    if(in.length() < 1){
-                        System.out.println("You must enter a non-blank value");
-                        continue;
-                    }
-                    numInput = Integer.parseInt(in);
-                    valid = true;
-                }
-                System.out.println(InventoryControl.changeInventory("Oxen", numInput, true));
+                System.out.println(PurchaseControl.PurchaseOxen());
                 GeneralStoreView generalStoreView = new GeneralStoreView();
                 generalStoreView.display();
                 break;
             case "2":
-                valid = false;
-                numInput = 0;
-                while (valid == false) {
-                    Scanner keyboard = new Scanner(System.in);
-                    System.out.println("================================================================================");
-                    System.out.println("==                               GENERAL STORE                                ==");
-                    System.out.println("==                                                                            ==");
-                    System.out.println("==                                -- WAGONS --                                ==");
-                    System.out.println("==               What size of Wagon would you like to purchase?               ==");
-                    System.out.println("==                                                                            ==");
-                    System.out.println("================================================================================");
-                    System.out.println("");
-                    System.out.println("");
-                    System.out.println("You currently have $" + InventoryControl.countItem("money"));
-                    System.out.println("1 | Small (Holds 1500lbs)");
-                    System.out.println("2 | Medium (Holds 2000lbs)");
-                    System.out.println("3 | Large (Holds 2500lbs");
-                    String in = keyboard.nextLine();
-                    in = in.trim();
-                    if(in.length() < 1){
-                        System.out.println("You must enter a non-blank value");
-                        continue;
-                    }
-                    numInput = Integer.parseInt(in);
-                    valid = true;
-                }
-                if (numInput == 1) {
-                    System.out.println(InventoryControl.changeInventory("Small Wagon", 1, true));
-                } else if (numInput == 2) {
-                    System.out.println(InventoryControl.changeInventory("Medium Wagon", 1, true));
-                } else if (numInput == 3) {
-                    System.out.println(InventoryControl.changeInventory("Large Wagon", 1, true));
-                }
+                System.out.println(PurchaseControl.PurchaseWagon());
                 generalStoreView = new GeneralStoreView();
                 generalStoreView.display();
                 break;
             case "3":
-                valid = false;
-                numInput = 0;
+                boolean valid = false;
+                int numInput = 0;
                 while (valid == false) {
                     Scanner keyboard = new Scanner(System.in);
                     System.out.println("================================================================================");

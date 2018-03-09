@@ -133,4 +133,31 @@ public class InventoryControl {
             return currentWeight;
         }
     }
+    
+    public static String buildInvMenu() {
+        InventoryItem[] inventoryArray = getInventory();
+        String invList = "";
+        int i = 1;
+        for (InventoryItem inv : inventoryArray) {
+            if(inv.getAmount() > 0 && !inv.getItem().equalsIgnoreCase("money")) {
+                int intAmount = (int) Math.round(inv.getAmount());
+                invList += "\n" + i + " | " + inv.getItem() + " (QTY : " + intAmount + ")";
+                i++;
+            }
+        }
+        invList += "\n" + i + " | Return to Previous Menu";
+        invList += "\nYou currently have $" + countItem("money");
+        return invList;
+    }
+    
+    public static int countInvMenu() {
+        InventoryItem[] inventoryArray = getInventory();
+        int i = 1;
+        for (InventoryItem inv : inventoryArray) {
+            if(inv.getAmount() > 0 && !inv.getItem().equalsIgnoreCase("money")) {
+                i++;
+            }
+        }
+        return i;
+    }
 }
