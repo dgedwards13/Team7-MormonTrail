@@ -11,78 +11,30 @@ import java.util.Scanner;
  *
  * @author Shaw-Laptop
  */
-public class RiverCrossingView {
+public class RiverCrossingView extends View {
     
     public RiverCrossingView(){
-         boolean endOfView = false;
-          do{
-              String[] inputs = this.getInputs();
-                      if (inputs == null || inputs.length < 1){
-                          return;
-                      }
-                      endOfView = doAction(inputs);
-          }
-          while (endOfView != true);
-    }
-    
-     private String[] getInputs() {
-         
-        String[] inputs = new String[1];
-        boolean valid = false;
-        
-        double depth = riverdepth();
-        String riverName = "something radome";
-        
-        while (valid == false) {
-            
-            Scanner keyboard = new Scanner(System.in);
-            
-            System.out.println("=================================================================================");
-            System.out.println("==                    You have made it to the " + riverName +" .              ==");
-            System.out.println("==               The river currently has a depth of " + depth + " feet.                 ==");
-            System.out.println("==             You now have a choice before; risk crossing the river now,      ==");
-            System.out.println("==     waiting a day, or leave some of your supplies on the side of the river  ==");
-            System.out.println("==                    to reduce the changes of your wagon sinking.             ==");
-            System.out.println("=================================================================================");
-            
-            System.out.println("1 | Cross River");
-            System.out.println("2 | Go back and think about it");
-            System.out.println("3 | Drop Supplies");
-            
-             
-            String in = keyboard.nextLine();
-            
-            in = in.trim();
-            
-            if(in.length() < 1){
-                System.out.println("You must enter a non-blank value");
-                continue;
-            }
-            
-            boolean v = in.equalsIgnoreCase("1") || in.equalsIgnoreCase("2") || in.equalsIgnoreCase("3");
-                    
-            if(v != true) {
-                System.out.println("The number entered must correlate with the menu items.");
-                continue;
-            }
-            
-            inputs[0] = in;
-            
-            valid = true;
-        }
-        return inputs;
-    }
-    
-    public static double riverdepth(){
+          super( "\n"
+            +"\n------------------------------------------"
+            +"\n------------------------------------------"         
+            +"\n You have made it to the riverName."     
+            +"\n The river currently has a depth of depth feet."
+            +"\n You now have a choice before; risk crossing the river now,"     
+            +"\n waiting a day, or leave some of your supplies on the side of the river"  
+            +"\n to reduce the changes of your wagon sinking."      
+            +"\n------------------------------------------"
+            +"\n1 | Cross River"
+            +"\n2 | Go back and think about it"
+            +"\n3 | Drop Supplies"
        
-        double random = new Random().nextDouble();
-        double result = 1 + (random *5);
-        return (double) Math.round(result *10)/10; 
+            +"\n------------------------------------------", 3, true);
     }
     
-     private boolean doAction(String[] inputs) {
+
+@Override    
+     public boolean doAction(String inputs) {
         
-        switch(inputs[0]) {
+        switch(inputs) {
             case "1":
                 System.out.println("Cross river");
                 CrossRiverView crossRiverView = new CrossRiverView();
@@ -103,5 +55,5 @@ public class RiverCrossingView {
            
         return true;
 }
-     public void display() {}
+    
 }

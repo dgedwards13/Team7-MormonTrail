@@ -14,13 +14,15 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
     protected String displayMessage;
     protected int numInputs;
+    protected boolean isMenu;
     
     public View(){
         
     }
-    public View(String message, int number){
+    public View(String message, int number, boolean menu){
         this.displayMessage = message;
         this.numInputs = number;
+        this.isMenu = menu;
     }
    
     
@@ -55,12 +57,14 @@ public abstract class View implements ViewInterface {
                 System.out.println("You must enter a non-blank value");
                 continue;
             }
-            int convert = Integer.parseInt(in);
-            boolean v = convert > 0 && convert < numInputs + 1;
-            if(v != true) {
-                System.out.println("The number entered must correlate with the available options.");
-                continue;
-            }
+            if (isMenu) {
+                int convert = Integer.parseInt(in);
+                boolean v = convert > 0 && convert < numInputs + 1;
+                if(v != true) {
+                    System.out.println("The number entered must correlate with the available options.");
+                    continue;
+                }
+            } 
             
             inputs = in;
             valid = true;

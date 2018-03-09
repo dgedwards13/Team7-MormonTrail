@@ -12,60 +12,27 @@ import java.util.Scanner;
  *
  * @author dgedw
  */
-public class HelpMenuView {
+public class HelpMenuView extends View{
     
     public HelpMenuView(){
-         boolean endOfView = false;
-          do{
-              String[] inputs = this.getInputs();
-                      if (inputs == null || inputs.length < 1){
-                          return;
-                      }
-                      endOfView = doAction(inputs);
-          }
-          while (endOfView != true);
+         super( "\n"
+            +"\n------------------------------------------"
+            +"\n------------------------------------------"         
+            +"\n Help Menu"      
+            +"\n------------------------------------------"
+            +"\n1 | Game Objective"
+            +"\n2 | How to Move"
+            +"\n3 | Tips"   
+            +"\n4 | Return to Previous Menu"     
+       
+            +"\n------------------------------------------", 4, true);
     }
     
-    private String[] getInputs() {
-        String[] inputs = new String[1];
-        boolean valid = false;
-        
-        while (valid == false) {
-            
-            Scanner keyboard = new Scanner(System.in);
-            
-            System.out.println("Help Menu");
-            System.out.println("1 | Game Objective");
-            System.out.println("2 | How to Move");
-            System.out.println("3 | Tips");
-            System.out.println("4 | Return to Previous Menu");
-             
-            String in = keyboard.nextLine();
-            
-            in = in.trim();
-            
-            if(in.length() < 1){
-                System.out.println("You must enter a non-blank value");
-                continue;
-            }
-            
-            boolean v = in.equalsIgnoreCase("1") || in.equalsIgnoreCase("2") || in.equalsIgnoreCase("3") || in.equalsIgnoreCase("4");
-                    
-            if(v != true) {
-                System.out.println("The number entered must correlate with the menu items.");
-                continue;
-            }
-            
-            inputs[0] = in;
-            
-            valid = true;
-        }
-        return inputs;
-    }
+   @Override
 
-    private boolean doAction(String[] inputs) {
+    public boolean doAction(String inputs) {
         
-        switch(inputs[0]) {
+        switch(inputs) {
             case "1":
                 System.out.println("Objective");
                 System.out.println("You are a Mormon pioneer and will begin your journey in Nauvoo, Illinois. Your destination is Salt Lake Valley.");
@@ -98,7 +65,5 @@ public class HelpMenuView {
         return true;
     }
     
-    public void display() {
-        
-    }
+    
 }
