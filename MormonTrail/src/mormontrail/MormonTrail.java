@@ -5,7 +5,7 @@
  */
 package mormontrail;
 
-import cit260.team7.mormontrail.view.StartProgramView;
+import cit260.team7.mormontrail.view.GrabNameView;
 
 /**
  *
@@ -29,8 +29,8 @@ public class MormonTrail {
      * @param args the command line arguments
      */
     public static void main(String[] args){
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.display();
+        GrabNameView grabNameView = new GrabNameView();
+        grabNameView.display();
     } 
       
 }
