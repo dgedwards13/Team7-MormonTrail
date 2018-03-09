@@ -12,62 +12,24 @@ import java.util.Scanner;
  *
  * @author dgedw
  */
-public class GamePlayView {
+public class GamePlayView extends View {
     
     public GamePlayView(){
-         boolean endOfView = false;
-          do{
-              String[] inputs = this.getInputs();
-                      if (inputs == null || inputs.length < 1){
-                          return;
-                      }
-                      endOfView = doAction(inputs);
-          }
-          while (endOfView != true);
+        super("/n"
+                + "/nView Testing"
+                + "/n1 | River Crossing View"
+                + "/n2 | Pace View"
+                + "/n3 | Daily Trail Stop Scene"
+                + "/n4 | General Store View"
+                + "/n5 | Fort or Town Scene"
+                , 5, true);
     }
     
-    private String[] getInputs() {
-        String[] inputs = new String[1];
-        boolean valid = false;
-        
-        while (valid == false) {
-            
-            Scanner keyboard = new Scanner(System.in);
-            
-            System.out.println("View Testing");
-            System.out.println("1 | River Crossing View");
-            System.out.println("2 | Pace View");
-            System.out.println("3 | Daily Trail Stop Scene");
-            System.out.println("4 | General Store View");
-            System.out.println("5 | Fort or Town Scene");
-            
-            String in = keyboard.nextLine();
-            
-            in = in.trim();
-            
-            if(in.length() < 1){
-                System.out.println("You must enter a non-blank value");
-                continue;
-            }
-            
-            boolean v = in.equalsIgnoreCase("1") || in.equalsIgnoreCase("2") || in.equalsIgnoreCase("3") || in.equalsIgnoreCase("4") || in.equalsIgnoreCase("5");
-                    
-            if(v != true) {
-                System.out.println("The number entered must correlate with the menu items.");
-                continue;
-            }
-            
-            inputs[0] = in;
-            
-            valid = true;
-        }
-        return inputs;
-    }
-
-    private boolean doAction(String[] inputs) {
+@Override
+    public boolean doAction(String inputs) {
         
         
-        switch(inputs[0]) {
+        switch(inputs) {
             case "1":
                 RiverCrossingView riverCrossingView = new RiverCrossingView();
                 riverCrossingView.display();
@@ -91,9 +53,5 @@ public class GamePlayView {
         }
            
         return true;
-    }
-    
-    public void display() {
-        
     }
 }
