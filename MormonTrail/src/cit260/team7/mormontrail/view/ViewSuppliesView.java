@@ -21,8 +21,9 @@ public class ViewSuppliesView extends View {
             + "\n==                               Your Supplies                                =="
             + "\n==                                                                            =="
             + "\n================================================================================"
-            + "\n\n" + InventoryControl.buildInvMenu()
-            + "\nWhich item (if any) would you like to sell?", InventoryControl.countInvMenu(), true);
+            + "\n\n" + InventoryControl.buildInvMenu("generalstore")
+            + "\nYou currently have $" + InventoryControl.countItem("money")
+            + "\nWhich item (if any) would you like to sell?", InventoryControl.countInvMenu("generalstore"), true);
     }
 
 @Override

@@ -13,66 +13,26 @@ import java.util.Scanner;
  *
  * @author dgedw
  */
-public class BuySuppliesView {
+public class BuySuppliesView extends View{
     public BuySuppliesView(){
-         boolean endOfView = false;
-          do{
-              String[] inputs = this.getInputs();
-                      if (inputs == null || inputs.length < 1){
-                          return;
-                      }
-                      endOfView = doAction(inputs);
-          }
-          while (endOfView != true);
+         super("/n================================================================================"
+                 + "/n==                               GENERAL STORE                                =="
+                 + "/n==                                                                            =="
+                 + "/n== Thanks for shopping with us! We have the following great products for you  =="
+                 + "/n==             to purchase! Please take a look around our store!              =="
+                 + "/n==                                                                            =="
+                 + "/n================================================================================"
+                 + "/n/nThe following supplies are available for purchase:"
+                 + "/n1 | Oxen"
+                 + "/n2 | Wagons"
+                 + "/n3 | Food"
+                 + "/n4 | Spare Parts"
+                 + "/n5 | Ammunition"
+                 + "/n6 | Return to Previous Menu", 6,true);
     }
-    
-    private String[] getInputs() {
-        String[] inputs = new String[1];
-        boolean valid = false;
-        
-        while (valid == false) {
-            
-            Scanner keyboard = new Scanner(System.in);
-            
-            System.out.println("================================================================================");
-            System.out.println("==                               GENERAL STORE                                ==");
-            System.out.println("==                                                                            ==");
-            System.out.println("== Thanks for shopping with us! We have the following great products for you  ==");
-            System.out.println("==             to purchase! Please take a look around our store!              ==");
-            System.out.println("==                                                                            ==");
-            System.out.println("================================================================================");
-            System.out.println("");
-            System.out.println("");
-            System.out.println("The following supplies are available for purchase:");
-            System.out.println("1 | Oxen");
-            System.out.println("2 | Wagons");
-            System.out.println("3 | Food");
-            System.out.println("4 | Spare Parts");
-            System.out.println("5 | Ammunition");
-            System.out.println("6 | Return to Previous Menu");
-
-            String in = keyboard.nextLine();
-            in = in.trim();
-            
-            if(in.length() < 1){
-                System.out.println("You must enter a non-blank value");
-                continue;
-            }
-            
-            boolean v = in.equalsIgnoreCase("1") || in.equalsIgnoreCase("2") || in.equalsIgnoreCase("3") || in.equalsIgnoreCase("4") || in.equalsIgnoreCase("5") || in.equalsIgnoreCase("6");
-            if(v != true) {
-                System.out.println("The number entered must correlate with the available options.");
-                continue;
-            }
-            
-            inputs[0] = in;
-            valid = true;
-        }
-        return inputs;
-    }
-
-    private boolean doAction(String[] inputs) {
-           switch(inputs[0]) {
+@Override
+    public boolean doAction(String inputs) {
+           switch(inputs) {
             case "1":
                 System.out.println(PurchaseControl.PurchaseOxen());
                 GeneralStoreView generalStoreView = new GeneralStoreView();
@@ -176,9 +136,5 @@ public class BuySuppliesView {
                 break;
         }
         return true;
-    }
-    
-    public void display() {
-        
     }
 }
