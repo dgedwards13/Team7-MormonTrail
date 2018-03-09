@@ -55,7 +55,7 @@ public class MainMenuView extends View {
                 boolean valid = false;
                 while (valid == false) {
                     Scanner keyboard = new Scanner(System.in);
-                    System.out.println("Are you sure you want to exit?");
+                    System.out.println("Are you sure you want to exit? (y/n)");
                     in = keyboard.nextLine();
             
                     in = in.trim();
