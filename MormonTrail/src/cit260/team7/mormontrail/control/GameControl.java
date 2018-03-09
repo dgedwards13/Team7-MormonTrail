@@ -52,4 +52,13 @@ public class GameControl {
       
   }
   
+  public static String buildRestMenu(){
+      return null;
+  }
+  public static int countRestMenu(){
+      ;
+      return 0;
+      
+  }
+  
 }
