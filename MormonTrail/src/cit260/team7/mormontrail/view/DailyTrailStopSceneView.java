@@ -30,7 +30,7 @@ public class DailyTrailStopSceneView extends View {
             +"\n3| Go hunting"
             +"\n4| Look for edible plants"
             +"\n5| Exit"
-            +"\n------------------------------------------", 5);
+            +"\n------------------------------------------", 5, true);
     }
     
   @Override
