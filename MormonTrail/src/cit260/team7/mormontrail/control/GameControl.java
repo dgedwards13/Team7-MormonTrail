@@ -61,4 +61,7 @@ public class GameControl {
       
   }
   
+  public static String playerData(){
+  return "";
+  }
 }

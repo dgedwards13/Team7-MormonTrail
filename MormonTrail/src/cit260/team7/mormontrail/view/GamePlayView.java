@@ -5,6 +5,7 @@
  */
 package cit260.team7.mormontrail.view;
 
+import cit260.team7.mormontrail.control.GameControl;
 /**
  *
  * @author dgedw
@@ -12,17 +13,20 @@ package cit260.team7.mormontrail.view;
 public class GamePlayView extends View {
     
     public GamePlayView(){
+        
         super( "\n"
             +"\n================================================================================"
-            +"\n==                             View Testing Menu                              =="
+            +"\n==                             Game Menu                                      ==" 
+//            This function will get the play information and display it.    
+            + GameControl.playerData()    
             +"\n================================================================================"
-            + "\n\n1 | River Crossing View"
-            + "\n2 | Pace View"
-            + "\n3 | Daily Trail Stop Scene"
-            + "\n4 | General Store View"
-            + "\n5 | Fort or Town Scene"
-            + "\n6 | Map View"
-            + "\n7 | Daily Rest View"
+            + "\n1 | Team Status"
+            + "\n2 | Team Supplies"
+            + "\n3 | Set Team Pace"
+            + "\n4 | Main Menu"
+            + "\n5 | Help Menu"
+            + "\n6 | View map"
+            + "\n7 | test menu"    
             , 7, true);
     }
     
@@ -32,33 +36,32 @@ public class GamePlayView extends View {
         
         switch(inputs) {
             case "1":
-                RiverCrossingView riverCrossingView = new RiverCrossingView();
-                riverCrossingView.display();
+//                TeamStatusView teamStatusView = new TeamStatusView();
+//                teamStatusView.display();
                 break;
             case "2":
+                TeamSuppliesView teamSuppliesView = new TeamSuppliesView();
+                teamSuppliesView.display();
+                break;
+            case "3":
                 PaceView paceView = new PaceView();
                 paceView.display();
                 break;
-            case "3":
-                DailyTrailStopSceneView dailyTrailStopSceneView = new DailyTrailStopSceneView();
-                dailyTrailStopSceneView.display();
-                break;
             case "4":
-                GeneralStoreView generalStoreView = new GeneralStoreView();
-                generalStoreView.display();
+                MainMenuView mainMenuView = new MainMenuView();
+                mainMenuView.display();
                 break;
             case"5":
-                FortTownSceneView fortTownSceneView = new FortTownSceneView();
-                fortTownSceneView.display();
+                HelpMenuView helpMenuView = new HelpMenuView();
+                helpMenuView.display();
                 break;
             case"6":
                 MapView mapView = new MapView();
                 mapView.display();
                 break;
             case"7":
-                DailyRestView dailyRestView = new DailyRestView();
-                dailyRestView.display();
-                break;
+                TestView testView = new TestView();
+                testView.display();
         }
            
         return true;
