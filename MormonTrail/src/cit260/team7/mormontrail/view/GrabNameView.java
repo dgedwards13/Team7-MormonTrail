@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package cit260.team7.mormontrail.view;
-import cit260.team7.mormontrail.view.StartProgramView;
 /**
  *
  * @author Savannah
@@ -18,8 +17,7 @@ public class GrabNameView extends View{
     }
     @Override
     public boolean doAction(String inputs){
-        System.out.println("Welcome" + inputs);
-        StartProgramView startProgramView = new StartProgramView();
+        StartProgramView startProgramView = new StartProgramView(inputs);
         startProgramView.display();
         return true;
     }

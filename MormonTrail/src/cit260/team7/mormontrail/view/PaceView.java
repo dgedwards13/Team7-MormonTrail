@@ -6,7 +6,6 @@
 package cit260.team7.mormontrail.view;
 
 import cit260.team7.mormontrail.control.GameControl;
-import java.util.Scanner;
 
 /**
  *
@@ -16,14 +15,12 @@ public class PaceView extends View{
     
     public PaceView(){
       super( "\n"
-            +"\n------------------------------------------"       
-            +"\n How fast do you want to go?"      
-            +"\n------------------------------------------"
-            +"\n | Slow"
-            +"\n | Medium"
-            +"\n | Fast"
-       
-            +"\n------------------------------------------",3, false); 
+            + "\n================================================================================"
+            + "\n==                            Set Team Pace                                   =="
+            + "\n==                                                                            =="
+            + "\n==                       How fast would you like to go?                       =="
+            + "\n==                  (You may type \"slow\" \"medium\" or \"fast\")                  =="
+            + "\n================================================================================",0, false); 
     }
     
 

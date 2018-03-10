@@ -5,9 +5,6 @@
  */
 package cit260.team7.mormontrail.view;
 
-import cit260.team7.mormontrail.control.GameControl;
-import java.util.Scanner;
-
 /**
  *
  * @author dgedw
@@ -16,16 +13,13 @@ public class HelpMenuView extends View{
     
     public HelpMenuView(){
          super( "\n"
-            +"\n------------------------------------------"
-            +"\n------------------------------------------"         
-            +"\n Help Menu"      
-            +"\n------------------------------------------"
-            +"\n1 | Game Objective"
+            +"\n================================================================================"
+            +"\n==                                 Help Menu                                  =="
+            +"\n================================================================================"
+            +"\n\n1 | Game Objective"
             +"\n2 | How to Move"
             +"\n3 | Tips"   
-            +"\n4 | Return to Previous Menu"     
-       
-            +"\n------------------------------------------", 4, true);
+            +"\n4 | Return to Previous Menu", 4, true);
     }
     
    @Override

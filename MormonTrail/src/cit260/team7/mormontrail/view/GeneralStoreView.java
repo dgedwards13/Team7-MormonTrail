@@ -5,8 +5,6 @@
  */
 package cit260.team7.mormontrail.view;
 
-import java.util.Scanner;
-
 
 /**
  *
@@ -15,7 +13,7 @@ import java.util.Scanner;
 public class GeneralStoreView extends View {
     public GeneralStoreView() {
         super("\n"
-              + "================================================================================"
+            + "\n================================================================================"
             + "\n==                               GENERAL STORE                                =="
             + "\n==                                                                            =="
             + "\n==  Welcome to the General Store! We have all the supplies that you may need  =="

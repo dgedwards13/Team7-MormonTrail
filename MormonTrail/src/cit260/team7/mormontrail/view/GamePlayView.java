@@ -5,9 +5,6 @@
  */
 package cit260.team7.mormontrail.view;
 
-import cit260.team7.mormontrail.control.InventoryControl;
-import java.util.Scanner;
-
 /**
  *
  * @author dgedw
@@ -15,14 +12,18 @@ import java.util.Scanner;
 public class GamePlayView extends View {
     
     public GamePlayView(){
-        super("/n"
-                + "/nView Testing"
-                + "/n1 | River Crossing View"
-                + "/n2 | Pace View"
-                + "/n3 | Daily Trail Stop Scene"
-                + "/n4 | General Store View"
-                + "/n5 | Fort or Town Scene"
-                , 5, true);
+        super( "\n"
+            +"\n================================================================================"
+            +"\n==                             View Testing Menu                              =="
+            +"\n================================================================================"
+            + "\n\n1 | River Crossing View"
+            + "\n2 | Pace View"
+            + "\n3 | Daily Trail Stop Scene"
+            + "\n4 | General Store View"
+            + "\n5 | Fort or Town Scene"
+            + "\n6 | Map View"
+            + "\n7 | Daily Rest View"
+            , 7, true);
     }
     
 @Override
@@ -49,6 +50,14 @@ public class GamePlayView extends View {
             case"5":
                 FortTownSceneView fortTownSceneView = new FortTownSceneView();
                 fortTownSceneView.display();
+                break;
+            case"6":
+                MapView mapView = new MapView();
+                mapView.display();
+                break;
+            case"7":
+                DailyRestView dailyRestView = new DailyRestView();
+                dailyRestView.display();
                 break;
         }
            

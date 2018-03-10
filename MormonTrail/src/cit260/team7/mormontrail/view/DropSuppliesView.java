@@ -5,10 +5,6 @@
  */
 package cit260.team7.mormontrail.view;
 
-import cit260.team7.mormontrail.control.GameControl;
-import cit260.team7.mormontrail.control.InventoryControl;
-import java.util.Scanner;
-
 /**
  *
  * @author Shaw-Laptop
@@ -17,16 +13,15 @@ public class DropSuppliesView extends View{
     
     public DropSuppliesView(){
      super( "\n"
-            +"\n------------------------------------------"
-            +"\n------------------------------------------"         
-            +"\n Are you sure you want to drop some of your supplies?"     
-            +"\n If you do go to the Inventory list. "
-            + "\n If you not want to drop your supplies Go back to the river crossing page."      
-            +"\n------------------------------------------"
-            +"\n | Inventory list"
-            +"\n Go back"
-       
-            +"\n------------------------------------------", 2, true);
+            + "\n================================================================================"
+            + "\n==                            Drop Supplies                                   =="
+            + "\n==                                                                            =="
+            + "\n==         Are you sure you would like to drop some of your supplies?         =="
+            + "\n== This action cannot be undone. If you would like to continue, press 1 to go =="
+            + "\n==  to your inventory list. Otherwise, you may return to the previous menu.   =="
+            + "\n================================================================================" 
+            + "\n1 | Inventory list"
+            + "\n2 | Return to River Crossing", 2, true);
     }
     
    

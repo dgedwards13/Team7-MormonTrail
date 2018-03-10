@@ -17,9 +17,7 @@ public class ViewSuppliesView extends View {
     public ViewSuppliesView(){
         super("\n"
             + "\n================================================================================"
-            + "\n==                                                                            =="
             + "\n==                               Your Supplies                                =="
-            + "\n==                                                                            =="
             + "\n================================================================================"
             + "\n\n" + InventoryControl.buildInvMenu("generalstore")
             + "\nYou currently have $" + InventoryControl.countItem("money")

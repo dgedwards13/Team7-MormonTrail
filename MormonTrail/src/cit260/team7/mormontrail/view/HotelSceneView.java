@@ -5,7 +5,6 @@
  */
 package cit260.team7.mormontrail.view;
 
-import java.util.Scanner;
 import cit260.team7.mormontrail.control.HotelControl;
 import cit260.team7.mormontrail.model.Character;
 /**
@@ -16,12 +15,13 @@ import cit260.team7.mormontrail.model.Character;
 public class HotelSceneView extends View {
     public HotelSceneView(){
         super("\n"
-            +"\n================================================================================="
-            +"\n==                            Welcome to the Hotel!                            =="
-            +"\n================================================================================="
-            +"\n==                    Here, you can pick up another traveler.                  =="
-            +"\n1 | List of available characters"
-            +"\n2 | Exit hotel", 2, true
+            + "\n================================================================================="
+            + "\n==                            Welcome to the Hotel!                            =="
+            + "\n==                                                                             =="
+            + "\n==                    Here, you can pick up another traveler.                  =="
+            + "\n================================================================================="
+            + "\n\n1 | List of available travelers"
+            + "\n2 | Exit hotel", 2, true
         );
     }
 @Override

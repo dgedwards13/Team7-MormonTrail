@@ -5,9 +5,6 @@
  */
 package cit260.team7.mormontrail.view;
 
-import cit260.team7.mormontrail.control.GameControl;
-import java.util.Scanner;
-
 /**
  *
  * @author Shaw-Laptop
@@ -15,13 +12,10 @@ import java.util.Scanner;
 public class CrossRiverView extends View{
     
     public CrossRiverView(){
-         super( "\n"
-            +"\n------------------------------------------"
-            +"\n------------------------------------------"         
-            +"\n You are Crossing the river."    
-            +"\n------------------------------------------"
-            +"\n1 | Return to Main Menu"
-            +"\n------------------------------------------", 1, true);
+         super("\n================================================================================"
+             + "\n==                         You Are Crossing The River                         =="
+             + "\n================================================================================"
+             + "\n\n1 | Return to Main Menu", 1, true);
     }
     
    @Override

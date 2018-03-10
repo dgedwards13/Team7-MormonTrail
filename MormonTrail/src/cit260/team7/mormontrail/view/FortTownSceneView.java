@@ -5,7 +5,6 @@
  */
 package cit260.team7.mormontrail.view;
 
-import java.util.Scanner;
 import cit260.team7.mormontrail.control.LocationControl;
 
 /**
@@ -18,8 +17,8 @@ public class FortTownSceneView extends View {
     public FortTownSceneView(){
         super("\n"
                 +"\n================================================================================"
-                +"\n" + LocationControl.fortTown()
-                +"\n================================================================================",4, true
+                + LocationControl.fortTown()
+                ,4, true
                 );
     }
     

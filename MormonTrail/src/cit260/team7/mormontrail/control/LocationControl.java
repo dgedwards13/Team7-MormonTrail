@@ -5,8 +5,6 @@
  */
 package cit260.team7.mormontrail.control;
 
-import java.util.Arrays;
-
 /**
  *
  * @author rherrerajr
@@ -21,17 +19,19 @@ public class LocationControl {
         String nearby = nearby();
         String output = "";
             if (nearby.equals("town")){
-                output += "==                            Welcome to Sometown!                            ==";
-                output += "1 | Visit the Hotel";
-                output += "2 | Visit the General Store";
-                output += "4 | Back to GamePlayView";
+                output += "\n==                            Welcome to Sometown!                            ==";
+                output += "\n================================================================================";
+                output += "\n\n1 | Visit the Hotel";
+                output += "\n2 | Visit the General Store";
+                output += "\n3 | Back to GamePlayView";
             }
  
              else if (nearby.equals("fort")){
-                output += "==                            Welcome to Somefort!                            ==";
-                output += "1 | Visit the General Store";
-                output += "2 | Return to the Trail";
-                output += "3 | Back to GamePlayView";
+                output += "\n==                            Welcome to Somefort!                            ==";
+                output += "\n================================================================================";
+                output += "\n\n1 | Visit the General Store";
+                output += "\n2 | Return to the Trail";
+                output += "\n3 | Back to GamePlayView";
              }
             return output;
     }

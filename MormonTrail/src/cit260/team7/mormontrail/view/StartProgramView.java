@@ -10,19 +10,22 @@ import cit260.team7.mormontrail.control.GameControl;
  * @author Savannah
  */
 public class StartProgramView extends View{
-//name = name.trim();
-    public StartProgramView() {
+    public StartProgramView(String inputs) {
            super("\n"
-                   +"\n========================================="
-                   +"Welcome to the Mormon Trail!"
-                   +"You are a Mormon pioneer and will begin your journey in Nauvoo, Illinois. Your destination is Salt Lake Valley."
-                   +"Your party will use your resources to purchase supplies and tools for your adventure. Any remaining money can be used along the way."
-                   +"Your survival depends on your skills, traits and decisions  as you face random events as well as obstacles. Success means reaching Salt Lake Valley."
-                   +"Are you ready to try your luck on the Mormon Trail?!"
-                   +"========================================="
-                   +"Choose One:"
-                   +"1 | Start a New Game"
-                   +"2 | Reload a Saved Game",2, true
+                 + inputs + ", welcome to the Mormon Trail!"
+                 + "\n================================================================================"
+                 + "\n== You are a Mormon pioneer and will begin your journey in Nauvoo, Illinois.  =="
+                 + "\n==  Your destination is Salt Lake Valley. Your party will use your resources  =="
+                 + "\n== to purchase supplies and tools for your adventure. Any remaining money can =="
+                 + "\n==  be used along the way. Your survival depends on your skills, traits and   =="
+                 + "\n==  decisions as you face random events as well as obstacles. Success means   =="
+                 + "\n==                         reaching Salt Lake Valley.                         =="
+                 + "\n==                                                                            =="
+                 + "\n==            Are you ready to try your luck on the Mormon Trail?!            =="
+                 + "\n================================================================================"
+                 + "\n\nChoose One:"
+                 + "\n1 | Start a New Game"
+                 + "\n2 | Reload a Saved Game",2, true
                    
            );
     }

@@ -6,8 +6,6 @@
  */
 package cit260.team7.mormontrail.view;
 
-import java.util.Scanner;
-import cit260.team7.mormontrail.control.GameControl;
 import cit260.team7.mormontrail.control.LocationControl;
 /**
  *
@@ -18,19 +16,15 @@ public class DailyTrailStopSceneView extends View {
 //    dailyTrailStop.display();
     
     public DailyTrailStopSceneView(){
-        
         super( "\n"
             +"\n================================================================================"
-            +"\n==                                                                            =="
-            +"\n==                              Daily Stop                                    =="
-            +"\n==                                                                            =="
+            +"\n==                           Daily Trail Stop                                 =="
             +"\n================================================================================"
-            +"\n1" + LocationControl.nearby()
-            +"\n2| Rest for the day"
-            +"\n3| Go hunting"
-            +"\n4| Look for edible plants"
-            +"\n5| Exit"
-            +"\n------------------------------------------", 5, true);
+            +"\n\n1 | Visit nearby " + LocationControl.nearby()
+            +"\n2 | Rest for the day"
+            +"\n3 | Go hunting"
+            +"\n4 | Look for edible plants"
+            +"\n5 | Exit", 5, true);
     }
     
   @Override
