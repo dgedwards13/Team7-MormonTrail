@@ -10,5 +10,8 @@ package cit260.team7.mormontrail.control;
  * @author Savannah
  */
 public class CharacterControl {
+    public static String healthStatus(){
+        return "healthy";
+    }
     
 }
