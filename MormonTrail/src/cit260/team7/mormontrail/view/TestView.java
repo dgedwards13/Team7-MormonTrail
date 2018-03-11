@@ -22,7 +22,8 @@ public class TestView extends View{
             + "\n5 | Fort or Town Scene"
             + "\n6 | Map View"
             + "\n7 | Daily Rest View"
-            , 7, true);
+            + "\n8 | Hunting View"
+            , 8, true);
     }
     
 @Override
@@ -57,6 +58,10 @@ public class TestView extends View{
             case"7":
                 DailyRestView dailyRestView = new DailyRestView();
                 dailyRestView.display();
+                break;
+            case"8":
+                HuntingView huntingView = new HuntingView();
+                huntingView.display();
                 break;
         }
            

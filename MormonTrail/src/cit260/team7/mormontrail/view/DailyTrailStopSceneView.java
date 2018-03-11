@@ -46,8 +46,8 @@ public class DailyTrailStopSceneView extends View {
             case "3":
                 System.out.println("Go Hunting");
                 System.out.println("Hunt for meat to feed your party.");
-                dailyTrailStop = new DailyTrailStopSceneView();
-                dailyTrailStop.display();
+                HuntingView huntingView = new HuntingView();
+                huntingView.display();
                 break;     
             case "4":
                 System.out.println("Look for Edible Plants");

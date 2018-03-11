@@ -17,7 +17,7 @@ public class HuntingView extends View {
             +"\n================================================================================"
             +"\n==                             Let's go hunting!                              =="
             +"\n================================================================================"
-            +"Choose the area out in the field you would like to shoot:Top Left, Top Right, Bottom Left, or Bottom Right"
+            +"\nChoose the area out in the field you would like to shoot:"
             + "\n\n1 | Top Left"
             + "\n2 | Top Right"
             + "\n3 | Bottom Left"
@@ -32,9 +32,13 @@ public class HuntingView extends View {
         if (inputs.equals(hunting)){
             //success
             System.out.println("You were successful!");
+            DailyTrailStopSceneView dailyTrailStop = new DailyTrailStopSceneView();
+                dailyTrailStop.display();
         } else{
             //display try again
             System.out.println("You were not successful, try again.");
+            DailyTrailStopSceneView dailyTrailStop = new DailyTrailStopSceneView();
+            dailyTrailStop.display();
         }
     return true;
     }

@@ -20,13 +20,14 @@ public class GamePlayView extends View {
 //            This function will get the play information and display it.    
             + GameControl.playerData()    
             +"\n================================================================================"
+            + "\n"
             + "\n1 | Team Status"
             + "\n2 | Team Supplies"
             + "\n3 | Set Team Pace"
             + "\n4 | Main Menu"
             + "\n5 | Help Menu"
             + "\n6 | View map"
-            + "\n7 | test menu"    
+            + "\n7 | Test menu"    
             , 7, true);
     }
     
