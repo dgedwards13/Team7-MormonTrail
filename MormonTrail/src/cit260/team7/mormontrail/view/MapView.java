@@ -5,6 +5,8 @@
  */
 package cit260.team7.mormontrail.view;
 
+import cit260.team7.mormontrail.control.MapControl;
+
 /**
  *
  * @author dgedw
@@ -18,7 +20,7 @@ public class MapView extends View{
             + "\n=           | Martin's Cove        | Chimney Rock   |           Mount Pigsah   ="
             + "\n= Salt Lake |  | Independence Rock |  | Fort Kearny | Kanesville | Garden Grove="
             + "\n=  | Valley |  |  |                |  |  |          |  |         |  |          ="
-            + "\n=  |        F  ^  ^                F  ^  F          T  T         T  T         X="
+            + MapControl.getLoc()
             + "\n=------------------------------------------------------------------------------="
             + "\n================================================================================"
             + "\nKey:"

@@ -10,5 +10,7 @@ package cit260.team7.mormontrail.control;
  * @author Savannah
  */
 public class MapControl {
-    
+    public static String getLoc() {
+        return "\n=  |        F  ^  ^                F  ^  F          T  T         T  T         X=";
+    }
 }
