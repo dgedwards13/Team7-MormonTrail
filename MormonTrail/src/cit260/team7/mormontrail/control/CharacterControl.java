@@ -7,7 +7,7 @@ package cit260.team7.mormontrail.control;
 
 /**
  *
- * @author Savannah
+ * @author Savannah, rherrerajr
  */
 public class CharacterControl {
     public static String healthStatus(){
