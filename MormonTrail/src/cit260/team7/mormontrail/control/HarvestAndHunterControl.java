@@ -31,4 +31,7 @@ public class HarvestAndHunterControl {
             }
         //return carryCapacity;
         }
+    public static String hunt(){
+        return "2";
+    }
 }
