@@ -13,9 +13,13 @@ import cit260.team7.mormontrail.view.MainMenuView;
  */
 public class GameControl {
     // void will be changed to String
-  public static void startNewGame(){  
-    MainMenuView mainMenuView = new MainMenuView();
-    mainMenuView.display();
+  public static void startNewGame(){
+      InventoryControl.setInventory();
+      HotelControl.setCharacter();
+      
+//    Lesson 10 changes      
+//    MainMenuView mainMenuView = new MainMenuView();
+//    mainMenuView.display();
     
 //    return
   }
