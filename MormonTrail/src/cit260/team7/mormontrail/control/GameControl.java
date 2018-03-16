@@ -6,16 +6,34 @@
 package cit260.team7.mormontrail.control;
 
 import cit260.team7.mormontrail.model.Game;
+import cit260.team7.mormontrail.model.Map;
 import cit260.team7.mormontrail.view.MainMenuView;
+import cit260.team7.mormontrail.model.Character;
 /**
  *
  * @author Shaw-Laptop
  */
 public class GameControl {
+
+    
     // void will be changed to String
   public static void startNewGame(){
+      //game
+      Game game = new Game();
+      game.setDayOnTrail(0);
+      game.setPace(2);
+      game.setMilesTraveled(0);
+      //game.setPlayer(player);
+      
       InventoryControl.setInventory();
       HotelControl.setCharacter();
+      EventControl.setEvent();
+      Map map = new Map();
+      MapControl.setLocation();
+      
+      //event
+      //map
+      //
       
 //    Lesson 10 changes      
 //    MainMenuView mainMenuView = new MainMenuView();
@@ -66,6 +84,8 @@ public class GameControl {
   }
   
   public static String playerData(){
-  return "";
+  return "a";
   }
+  
+  private static String player;
 }

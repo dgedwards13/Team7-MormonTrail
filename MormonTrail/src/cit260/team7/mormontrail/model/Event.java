@@ -17,7 +17,9 @@ public class Event implements Serializable{
     private double healthImpact;
     private String description;
     
- public Event(){
+    
+    
+    public Event(){
         
     }
 

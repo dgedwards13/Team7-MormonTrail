@@ -21,8 +21,15 @@ public class Game implements Serializable{
     private double pace;
     private double milesTraveled;
     private double currentMoneyBalance;
+    private String player;
 
- 
+    public String getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(String player) {
+        this.player = player;
+    }
     
     public Game(){
         
@@ -99,7 +106,7 @@ public class Game implements Serializable{
 
     @Override
     public String toString() {
-        return "Game{" + "dayOnTrail=" + dayOnTrail + ", pace=" + pace + ", milesTraveled=" + milesTraveled + ", currentMoneyBalance=" + currentMoneyBalance + '}';
+        return "Game{" + "dayOnTrail=" + dayOnTrail + ", pace=" + pace + ", milesTraveled=" + milesTraveled + ", currentMoneyBalance=" + currentMoneyBalance + "Player= " + player + '}';
     }
    
     
