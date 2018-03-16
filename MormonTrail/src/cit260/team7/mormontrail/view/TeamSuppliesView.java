@@ -19,7 +19,7 @@ public class TeamSuppliesView extends View {
             +"\n================================================================================"
             +"\n==                             Team Supplies                                  =="    
             +"\n================================================================================"
-            + "\n Money " + InventoryControl.countItem("money")
+            +"\n" + InventoryControl.getInventory()
             + "\n1 | return to game play"
             , 1, true);
     }
