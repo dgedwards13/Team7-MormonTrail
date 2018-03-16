@@ -49,6 +49,8 @@ public class InventoryControl {
         
     }
     
+    
+    
     public static int countItem(String itemName) {
         InventoryItem[] inventoryArray = getInventory();
         int invLength = inventoryArray.length;

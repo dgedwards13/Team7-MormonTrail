@@ -5,6 +5,8 @@
  */
 package cit260.team7.mormontrail.view;
 
+import cit260.team7.mormontrail.control.InventoryControl;
+
 
 
 /**
@@ -17,6 +19,7 @@ public class TeamSuppliesView extends View {
             +"\n================================================================================"
             +"\n==                             Team Supplies                                  =="    
             +"\n================================================================================"
+            + "\n Money " + InventoryControl.countItem("money")
             + "\n1 | return to game play"
             , 1, true);
     }

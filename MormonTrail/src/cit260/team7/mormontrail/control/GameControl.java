@@ -41,10 +41,11 @@ public class GameControl {
       //
       
 //    Lesson 10 changes      
-//    MainMenuView mainMenuView = new MainMenuView();
-//    mainMenuView.display();
+   MainMenuView mainMenuView = new MainMenuView();
+   mainMenuView.display();
     
 //    return
+
   }
   
   public static Game retrieveGame(){
