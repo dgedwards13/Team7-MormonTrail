@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package cit260.team7.mormontrail.view;
+
 /**
  *
  * @author Savannah

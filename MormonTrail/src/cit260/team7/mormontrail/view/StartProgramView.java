@@ -10,9 +10,12 @@ import cit260.team7.mormontrail.control.GameControl;
  * @author Savannah
  */
 public class StartProgramView extends View{
-    public StartProgramView(String inputs) {
+    
+    public String name;
+    
+    public StartProgramView(String input) {
            super("\n"
-                 + inputs + ", welcome to the Mormon Trail!"
+                 + input + ", welcome to the Mormon Trail!"
                  + "\n================================================================================"
                  + "\n== You are a Mormon pioneer and will begin your journey in Nauvoo, Illinois.  =="
                  + "\n==  Your destination is Salt Lake Valley. Your party will use your resources  =="
@@ -28,13 +31,14 @@ public class StartProgramView extends View{
                  + "\n2 | Reload a Saved Game",2, true
                    
            );
+           this.name = input;
     }
 
 @Override
     public boolean doAction(String inputs) {
         
         if(inputs.equalsIgnoreCase("1")) {
-            GameControl.startNewGame();
+            GameControl.startNewGame(name);
             return true;
         }
         

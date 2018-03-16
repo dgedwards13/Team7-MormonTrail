@@ -6,6 +6,7 @@
 package cit260.team7.mormontrail.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -14,24 +15,24 @@ import java.util.Objects;
  */
 public class Hotel implements Serializable{
     
-    private String availableCharater;
+    private Character[] availableCharaters;
     
     public Hotel(){
         
     }
 
-    public String getAvailableCharater() {
-        return availableCharater;
+    public Character[] getAvailableCharaters() {
+        return availableCharaters;
     }
 
-    public void setAvailableCharater(String availableCharater) {
-        this.availableCharater = availableCharater;
+    public void setAvailableCharaters(Character[] availableCharaters) {
+        this.availableCharaters = availableCharaters;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 37 * hash + Objects.hashCode(this.availableCharater);
+        hash = 41 * hash + Arrays.deepHashCode(this.availableCharaters);
         return hash;
     }
 
@@ -47,7 +48,7 @@ public class Hotel implements Serializable{
             return false;
         }
         final Hotel other = (Hotel) obj;
-        if (!Objects.equals(this.availableCharater, other.availableCharater)) {
+        if (!Arrays.deepEquals(this.availableCharaters, other.availableCharaters)) {
             return false;
         }
         return true;
@@ -55,7 +56,7 @@ public class Hotel implements Serializable{
 
     @Override
     public String toString() {
-        return "Hotel{" + "availableCharater=" + availableCharater + '}';
+        return "Hotel{" + "availableCharaters=" + availableCharaters + '}';
     }
     
     

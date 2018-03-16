@@ -6,6 +6,7 @@
 package cit260.team7.mormontrail.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -14,43 +15,23 @@ import java.util.Objects;
  */
 public class Map implements Serializable{
     
-    private String description;
-    private double rowCount;
-    private double columnCount;
+    private ArrayList locations;
     
     public Map(){
     }
 
-    public String getDescription() {
-        return description;
+    public ArrayList getLocations() {
+        return locations;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public double getRowCount() {
-        return rowCount;
-    }
-
-    public void setRowCount(double rowCount) {
-        this.rowCount = rowCount;
-    }
-
-    public double getColumnCount() {
-        return columnCount;
-    }
-
-    public void setColumnCount(double columnCount) {
-        this.columnCount = columnCount;
+    public void setLocations(ArrayList locations) {
+        this.locations = locations;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 79 * hash + Objects.hashCode(this.description);
-        hash = 79 * hash + (int) (Double.doubleToLongBits(this.rowCount) ^ (Double.doubleToLongBits(this.rowCount) >>> 32));
-        hash = 79 * hash + (int) (Double.doubleToLongBits(this.columnCount) ^ (Double.doubleToLongBits(this.columnCount) >>> 32));
+        hash = 37 * hash + Objects.hashCode(this.locations);
         return hash;
     }
 
@@ -66,13 +47,7 @@ public class Map implements Serializable{
             return false;
         }
         final Map other = (Map) obj;
-        if (Double.doubleToLongBits(this.rowCount) != Double.doubleToLongBits(other.rowCount)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.columnCount) != Double.doubleToLongBits(other.columnCount)) {
-            return false;
-        }
-        if (!Objects.equals(this.description, other.description)) {
+        if (!Objects.equals(this.locations, other.locations)) {
             return false;
         }
         return true;
@@ -80,8 +55,8 @@ public class Map implements Serializable{
 
     @Override
     public String toString() {
-        return "Map{" + "description=" + description + ", rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
+        return "Map{" + "locations=" + locations + '}';
     }
-    
-    
+
+   
 }

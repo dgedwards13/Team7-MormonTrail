@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author Astley Shaw, Savannah Fish, Daniel Edwards
  */
-public class RiverCrossing implements Serializable{
+public class RiverCrossing extends RegularSceneType implements Serializable{
     
     private double depth;
 

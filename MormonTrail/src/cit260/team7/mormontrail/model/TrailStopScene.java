@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author Astley Shaw, Savannah Fish, Daniel Edwards
  */
-public class TrailStopScene implements Serializable{
+public class TrailStopScene extends RegularSceneType implements Serializable{
     
     private boolean hasNearbyTown;
     private String nearbyTownName;

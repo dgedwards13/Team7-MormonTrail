@@ -14,8 +14,8 @@ import java.util.Objects;
  */
 public class RegularSceneType implements Serializable{
     
-    private String description;
     private String name;
+    private String description;
     private double coordinates;
     
     public RegularSceneType(){

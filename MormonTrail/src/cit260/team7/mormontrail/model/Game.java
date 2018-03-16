@@ -6,6 +6,7 @@
 package cit260.team7.mormontrail.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -20,17 +21,10 @@ public class Game implements Serializable{
     private double dayOnTrail;
     private double pace;
     private double milesTraveled;
-    private double currentMoneyBalance;
     private String player;
+    private InventoryItem[] InventoryArray;
+    private Event[] EventArray;
 
-    public String getPlayer() {
-        return player;
-    }
-
-    public void setPlayer(String player) {
-        this.player = player;
-    }
-    
     public Game(){
         
     }
@@ -59,21 +53,39 @@ public class Game implements Serializable{
         this.milesTraveled = milesTraveled;
     }
 
-    public double getCurrentMoneyBalance() {
-        return currentMoneyBalance;
+    public String getPlayer() {
+        return player;
     }
 
-    public void setCurrentMoneyBalance(double currentMoneyBalance) {
-        this.currentMoneyBalance = currentMoneyBalance;
+    public void setPlayer(String player) {
+        this.player = player;
+    }
+
+    public InventoryItem[] getInventoryArray() {
+        return InventoryArray;
+    }
+
+    public void setInventoryArray(InventoryItem[] InventoryArray) {
+        this.InventoryArray = InventoryArray;
+    }
+
+    public Event[] getEventArray() {
+        return EventArray;
+    }
+
+    public void setEventArray(Event[] EventArray) {
+        this.EventArray = EventArray;
     }
 
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 41 * hash + (int) (Double.doubleToLongBits(this.dayOnTrail) ^ (Double.doubleToLongBits(this.dayOnTrail) >>> 32));
-        hash = 41 * hash + (int) (Double.doubleToLongBits(this.pace) ^ (Double.doubleToLongBits(this.pace) >>> 32));
-        hash = 41 * hash + (int) (Double.doubleToLongBits(this.milesTraveled) ^ (Double.doubleToLongBits(this.milesTraveled) >>> 32));
-        hash = 41 * hash + (int) (Double.doubleToLongBits(this.currentMoneyBalance) ^ (Double.doubleToLongBits(this.currentMoneyBalance) >>> 32));
+        hash = 89 * hash + (int) (Double.doubleToLongBits(this.dayOnTrail) ^ (Double.doubleToLongBits(this.dayOnTrail) >>> 32));
+        hash = 89 * hash + (int) (Double.doubleToLongBits(this.pace) ^ (Double.doubleToLongBits(this.pace) >>> 32));
+        hash = 89 * hash + (int) (Double.doubleToLongBits(this.milesTraveled) ^ (Double.doubleToLongBits(this.milesTraveled) >>> 32));
+        hash = 89 * hash + Objects.hashCode(this.player);
+        hash = 89 * hash + Arrays.deepHashCode(this.InventoryArray);
+        hash = 89 * hash + Arrays.deepHashCode(this.EventArray);
         return hash;
     }
 
@@ -98,7 +110,13 @@ public class Game implements Serializable{
         if (Double.doubleToLongBits(this.milesTraveled) != Double.doubleToLongBits(other.milesTraveled)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.currentMoneyBalance) != Double.doubleToLongBits(other.currentMoneyBalance)) {
+        if (!Objects.equals(this.player, other.player)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.InventoryArray, other.InventoryArray)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.EventArray, other.EventArray)) {
             return false;
         }
         return true;
@@ -106,9 +124,10 @@ public class Game implements Serializable{
 
     @Override
     public String toString() {
-        return "Game{" + "dayOnTrail=" + dayOnTrail + ", pace=" + pace + ", milesTraveled=" + milesTraveled + ", currentMoneyBalance=" + currentMoneyBalance + "Player= " + player + '}';
+        return "Game{" + "dayOnTrail=" + dayOnTrail + ", pace=" + pace + ", milesTraveled=" + milesTraveled + ", player=" + player + ", InventoryArray=" + InventoryArray + ", EventArray=" + EventArray + '}';
     }
+
    
-    
- 
+
+   
 }

@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author Astley Shaw, Savannah Fish, Daniel Edwards
  */
-public class FortTown implements Serializable{
+public class FortTown extends RegularSceneType implements Serializable {
     
 
     private boolean hasHotel;

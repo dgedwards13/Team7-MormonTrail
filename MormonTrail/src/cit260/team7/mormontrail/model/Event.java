@@ -14,21 +14,28 @@ import java.util.Objects;
  */
 public class Event implements Serializable{
     
-    private double healthImpact;
     private String description;
-    
-    
+    private String charImpact;
+    private double charHealthImpact;
+    private double oxenHealthImpact;
+    private String inventoryImpact;
+    private double inventoryAmountImpact;
+    private int distanceImpact;
+    private double paceImpact;
     
     public Event(){
         
     }
-
-    public double getHealthImpact() {
-        return healthImpact;
-    }
-
-    public void setHealthImpact(double healthImpact) {
-        this.healthImpact = healthImpact;
+    
+    public Event(String d, String cI, double cHI, double oHI, String iI, double iAI, int dI, double pI){
+        this.description = d;
+        this.charImpact = cI;
+        this.charHealthImpact = cHI;
+        this.oxenHealthImpact = oHI;
+        this.inventoryImpact = iI;
+        this.inventoryAmountImpact = iAI;
+        this.distanceImpact = dI;
+        this.paceImpact = pI;
     }
 
     public String getDescription() {
@@ -39,11 +46,73 @@ public class Event implements Serializable{
         this.description = description;
     }
 
+    public String getCharImpact() {
+        return charImpact;
+    }
+
+    public void setCharImpact(String charImpact) {
+        this.charImpact = charImpact;
+    }
+
+    public double getCharHealthImpact() {
+        return charHealthImpact;
+    }
+
+    public void setCharHealthImpact(double charHealthImpact) {
+        this.charHealthImpact = charHealthImpact;
+    }
+
+    public double getOxenHealthImpact() {
+        return oxenHealthImpact;
+    }
+
+    public void setOxenHealthImpact(double oxenHealthImpact) {
+        this.oxenHealthImpact = oxenHealthImpact;
+    }
+
+    public String getInventoryImpact() {
+        return inventoryImpact;
+    }
+
+    public void setInventoryImpact(String inventoryImpact) {
+        this.inventoryImpact = inventoryImpact;
+    }
+
+    public double getInventoryAmountImpact() {
+        return inventoryAmountImpact;
+    }
+
+    public void setInventoryAmountImpact(double inventoryAmountImpact) {
+        this.inventoryAmountImpact = inventoryAmountImpact;
+    }
+
+    public int getDistanceImpact() {
+        return distanceImpact;
+    }
+
+    public void setDistanceImpact(int distanceImpact) {
+        this.distanceImpact = distanceImpact;
+    }
+
+    public double getPaceImpact() {
+        return paceImpact;
+    }
+
+    public void setPaceImpact(double paceImpact) {
+        this.paceImpact = paceImpact;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 67 * hash + (int) (Double.doubleToLongBits(this.healthImpact) ^ (Double.doubleToLongBits(this.healthImpact) >>> 32));
-        hash = 67 * hash + Objects.hashCode(this.description);
+        hash = 23 * hash + Objects.hashCode(this.description);
+        hash = 23 * hash + Objects.hashCode(this.charImpact);
+        hash = 23 * hash + (int) (Double.doubleToLongBits(this.charHealthImpact) ^ (Double.doubleToLongBits(this.charHealthImpact) >>> 32));
+        hash = 23 * hash + (int) (Double.doubleToLongBits(this.oxenHealthImpact) ^ (Double.doubleToLongBits(this.oxenHealthImpact) >>> 32));
+        hash = 23 * hash + Objects.hashCode(this.inventoryImpact);
+        hash = 23 * hash + (int) (Double.doubleToLongBits(this.inventoryAmountImpact) ^ (Double.doubleToLongBits(this.inventoryAmountImpact) >>> 32));
+        hash = 23 * hash + this.distanceImpact;
+        hash = 23 * hash + (int) (Double.doubleToLongBits(this.paceImpact) ^ (Double.doubleToLongBits(this.paceImpact) >>> 32));
         return hash;
     }
 
@@ -59,10 +128,28 @@ public class Event implements Serializable{
             return false;
         }
         final Event other = (Event) obj;
-        if (Double.doubleToLongBits(this.healthImpact) != Double.doubleToLongBits(other.healthImpact)) {
+        if (Double.doubleToLongBits(this.charHealthImpact) != Double.doubleToLongBits(other.charHealthImpact)) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.oxenHealthImpact) != Double.doubleToLongBits(other.oxenHealthImpact)) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.inventoryAmountImpact) != Double.doubleToLongBits(other.inventoryAmountImpact)) {
+            return false;
+        }
+        if (this.distanceImpact != other.distanceImpact) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.paceImpact) != Double.doubleToLongBits(other.paceImpact)) {
             return false;
         }
         if (!Objects.equals(this.description, other.description)) {
+            return false;
+        }
+        if (!Objects.equals(this.charImpact, other.charImpact)) {
+            return false;
+        }
+        if (!Objects.equals(this.inventoryImpact, other.inventoryImpact)) {
             return false;
         }
         return true;
@@ -70,8 +157,8 @@ public class Event implements Serializable{
 
     @Override
     public String toString() {
-        return "Event{" + "healthImpact=" + healthImpact + ", description=" + description + '}';
+        return "Event{" + "description=" + description + ", charImpact=" + charImpact + ", charHealthImpact=" + charHealthImpact + ", oxenHealthImpact=" + oxenHealthImpact + ", inventoryImpact=" + inventoryImpact + ", inventoryAmountImpact=" + inventoryAmountImpact + ", distanceImpact=" + distanceImpact + ", paceImpact=" + paceImpact + '}';
     }
-    
+
     
 }

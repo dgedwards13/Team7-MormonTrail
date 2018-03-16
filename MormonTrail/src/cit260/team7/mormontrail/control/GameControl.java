@@ -9,6 +9,7 @@ import cit260.team7.mormontrail.model.Game;
 import cit260.team7.mormontrail.model.Map;
 import cit260.team7.mormontrail.view.MainMenuView;
 import cit260.team7.mormontrail.model.Character;
+import cit260.team7.mormontrail.model.Hotel;
 /**
  *
  * @author Shaw-Laptop
@@ -17,17 +18,21 @@ public class GameControl {
 
     
     // void will be changed to String
-  public static void startNewGame(){
+  public static void startNewGame(String name){
       //game
       Game game = new Game();
       game.setDayOnTrail(0);
       game.setPace(2);
       game.setMilesTraveled(0);
-      //game.setPlayer(player);
+      game.setPlayer(name);
       
       InventoryControl.setInventory();
+      game.setInventoryArray(InventoryControl.getInventory());
       HotelControl.setCharacter();
-      EventControl.setEvent();
+      Hotel hotel = new Hotel();
+      hotel.setAvailableCharaters(HotelControl.getCharacter());
+      EventControl.setEvents();
+      game.setEventArray(EventControl.getEvents());
       Map map = new Map();
       MapControl.setLocation();
       
@@ -66,7 +71,7 @@ public class GameControl {
       mainMenuView.display();
   } 
   
-  public static void setPace(String pace){
+  public static void setPace(int pace){
   
   }
   
