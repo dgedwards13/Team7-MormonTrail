@@ -6,6 +6,8 @@
 package cit260.team7.mormontrail.control;
 
 import cit260.team7.mormontrail.model.Character;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 /**
  *
  * @author Savannah
@@ -46,5 +48,26 @@ public class HotelControl {
         
         return characterArray;
         
+    }
+    
+    public static String characterHealth() {
+        
+        Character[] characterArray = getCharacter();
+        String status = "";
+        for (Object player : characterArray){
+            return status + player;
+        }
+        Arrays.sort(characterArray);
+        
+        for (Object player : characterArray){
+            return status + player;
+        }
+//        Character[] characterArray = getCharacter(); 
+//        String status = "";    
+////        Arrays.sort(characterArray);
+//        for( int i = 0; i < characterArray.length; i++){
+//          status += "\n" + characterArray[i].getName() + "'s health is  " + characterArray[i].getCurrentHealth();
+//        }
+       return "\n" + status;
     }
 }

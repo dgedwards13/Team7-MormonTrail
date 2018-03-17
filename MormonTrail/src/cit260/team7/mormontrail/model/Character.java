@@ -29,7 +29,15 @@ public class Character implements Serializable{
         dailyStaminaDraw = charDailyStaminaDraw;
         currentHealth = charCurrentHealth;
     }
-        
+    
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
     public double getMoney() {
         return money;
     }
@@ -68,16 +76,6 @@ public class Character implements Serializable{
 
     public void setCurrentHealth(double currentHealth) {
         this.currentHealth = currentHealth;
-    }
-  
-    
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     @Override
