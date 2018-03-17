@@ -182,16 +182,13 @@ public class InventoryControl {
         }
         return i;
     }
-
-    public static String getInventory(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  
 
     public static String inventoryList() {
         InventoryItem[] inventoryArray = getInventory(); 
         String list= "";
         for( int i = 0; i < inventoryArray.length; i++){
-          list += inventoryArray[i].getItem();
+          list += "\n" + inventoryArray[i].getItem();
         }
         return list;
     }
