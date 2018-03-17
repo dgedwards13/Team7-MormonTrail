@@ -37,8 +37,8 @@ public class GamePlayView extends View {
         
         switch(inputs) {
             case "1":
-//                TeamStatusView teamStatusView = new TeamStatusView();
-//                teamStatusView.display();
+                TeamStatusView teamStatusView = new TeamStatusView();
+                teamStatusView.display();
                 break;
             case "2":
                 TeamSuppliesView teamSuppliesView = new TeamSuppliesView();

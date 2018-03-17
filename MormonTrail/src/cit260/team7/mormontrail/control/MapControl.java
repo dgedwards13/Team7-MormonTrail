@@ -43,7 +43,7 @@ public class MapControl {
     static FortTown loc26;
     
     public static String getLoc() {
-        return "\n=  |        F  ^  ^ R           F R ^  F   R       T  T   R      T  T         X=";
+        return "\n=  |        F  ^  ^ R              F R ^  F   R     T  T   R     T  T         X=";
     }
     
     public static void setLocation(){
