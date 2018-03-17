@@ -50,17 +50,7 @@ public class InventoryControl {
         
     }
     
-    public static String inventoryList(){
-        InventoryItem[] inventoryArray = getInventory();
-         String list="";
-        for( int i = 0; i < inventoryArray.length; i++){
-//        String testValue = inventoryArray[i].getItem();
-    list= list + i;
-       }
-        
-        return list;
-     } 
- 
+  
     
     public static int countItem(String itemName) {
         InventoryItem[] inventoryArray = getInventory();
@@ -196,4 +186,15 @@ public class InventoryControl {
     public static String getInventory(String string) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public static String inventoryList() {
+        InventoryItem[] inventoryArray = getInventory(); 
+        String list= "";
+        for( int i = 0; i < inventoryArray.length; i++){
+          list += inventoryArray[i].getItem();
+        }
+        return list;
+    }
+
+    
 }
