@@ -7,6 +7,7 @@ package cit260.team7.mormontrail.control;
 
 import cit260.team7.mormontrail.model.InventoryItem;
 
+
 /**
  *
  * @author Astley Shaw, Savannah Fish, Daniel Edwards
@@ -51,10 +52,15 @@ public class InventoryControl {
     
     public static String inventoryList(){
         InventoryItem[] inventoryArray = getInventory();
+         String list="";
         for( int i = 0; i < inventoryArray.length; i++){
-            
+//        String testValue = inventoryArray[i].getItem();
+    list= list + i;
        }
-    }
+        
+        return list;
+     } 
+ 
     
     public static int countItem(String itemName) {
         InventoryItem[] inventoryArray = getInventory();

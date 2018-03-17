@@ -24,6 +24,7 @@ public class ViewSuppliesView extends View {
             + "\nWhich item (if any) would you like to sell?", InventoryControl.countInvMenu("generalstore"), true);
     }
 
+        
 @Override
     public boolean doAction(String inputs) {
         InventoryItem[] inventoryArray = InventoryControl.getInventory();
