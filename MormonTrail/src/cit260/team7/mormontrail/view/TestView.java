@@ -64,6 +64,10 @@ public class TestView extends View{
                 HuntingView huntingView = new HuntingView();
                 huntingView.display();
                 break;
+            case "9":
+                dailyTrailStopSceneView = new DailyTrailStopSceneView();
+                dailyTrailStopSceneView.display();
+                break;
         }
            
         return true;

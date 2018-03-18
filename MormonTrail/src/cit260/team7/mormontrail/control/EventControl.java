@@ -87,8 +87,8 @@ public class EventControl {
             for(int i=0; i < invLength; i++){
                 if( price > maxPrice){
                     stolen = inventoryArray[maxPrice].getItem();
-                    double currentAmount = inventoryArray[maxPrice].getAmount();
-                    inventoryArray[maxPrice].setAmount(currentAmount = 0);
+                    inventoryArray[maxPrice].getAmount();
+                    inventoryArray[maxPrice].setAmount(0);
                 }
             }
             return "The indian's stole your " + stolen;
