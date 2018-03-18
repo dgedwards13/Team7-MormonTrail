@@ -193,5 +193,26 @@ public class InventoryControl {
         return list;
     }
 
-    
+    public static String order(){
+      InventoryItem[] ray = InventoryControl.getInventory();
+        String list= "";
+        for( int i = 0; i < ray.length; i++){
+            for( int j = i + 1; j<ray.length; j++){
+            InventoryItem tmp;
+            if(ray[i].getAmount() > ray[j].getAmount()){
+             tmp = ray[i];
+             ray[i] = ray[j];
+             ray[j] = tmp;
+            }
+            
+            
+            }
+//          list += "\n"+ inventoryArray[i].getAmount();
+        }
+        for (int i= 0; i < ray.length; i++) {
+            list += "\n" + ray[i].getItem() + " " + ray[i].getAmount();
+        
+    }
+      return list;   
+}
 }
