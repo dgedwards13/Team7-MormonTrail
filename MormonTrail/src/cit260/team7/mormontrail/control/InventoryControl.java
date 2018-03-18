@@ -187,8 +187,8 @@ public class InventoryControl {
     public static String inventoryList() {
         InventoryItem[] inventoryArray = getInventory(); 
         String list= "";
-        for( int i = 0; i < inventoryArray.length; i++){
-          list += "\n" + inventoryArray[i].getItem();
+        for (InventoryItem inventoryArray1 : inventoryArray) {
+            list += "\n" + inventoryArray1.getItem();
         }
         return list;
     }
@@ -209,10 +209,9 @@ public class InventoryControl {
             }
 //          list += "\n"+ inventoryArray[i].getAmount();
         }
-        for (int i= 0; i < ray.length; i++) {
-            list += "\n" + ray[i].getItem() + " " + ray[i].getAmount();
-        
-    }
+        for (InventoryItem ray1 : ray) {
+            list += "\n" + ray1.getItem() + " " + ray1.getAmount();
+        }
       return list;   
 }
 }
