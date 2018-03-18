@@ -77,20 +77,15 @@ class EventControl {
 //    }
     
     //if eventArray[10]{
-//        public static int indianRaid(){
-//            Integer[] inventoryArray = Arrays.copyOf(a, a.length, Integer[].class);
-//            InventoryItem[] a = new Integer[1];
-//            Integer b=1;
-//a[0]=b;
-//Integer[] c = (Integer[]) a;
-//            InventoryItem[] inventoryArray = getInventory();
-//            int stolenItem = Integer.MIN_VALUE;
-//            for(int i=0; i < inventoryArray.length; i++){
-//                if(inventoryArray[i] > stolenItem){
-//                    stolenItem = inventoryArray[i]; 
-//                }
-//            }
-//            //change # to 0 in supplies
-//            System.out.println("The indian's stole your " + stolenItem);
-//        }
+        public static int indianRaid(){
+            InventoryItem[] inventoryArray = getInventory();
+            int stolenItem = Integer.MIN_VALUE;
+            for(int i=0; i < inventoryArray.length; i++){
+                if(inventoryArray[i] > stolenItem){
+                    stolenItem = inventoryArray[i]; 
+                }
+            }
+            //change # to 0 in supplies
+            System.out.println("The indian's stole your " + stolenItem);
+        }
 }
