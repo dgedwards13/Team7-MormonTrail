@@ -24,13 +24,13 @@ public class HotelControl {
             
     public static void setCharacter(){
         characterSusan = new Character("Susan", 10, 5, 400, 2, 2);
-        characterSam = new Character("Sam", 10, 6, 600, 2, 2);
-        characterJoseph = new Character("Joseph", 10, 7, 100, 2, 2);
-        characterRicardo = new Character("Ricardo", 10, 8, 680, 2, 2);
-        characterSavannah = new Character("Savannah", 10, 8, 680, 2, 2);
-        characterDaniel = new Character("Daniel", 10, 8, 680, 2, 2);
-        characterAstley = new Character("Astley", 10, 8, 680, 2, 2);
-        characterRachel = new Character("Rachel", 10, 5, 500, 2, 2);
+        characterSam = new Character("Sam", 10, 6, 600, 2, 4);
+        characterJoseph = new Character("Joseph", 10, 7, 100, 2, 3);
+        characterRicardo = new Character("Ricardo", 10, 8, 680, 2, 6);
+        characterSavannah = new Character("Savannah", 10, 8, 680, 2, 1);
+        characterDaniel = new Character("Daniel", 10, 8, 680, 2, 5);
+        characterAstley = new Character("Astley", 10, 8, 680, 2, 7);
+        characterRachel = new Character("Rachel", 10, 5, 500, 2, 8);
     }
     
     public static Character[] getCharacter(){
@@ -47,27 +47,29 @@ public class HotelControl {
         characterArray[7] = characterRachel;
         
         return characterArray;
+    }
+    public static String characterHealth(){
+    Character[] characterArray = HotelControl.getCharacter();
+        String list= "";
+        for(int i = 0; i < characterArray.length; i++){
+            for( int j = i + 1; j< characterArray.length; j++){
+            Character tmp;
+            if(characterArray[i].getCurrentHealth()> characterArray[j].getCurrentHealth()){
+             tmp = characterArray[i];
+             characterArray[i] = characterArray[j];
+             characterArray[j] = tmp;
+            }
+            
+            
+            }
+        }
+        for (int i= 0; i < characterArray.length; i++) {
+            list += "\n" + characterArray[i].getName()+ " " + characterArray[i].getCurrentHealth();
         
     }
-    
-    public static String characterHealth() {
-        
-        Character[] characterArray = getCharacter();
-        String status = "";
-        for (Object player : characterArray){
-            return status + player;
-        }
-        Arrays.sort(characterArray);
-        
-        for (Object player : characterArray){
-            return status + player;
-        }
-//        Character[] characterArray = getCharacter(); 
-//        String status = "";    
-////        Arrays.sort(characterArray);
-//        for( int i = 0; i < characterArray.length; i++){
-//          status += "\n" + characterArray[i].getName() + "'s health is  " + characterArray[i].getCurrentHealth();
-//        }
-       return "\n" + status;
-    }
+      return list;   
 }
+}
+
+             
+   
