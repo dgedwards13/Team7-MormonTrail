@@ -210,7 +210,12 @@ public class InventoryControl {
 //          list += "\n"+ inventoryArray[i].getAmount();
         }
         for (InventoryItem ray1 : ray) {
-            list += "\n" + ray1.getItem() + " " + ray1.getAmount();
+        if(ray1.getAmount()<=-1) {
+                System.out.println("invaild");
+            } 
+            else { 
+               list += "\n" + ray1.getItem() + " " + ray1.getAmount(); 
+            }
         }
       return list;   
 }
