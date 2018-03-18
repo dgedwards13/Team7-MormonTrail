@@ -61,10 +61,9 @@ public class HotelControl {
             
             }
         }
-        for (int i= 0; i < characterArray.length; i++) {
-            list += "\n" + characterArray[i].getName()+ " " + characterArray[i].getCurrentHealth();
-        
-    }
+        for (Character characterArray1 : characterArray) {
+            list += "\n" + characterArray1.getName() + " " + characterArray1.getCurrentHealth();
+        }
       return list;   
 }
 }
