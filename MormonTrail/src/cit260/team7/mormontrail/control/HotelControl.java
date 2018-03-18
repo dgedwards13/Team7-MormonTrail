@@ -8,7 +8,7 @@ package cit260.team7.mormontrail.control;
 import cit260.team7.mormontrail.model.Character;
 /**
  *
- * @author Savannah
+ * @author Savannah, rherrerajr
  */
 public class HotelControl {
     static Character characterSusan;
