@@ -23,8 +23,8 @@ public class TestingSort {
         InventoryControl.changeInventory("Small Wagon", 1, true);
         InventoryItem[] arr = InventoryControl.getInventory();
         System.out.println("With no Sorting:");
-        for (int i= 0; i < arr.length; i++) {
-            System.out.println(arr[i].getItem() + " " + arr[i].getAmount());
+        for (InventoryItem arr1 : arr) {
+            System.out.println(arr1.getItem() + " " + arr1.getAmount());
         }
         System.out.println(" ");
         System.out.println(" ");
@@ -40,8 +40,8 @@ public class TestingSort {
             }
         }
         System.out.println("With Sorting:");
-        for (int i= 0; i < arr.length; i++) {
-            System.out.println(arr[i].getItem() + " " + arr[i].getAmount());
+        for (InventoryItem arr1 : arr) {
+            System.out.println(arr1.getItem() + " " + arr1.getAmount());
         }
     } 
 
