@@ -23,7 +23,8 @@ public class TestView extends View{
             + "\n6 | Map View"
             + "\n7 | Daily Rest View"
             + "\n8 | Hunting View"
-            + "\n9 | Indian Raid Test" + EventControl.indianRaid()
+            + "\n9 | Indian Raid Test" 
+            + "\n" +  EventControl.indianRaid()
             , 8, true);
     }
     

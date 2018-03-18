@@ -8,6 +8,8 @@ package cit260.team7.mormontrail.control;
 import cit260.team7.mormontrail.model.Event;
 import static cit260.team7.mormontrail.control.InventoryControl.getInventory;
 import cit260.team7.mormontrail.model.InventoryItem;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author Savannah
@@ -76,22 +78,28 @@ public class EventControl {
     
     //if eventArray[10]{
         public static String indianRaid(){
-            String stolen = "";
-            //Get Inventory Array
-            InventoryItem[] inventoryArray = getInventory();
+            InventoryItem[] inventoryArray = InventoryControl.getInventory();
+            List<InventoryItem> ownedArray = new ArrayList<>();
+            for (InventoryItem inv : inventoryArray) {
+                    if(inv.getAmount() > 0 && !inv.getItem().equalsIgnoreCase("money")) {
+                        ownedArray.add(inv);
+                    }
+                }
+            InventoryItem stolen = inventoryArray[5];
             //Get Max Value Item
-            int invLength = inventoryArray.length;
-            int maxPrice = -1;
-            double price = inventoryArray[maxPrice].getPrice();
+            int invLength = ownedArray.size();
+            double maxPrice = 0;
             maxPrice = Integer.MIN_VALUE;
             for(int i=0; i < invLength; i++){
+                double price = ownedArray.get(i).getPrice();
                 if( price > maxPrice){
-                    stolen = inventoryArray[maxPrice].getItem();
-                    inventoryArray[maxPrice].getAmount();
-                    inventoryArray[maxPrice].setAmount(0);
+                    stolen = ownedArray.get(i);
+                    maxPrice = price;
                 }
             }
-            return "The indian's stole your " + stolen;
+            //get rid of item stolen
+            stolen.setAmount(0);
+            return "The indian's stole your " + stolen.getItem();
         }
 }
 
