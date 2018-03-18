@@ -6,10 +6,8 @@
 package cit260.team7.mormontrail.control;
 
 import cit260.team7.mormontrail.model.Event;
-import cit260.team7.mormontrail.control.InventoryControl;
 import static cit260.team7.mormontrail.control.InventoryControl.getInventory;
 import cit260.team7.mormontrail.model.InventoryItem;
-import java.util.Arrays;
 /**
  *
  * @author Savannah
@@ -77,15 +75,18 @@ class EventControl {
 //    }
     
     //if eventArray[10]{
-        public static int indianRaid(){
+        public static void indianRaid(){
+            //Get Inventory Array
             InventoryItem[] inventoryArray = getInventory();
-            int stolenItem = Integer.MIN_VALUE;
-            for(int i=0; i < inventoryArray.length; i++){
-                if(inventoryArray[i] > stolenItem){
-                    stolenItem = inventoryArray[i]; 
+            //Get Max Value Item
+            int invLength = inventoryArray.length;
+            int maxPrice = -1;
+            double price = inventoryArray[maxPrice].getPrice();
+            maxPrice = Integer.MIN_VALUE;
+            for(int i=0; i < invLength; i++){
+                if( price > maxPrice){
+                    System.out.println("The indian's stole your " + inventoryArray[maxPrice].getItem());
                 }
             }
-            //change # to 0 in supplies
-            System.out.println("The indian's stole your " + stolenItem);
         }
 }

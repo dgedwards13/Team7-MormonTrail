@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package cit260.team7.mormontrail.view;
-
+import cit260.team7.mormontrail.control.EventControl;
 /**
  *
  * @author Shaw-Laptop
@@ -23,6 +23,7 @@ public class TestView extends View{
             + "\n6 | Map View"
             + "\n7 | Daily Rest View"
             + "\n8 | Hunting View"
+            + "\n9 | Indian Raid Test" + EventControl.indianRaid()
             , 8, true);
     }
     
