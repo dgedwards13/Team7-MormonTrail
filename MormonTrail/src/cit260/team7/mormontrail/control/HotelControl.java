@@ -6,8 +6,6 @@
 package cit260.team7.mormontrail.control;
 
 import cit260.team7.mormontrail.model.Character;
-import java.lang.reflect.Array;
-import java.util.Arrays;
 /**
  *
  * @author Savannah
