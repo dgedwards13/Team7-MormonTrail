@@ -75,7 +75,8 @@ public class EventControl {
 //    }
     
     //if eventArray[10]{
-        public static String indianRaid(String stolen){
+        public static String indianRaid(){
+            String stolen = "";
             //Get Inventory Array
             InventoryItem[] inventoryArray = getInventory();
             //Get Max Value Item
