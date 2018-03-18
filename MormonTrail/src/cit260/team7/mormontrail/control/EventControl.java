@@ -12,7 +12,7 @@ import cit260.team7.mormontrail.model.InventoryItem;
  *
  * @author Savannah
  */
-class EventControl {
+public class EventControl {
     static Event event1;
     static Event event2;
     static Event event3;
@@ -75,7 +75,7 @@ class EventControl {
 //    }
     
     //if eventArray[10]{
-        public static void indianRaid(){
+        public static String indianRaid(String stolen){
             //Get Inventory Array
             InventoryItem[] inventoryArray = getInventory();
             //Get Max Value Item
@@ -85,8 +85,12 @@ class EventControl {
             maxPrice = Integer.MIN_VALUE;
             for(int i=0; i < invLength; i++){
                 if( price > maxPrice){
-                    System.out.println("The indian's stole your " + inventoryArray[maxPrice].getItem());
+                    stolen = inventoryArray[maxPrice].getItem();
+                    double currentAmount = inventoryArray[maxPrice].getAmount();
+                    inventoryArray[maxPrice].setAmount(currentAmount = 0);
                 }
             }
+            return "The indian's stole your " + stolen;
         }
 }
+
