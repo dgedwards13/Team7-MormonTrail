@@ -6,6 +6,7 @@
 package cit260.team7.mormontrail.view;
 
 import cit260.team7.mormontrail.control.InventoryControl;
+import cit260.team7.mormontrail.exception.InventoryException;
 
 
 
@@ -14,7 +15,7 @@ import cit260.team7.mormontrail.control.InventoryControl;
  * @author Shaw-Laptop
  */
 public class TeamSuppliesView extends View {
-    public TeamSuppliesView(){
+    public TeamSuppliesView() throws InventoryException{
      super( "\n"
             +"\n================================================================================"
             +"\n==                             Team Supplies                                  =="    

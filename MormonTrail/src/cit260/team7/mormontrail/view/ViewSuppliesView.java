@@ -6,9 +6,12 @@
 package cit260.team7.mormontrail.view;
 
 import cit260.team7.mormontrail.control.InventoryControl;
+import cit260.team7.mormontrail.exception.InventoryException;
 import cit260.team7.mormontrail.model.InventoryItem;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author dgedw
@@ -40,9 +43,13 @@ public class ViewSuppliesView extends View {
             GeneralStoreView generalStoreView = new GeneralStoreView();
             generalStoreView.display();
         } else {
-            InventoryControl.changeInventory(ownedArray.get(num).getItem(), -1, true);
-            ViewSuppliesView viewSuppliesView = new ViewSuppliesView();
-            viewSuppliesView.display();
+            try {
+                InventoryControl.changeInventory(ownedArray.get(num).getItem(), -1, true);
+                ViewSuppliesView viewSuppliesView = new ViewSuppliesView();
+                viewSuppliesView.display();
+            } catch (InventoryException ex) {
+                Logger.getLogger(ViewSuppliesView.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         return true;
     }

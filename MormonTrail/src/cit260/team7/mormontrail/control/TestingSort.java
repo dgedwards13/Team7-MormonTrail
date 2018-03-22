@@ -5,6 +5,7 @@
  */
 package cit260.team7.mormontrail.control;
 
+import cit260.team7.mormontrail.exception.InventoryException;
 import cit260.team7.mormontrail.model.InventoryItem;
 import java.util.Arrays;
 
@@ -14,7 +15,7 @@ import java.util.Arrays;
  */
 public class TestingSort {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InventoryException {
         InventoryControl.setInventory();
         InventoryControl.changeInventory("Food", 20, true);
         InventoryControl.changeInventory("Oxen", 3, true);

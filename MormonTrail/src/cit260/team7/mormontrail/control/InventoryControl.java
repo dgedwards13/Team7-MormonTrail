@@ -6,6 +6,7 @@
 package cit260.team7.mormontrail.control;
 
 import cit260.team7.mormontrail.model.InventoryItem;
+import cit260.team7.mormontrail.exception.InventoryException;
 
 
 /**
@@ -71,7 +72,7 @@ public class InventoryControl {
         }
     }
     
-    public static String changeInventory(String itemName, double amount, boolean purchase) {
+    public static String changeInventory(String itemName, double amount, boolean purchase) throws InventoryException{
         // Build Inventory Array
         InventoryItem[] inventoryArray = getInventory();
         // Count the number of items in inventory
@@ -85,7 +86,7 @@ public class InventoryControl {
             }
         }
         if (search == 0) {
-            return "Item does not exist";
+            throw new InventoryException("Item does not exist");
         }
         int index = -1;
             for( int i = 0; (i < invLength) && (index == -1); i++) {
@@ -107,7 +108,7 @@ public class InventoryControl {
             double price = inventoryArray[index].getPrice();
             price = price * amount;
             if (wallet - price < 0) {
-                return "You cannot afford that!";
+                throw new InventoryException("You cannot afford that!");
             }
             inventoryArray[moneyIndex].setAmount(wallet - price);
         }
@@ -117,7 +118,7 @@ public class InventoryControl {
         return "Success!";
     }
     
-    public static double calCurrentWeight(double wagonSize) {
+    public static double calCurrentWeight(double wagonSize) throws InventoryException{
         double currentWeight;
         InventoryItem[] inventoryArray = InventoryControl.getInventory();
         int invCount = inventoryArray.length;      
@@ -129,8 +130,7 @@ public class InventoryControl {
             invItemWeight = invItemWeight + wa;
         }
         if(invItemWeight < 0 || invItemWeight > wagonSize) {
-            currentWeight = -1;
-            return currentWeight;
+            throw new InventoryException("you are so wrong");
         } else {
             currentWeight = invItemWeight;
             return currentWeight;
@@ -141,7 +141,7 @@ public class InventoryControl {
         InventoryItem[] inventoryArray = getInventory();
         String invList = "";
         int i = 1;
-        if(application.equalsIgnoreCase("generalstore")) {
+        if(application.equalsIgnoreCase("generalstore")) { 
             for (InventoryItem inv : inventoryArray) {
                 if(inv.getAmount() > 0 && !inv.getItem().equalsIgnoreCase("money")) {
                     int intAmount = (int) Math.round(inv.getAmount());
@@ -193,7 +193,7 @@ public class InventoryControl {
         return list;
     }
 
-    public static String order(){
+    public static String order() throws InventoryException{
       InventoryItem[] ray = InventoryControl.getInventory();
         String list= "";
         for( int i = 0; i < ray.length; i++){
@@ -211,7 +211,7 @@ public class InventoryControl {
         }
         for (InventoryItem ray1 : ray) {
         if(ray1.getAmount()<=-1) {
-                System.out.println("invaild");
+                throw new InventoryException("invaild");
             } 
             else { 
                list += "\n" + ray1.getItem() + " " + ray1.getAmount(); 

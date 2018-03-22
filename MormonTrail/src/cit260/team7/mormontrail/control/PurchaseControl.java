@@ -5,6 +5,7 @@
  */
 package cit260.team7.mormontrail.control;
 
+import cit260.team7.mormontrail.exception.InventoryException;
 import java.util.Scanner;
 
 /**
@@ -12,7 +13,7 @@ import java.util.Scanner;
  * @author dgedw
  */
 public class PurchaseControl {
-    public static String PurchaseOxen() {
+    public static String PurchaseOxen() throws InventoryException {
         boolean valid = false;
         int numInput = 0;
         while (valid == false) {
