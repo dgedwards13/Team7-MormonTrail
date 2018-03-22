@@ -34,11 +34,17 @@ public class BuySuppliesView extends View{
              + "\n6 | Return to Previous Menu", 6,true);
     }
 @Override
-    public void doAction(String inputs) {
-        try {
+    public boolean doAction(String inputs) {
             switch(inputs) {
                 case "1":
-                    System.out.println(PurchaseControl.PurchaseOxen());
+            {
+                try {
+                    PurchaseControl.PurchaseOxen();
+                } catch (InventoryException e) {
+                    System.out.println(e.getMessage);
+                    return false;
+                }
+            }
                     GeneralStoreView generalStoreView = new GeneralStoreView();
                     generalStoreView.display();
                     break;
@@ -139,8 +145,6 @@ public class BuySuppliesView extends View{
                     generalStoreView.display();
                     break;
             }
-        } catch (InventoryException ex) {
-            Logger.getLogger(BuySuppliesView.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
