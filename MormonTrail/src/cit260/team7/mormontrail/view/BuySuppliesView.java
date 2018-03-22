@@ -41,7 +41,7 @@ public class BuySuppliesView extends View{
                 try {
                     PurchaseControl.PurchaseOxen();
                 } catch (InventoryException e) {
-                    System.out.println(e.getMessage);
+                    System.out.println(e.getMessage());
                     return false;
                 }
             }
@@ -49,7 +49,14 @@ public class BuySuppliesView extends View{
                     generalStoreView.display();
                     break;
                 case "2":
-                    System.out.println(PurchaseControl.PurchaseWagon());
+            {
+                try {
+                    PurchaseControl.PurchaseWagon();
+                } catch (InventoryException e) {
+                    System.out.println(e.getMessage());
+                    return false;
+                }
+            }
                     generalStoreView = new GeneralStoreView();
                     generalStoreView.display();
                     break;
@@ -78,7 +85,14 @@ public class BuySuppliesView extends View{
                         numInput = Integer.parseInt(in);
                         valid = true;
                     }
-                    System.out.println(InventoryControl.changeInventory("Food", numInput, true));
+            {
+                try {
+                    InventoryControl.changeInventory("Food", numInput, true);
+                } catch (InventoryException e) {
+                    System.out.println(e.getMessage());
+                    return false;
+                }
+            }
                     generalStoreView = new GeneralStoreView();
                     generalStoreView.display();
                     break;
@@ -107,7 +121,14 @@ public class BuySuppliesView extends View{
                         numInput = Integer.parseInt(in);
                         valid = true;
                     }
-                    System.out.println(InventoryControl.changeInventory("Spare Parts", numInput, true));
+            {
+                try {
+                    InventoryControl.changeInventory("Spare Parts", numInput, true);
+                } catch (InventoryException e) {
+                    System.out.println(e.getMessage());
+                    return false;
+                }
+            }
                     generalStoreView = new GeneralStoreView();
                     generalStoreView.display();
                     break;
@@ -136,7 +157,14 @@ public class BuySuppliesView extends View{
                         numInput = Integer.parseInt(in);
                         valid = true;
                     }
-                    System.out.println(InventoryControl.changeInventory("Ammunition", numInput, true));
+            {
+                try {
+                    InventoryControl.changeInventory("Ammunition", numInput, true);
+                } catch (InventoryException e) {
+                    System.out.println(e.getMessage());
+                    return false;
+                }
+            }
                     generalStoreView = new GeneralStoreView();
                     generalStoreView.display();
                     break;
@@ -145,6 +173,6 @@ public class BuySuppliesView extends View{
                     generalStoreView.display();
                     break;
             }
+            return true;
         }
     }
-}

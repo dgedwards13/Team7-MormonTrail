@@ -46,7 +46,7 @@ public class PurchaseControl {
         }
     }
     
-    public static String PurchaseWagon() {
+    public static String PurchaseWagon() throws InventoryException{
         boolean valid = false;
         int numInput = 0;
         while (valid == false) {
@@ -67,8 +67,7 @@ public class PurchaseControl {
             String in = keyboard.nextLine();
             in = in.trim();
             if(in.length() < 1){
-                System.out.println("You must enter a non-blank value");
-                continue;
+                throw new InventoryException("You must enter a non-blank value");
             }
             numInput = Integer.parseInt(in);
             valid = true;
@@ -78,24 +77,24 @@ public class PurchaseControl {
             if (buy.equalsIgnoreCase("success!")) {
                 return "Success!";
             } else {
-                return "Transaction failed. Please try again.";
+                throw new InventoryException("Transaction failed. Please try again.");
             }
         } else if (numInput == 2) {
             String buy = InventoryControl.changeInventory("Medium Wagon", 1, true);
             if (buy.equalsIgnoreCase("success!")) {
                 return "Success!";
             } else {
-                return "Transaction failed. Please try again.";
+                throw new InventoryException("Transaction failed. Please try again.");
             }
         } else if (numInput == 3) {
             String buy = InventoryControl.changeInventory("Large Wagon", 1, true);
             if (buy.equalsIgnoreCase("success!")) {
                 return "Success!";
             } else {
-                return "Transaction failed. Please try again.";
+                throw new InventoryException("Transaction failed. Please try again.");
             }
         } else {
-            return "Transaction failed. Please try again.";
+            throw new InventoryException("Transaction failed. Please try again.");
         }
     }
 }

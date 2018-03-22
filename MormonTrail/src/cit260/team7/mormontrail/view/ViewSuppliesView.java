@@ -47,8 +47,9 @@ public class ViewSuppliesView extends View {
                 InventoryControl.changeInventory(ownedArray.get(num).getItem(), -1, true);
                 ViewSuppliesView viewSuppliesView = new ViewSuppliesView();
                 viewSuppliesView.display();
-            } catch (InventoryException ex) {
-                Logger.getLogger(ViewSuppliesView.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (InventoryException e) {
+                System.out.println(e.getMessage());
+                return false;
             }
         }
         return true;

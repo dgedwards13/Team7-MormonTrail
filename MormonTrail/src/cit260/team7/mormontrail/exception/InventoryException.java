@@ -14,20 +14,20 @@ public class InventoryException extends Exception{
     public InventoryException() {
     }
 
-    public InventoryException(String string) {
-        super(string);
+    public InventoryException(String message) {
+        super(message);
     }
 
-    public InventoryException(String string, Throwable thrwbl) {
-        super(string, thrwbl);
+    public InventoryException(String message, Throwable cause) {
+        super(message, cause);
     }
 
-    public InventoryException(Throwable thrwbl) {
-        super(thrwbl);
+    public InventoryException(Throwable cause) {
+        super(cause);
     }
 
-    public InventoryException(String string, Throwable thrwbl, boolean bln, boolean bln1) {
-        super(string, thrwbl, bln, bln1);
+    public InventoryException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
     }
     
 }
