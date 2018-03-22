@@ -10,8 +10,6 @@ import cit260.team7.mormontrail.exception.InventoryException;
 import cit260.team7.mormontrail.model.InventoryItem;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 /**
  *
  * @author dgedw
