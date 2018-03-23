@@ -47,7 +47,7 @@ public class PurchaseControl {
         if (buy.equalsIgnoreCase("success!")) {
             return "Success!";
         } else {
-            return "Transaction failed. Please try again.";
+            throw new InventoryException("Transaction failed. Please try again.");
         }
     }
     
