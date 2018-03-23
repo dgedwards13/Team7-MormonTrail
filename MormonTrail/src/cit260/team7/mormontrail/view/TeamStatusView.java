@@ -7,6 +7,7 @@ package cit260.team7.mormontrail.view;
 
 import cit260.team7.mormontrail.control.CharacterControl;
 import cit260.team7.mormontrail.control.HotelControl;
+import cit260.team7.mormontrail.exception.CharacterException;
 
 /**
  *

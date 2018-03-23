@@ -6,7 +6,9 @@
 package cit260.team7.mormontrail.view;
 
 import cit260.team7.mormontrail.control.GameControl;
+import cit260.team7.mormontrail.exception.EventException;
 import cit260.team7.mormontrail.exception.InventoryException;
+
 
 /**
  *
@@ -67,7 +69,12 @@ public class GamePlayView extends View {
                 mapView.display();
                 break;
             case "7":
-                TestView testView = new TestView();
+                TestView testView = null;
+        try {
+            testView = new TestView();
+        } catch (EventException e) {
+            System.out.println(e.getMessage());
+        }
                 testView.display();
         }
 
