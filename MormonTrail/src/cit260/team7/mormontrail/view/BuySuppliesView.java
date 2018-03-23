@@ -5,12 +5,9 @@
  */
 package cit260.team7.mormontrail.view;
 
-import cit260.team7.mormontrail.control.InventoryControl;
 import cit260.team7.mormontrail.control.PurchaseControl;
 import cit260.team7.mormontrail.exception.InventoryException;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 
 /**
