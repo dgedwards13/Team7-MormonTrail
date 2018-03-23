@@ -6,6 +6,7 @@
 package mormontrail;
 
 import cit260.team7.mormontrail.view.GrabNameView;
+import cit260.team7.mormontrail.model.Game;
 
 /**
  *
@@ -24,13 +25,28 @@ import cit260.team7.mormontrail.view.GrabNameView;
 
 
 public class MormonTrail {
+    public static Game game;
+
+    public static Game getGame() {
+        return game;
+    }
+
+    public static void setGame(Game game) {
+        MormonTrail.game = game;
+    }
+
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args){
+        try{
         GrabNameView grabNameView = new GrabNameView();
         grabNameView.display();
+        }
+        catch(){
+            
+        }
     } 
       
 }

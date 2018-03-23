@@ -6,6 +6,7 @@
 package cit260.team7.mormontrail.view;
 
 import java.util.Scanner;
+import cit260.team7.mormontrail.exception.ViewException;
 
 /**
  *
@@ -58,13 +59,18 @@ public abstract class View implements ViewInterface {
                 continue;
             }
             if (isMenu) {
+                try{
                 int convert = Integer.parseInt(in);
                 boolean v = convert > 0 && convert < numInputs + 1;
                 if(v != true) {
                     System.out.println("The number entered must correlate with the available options.");
                     continue;
                 }
-            } 
+            }catch(NumberFormatException e){
+                System.out.println("\nYou must enter a valid menu number");
+                continue;
+            }
+            }
             
             inputs = in;
             valid = true;

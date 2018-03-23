@@ -8,8 +8,9 @@ package cit260.team7.mormontrail.control;
 import cit260.team7.mormontrail.model.Game;
 import cit260.team7.mormontrail.model.Map;
 import cit260.team7.mormontrail.view.MainMenuView;
-import cit260.team7.mormontrail.model.Character;
+//import cit260.team7.mormontrail.model.Character;
 import cit260.team7.mormontrail.model.Hotel;
+import mormontrail.MormonTrail;
 /**
  *
  * @author Shaw-Laptop
@@ -21,6 +22,7 @@ public class GameControl {
   public static void startNewGame(String name){
       //game
       Game game = new Game();
+      MormonTrail.setGame(game);
       game.setDayOnTrail(0);
       game.setPace(2);
       game.setMilesTraveled(0);
