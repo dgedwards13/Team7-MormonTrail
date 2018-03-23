@@ -7,6 +7,7 @@ package cit260.team7.mormontrail.view;
 
 import cit260.team7.mormontrail.control.GameControl;
 import cit260.team7.mormontrail.exception.EventException;
+import cit260.team7.mormontrail.exception.HarvestAndHunterException;
 import cit260.team7.mormontrail.exception.InventoryException;
 
 
@@ -73,6 +74,8 @@ public class GamePlayView extends View {
         try {
             testView = new TestView();
         } catch (EventException e) {
+            System.out.println(e.getMessage());
+        } catch (HarvestAndHunterException e) {
             System.out.println(e.getMessage());
         }
                 testView.display();
