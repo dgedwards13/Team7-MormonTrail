@@ -6,6 +6,8 @@
 package cit260.team7.mormontrail.view;
 import cit260.team7.mormontrail.exception.EventException;
 import cit260.team7.mormontrail.control.EventControl;
+import cit260.team7.mormontrail.control.HarvestAndHunterControl;
+import cit260.team7.mormontrail.exception.HarvestAndHunterException;
 
 /**
  *
@@ -13,7 +15,7 @@ import cit260.team7.mormontrail.control.EventControl;
  */
 public class TestView extends View {
 
-    public TestView() throws EventException {
+    public TestView() throws EventException, HarvestAndHunterException {
         super("\n"
                 + "\n================================================================================"
                 + "\n==                             Test Menu                                      =="
@@ -26,8 +28,10 @@ public class TestView extends View {
                 + "\n6 | Map View"
                 + "\n7 | Daily Rest View"
                 + "\n8 | Hunting View"
-                + "\n9 | Indian Raid Test"
-                + "\n" + EventControl.indianRaid(),
+                + "\n9 | indianRaid Test"
+                + "\n" + EventControl.indianRaid()
+                + "\nHarvestAndHunterControl Test"
+                + "\n" + HarvestAndHunterControl.calCarryingCapacity(1500, 300, 20),
                 8, true);
     }
 
