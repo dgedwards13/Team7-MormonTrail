@@ -12,14 +12,13 @@ import java.util.Objects;
  *
  * @author Astley Shaw, Savannah Fish, Daniel Edwards
  */
+public class InventoryItem implements Serializable {
 
-public class InventoryItem implements Serializable{
-    
     private String item;
     private double amount;
     private double itemWeight;
     private double price;
-    
+
     public InventoryItem(String i, double a, double w, double p) {
         item = i;
         amount = a;
@@ -34,7 +33,7 @@ public class InventoryItem implements Serializable{
     public void setPrice(double price) {
         this.price = price;
     }
-    
+
     public String getItem() {
         return item;
     }
@@ -101,7 +100,4 @@ public class InventoryItem implements Serializable{
         return "InventoryItem{" + "item=" + item + ", amount=" + amount + ", itemWeight=" + itemWeight + ", price=" + price + '}';
     }
 
-
-    
-    
 }

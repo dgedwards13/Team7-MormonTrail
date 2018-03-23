@@ -11,25 +11,24 @@ import cit260.team7.mormontrail.control.GameControl;
  *
  * @author rherrerajr
  */
-public class DailyRestView extends View{
-    
-    public DailyRestView(){
+public class DailyRestView extends View {
 
-        super( "\n"
-            +"\n================================================================================"
-            +"\n==                              Daily Rest                                    =="
-            +"\n================================================================================"
-            +"\n\n" + GameControl.buildRestMenu()
-            +"\nHow many days of rest?", GameControl.countRestMenu(), true);
+    public DailyRestView() {
+
+        super("\n"
+                + "\n================================================================================"
+                + "\n==                              Daily Rest                                    =="
+                + "\n================================================================================"
+                + "\n\n" + GameControl.buildRestMenu()
+                + "\nHow many days of rest?", GameControl.countRestMenu(), true);
     }
 
-@Override
+    @Override
     public boolean doAction(String inputs) {
-        
-        
+
         int result = Integer.parseInt(inputs);
         System.out.println(result);
-        
+
         GameControl.setDailyRest(result);
         System.out.println("Successful rest day");
         return true;

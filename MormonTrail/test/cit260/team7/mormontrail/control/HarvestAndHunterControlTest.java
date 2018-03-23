@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
  * @author Savannah
  */
 public class HarvestAndHunterControlTest {
-    
+
     public HarvestAndHunterControlTest() {
     }
 
@@ -31,7 +31,7 @@ public class HarvestAndHunterControlTest {
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
-        
+
         System.out.println("\tTest case 2");
         wagonCapacity = 1000;
         currentWeight = 1000;
@@ -39,7 +39,7 @@ public class HarvestAndHunterControlTest {
         expResult = 0;
         result = HarvestAndHunterControl.calCarryingCapacity(wagonCapacity, currentWeight, huntGatheredItem);
         assertEquals(expResult, result, 0.0);
-        
+
         System.out.println("\tTest case 3");
         wagonCapacity = 1500;
         currentWeight = 2000;
@@ -47,7 +47,7 @@ public class HarvestAndHunterControlTest {
         expResult = -1;
         result = HarvestAndHunterControl.calCarryingCapacity(wagonCapacity, currentWeight, huntGatheredItem);
         assertEquals(expResult, result, 0.0);
-        
+
         System.out.println("\tTest case 4");
         wagonCapacity = 2000;
         currentWeight = -3;
@@ -55,7 +55,7 @@ public class HarvestAndHunterControlTest {
         expResult = -1;
         result = HarvestAndHunterControl.calCarryingCapacity(wagonCapacity, currentWeight, huntGatheredItem);
         assertEquals(expResult, result, 0.0);
-        
+
         System.out.println("\tTest case 5");
         wagonCapacity = 1000;
         currentWeight = 0;
@@ -63,7 +63,7 @@ public class HarvestAndHunterControlTest {
         expResult = 1;
         result = HarvestAndHunterControl.calCarryingCapacity(wagonCapacity, currentWeight, huntGatheredItem);
         assertEquals(expResult, result, 0.0);
-        
+
         System.out.println("\tTest case 6");
         wagonCapacity = 1500;
         currentWeight = 0;
@@ -71,7 +71,7 @@ public class HarvestAndHunterControlTest {
         expResult = 1;
         result = HarvestAndHunterControl.calCarryingCapacity(wagonCapacity, currentWeight, huntGatheredItem);
         assertEquals(expResult, result, 0.0);
-        
+
         System.out.println("\tTest case 7");
         wagonCapacity = 2000;
         currentWeight = 2000;
@@ -80,5 +80,5 @@ public class HarvestAndHunterControlTest {
         result = HarvestAndHunterControl.calCarryingCapacity(wagonCapacity, currentWeight, huntGatheredItem);
         assertEquals(expResult, result, 0.0);
     }
-    
+
 }

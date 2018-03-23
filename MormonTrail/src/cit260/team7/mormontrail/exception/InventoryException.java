@@ -9,7 +9,7 @@ package cit260.team7.mormontrail.exception;
  *
  * @author Shaw-Laptop
  */
-public class InventoryException extends Exception{
+public class InventoryException extends Exception {
 
     public InventoryException() {
     }
@@ -29,5 +29,5 @@ public class InventoryException extends Exception{
     public InventoryException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
-    
+
 }

@@ -13,12 +13,11 @@ import java.util.Objects;
  * @author Astley Shaw, Savannah Fish, Daniel Edwards
  */
 public class FortTown extends RegularSceneType implements Serializable {
-    
 
     private boolean hasHotel;
-    
-    public FortTown(){
-        
+
+    public FortTown() {
+
     }
 
     public boolean isHasHotel() {
@@ -59,8 +58,4 @@ public class FortTown extends RegularSceneType implements Serializable {
         return "FortTown{" + "hasHotel=" + hasHotel + '}';
     }
 
-
-   
-    
-    
 }

@@ -6,11 +6,13 @@
 package cit260.team7.mormontrail.control;
 
 import cit260.team7.mormontrail.model.Character;
+
 /**
  *
  * @author Savannah, rherrerajr
  */
 public class HotelControl {
+
     static Character characterSusan;
     static Character characterSam;
     static Character characterJoseph;
@@ -19,8 +21,8 @@ public class HotelControl {
     static Character characterDaniel;
     static Character characterAstley;
     static Character characterRachel;
-            
-    public static void setCharacter(){
+
+    public static void setCharacter() {
         characterSusan = new Character("Susan", 10, 5, 400, 2, 2);
         characterSam = new Character("Sam", 10, 6, 600, 2, 4);
         characterJoseph = new Character("Joseph", 10, 7, 100, 2, 3);
@@ -30,9 +32,9 @@ public class HotelControl {
         characterAstley = new Character("Astley", 10, 8, 680, 2, 7);
         characterRachel = new Character("Rachel", 10, 5, 500, 2, 8);
     }
-    
-    public static Character[] getCharacter(){
- 
+
+    public static Character[] getCharacter() {
+
         Character[] characterArray = new Character[8];
 
         characterArray[0] = characterSusan;
@@ -43,30 +45,27 @@ public class HotelControl {
         characterArray[5] = characterDaniel;
         characterArray[6] = characterAstley;
         characterArray[7] = characterRachel;
-        
+
         return characterArray;
     }
-    public static String characterHealth(){
-    Character[] characterArray = HotelControl.getCharacter();
-        String list= "";
-        for(int i = 0; i < characterArray.length; i++){
-            for( int j = i + 1; j< characterArray.length; j++){
-            Character tmp;
-            if(characterArray[i].getCurrentHealth()> characterArray[j].getCurrentHealth()){
-             tmp = characterArray[i];
-             characterArray[i] = characterArray[j];
-             characterArray[j] = tmp;
-            }
-            
-            
+
+    public static String characterHealth() {
+        Character[] characterArray = HotelControl.getCharacter();
+        String list = "";
+        for (int i = 0; i < characterArray.length; i++) {
+            for (int j = i + 1; j < characterArray.length; j++) {
+                Character tmp;
+                if (characterArray[i].getCurrentHealth() > characterArray[j].getCurrentHealth()) {
+                    tmp = characterArray[i];
+                    characterArray[i] = characterArray[j];
+                    characterArray[j] = tmp;
+                }
+
             }
         }
         for (Character characterArray1 : characterArray) {
             list += "\n" + characterArray1.getName() + " " + characterArray1.getCurrentHealth();
         }
-      return list;   
+        return list;
+    }
 }
-}
-
-             
-   

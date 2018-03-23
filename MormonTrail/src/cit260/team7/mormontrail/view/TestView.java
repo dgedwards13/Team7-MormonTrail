@@ -4,35 +4,37 @@
  * and open the template in the editor.
  */
 package cit260.team7.mormontrail.view;
+
 import cit260.team7.mormontrail.control.EventControl;
+
 /**
  *
  * @author Shaw-Laptop
  */
-public class TestView extends View{
-    public TestView(){
-    super( "\n"
-            +"\n================================================================================"
-            +"\n==                             Test Menu                                      =="
-            +"\n================================================================================"
-            + "\n\n1 | River Crossing View"
-            + "\n2 | Pace View"
-            + "\n3 | Daily Trail Stop Scene"
-            + "\n4 | General Store View"
-            + "\n5 | Fort or Town Scene"
-            + "\n6 | Map View"
-            + "\n7 | Daily Rest View"
-            + "\n8 | Hunting View"
-            + "\n9 | Indian Raid Test" 
-            + "\n" +  EventControl.indianRaid()
-            , 8, true);
+public class TestView extends View {
+
+    public TestView() {
+        super("\n"
+                + "\n================================================================================"
+                + "\n==                             Test Menu                                      =="
+                + "\n================================================================================"
+                + "\n\n1 | River Crossing View"
+                + "\n2 | Pace View"
+                + "\n3 | Daily Trail Stop Scene"
+                + "\n4 | General Store View"
+                + "\n5 | Fort or Town Scene"
+                + "\n6 | Map View"
+                + "\n7 | Daily Rest View"
+                + "\n8 | Hunting View"
+                + "\n9 | Indian Raid Test"
+                + "\n" + EventControl.indianRaid(),
+                8, true);
     }
-    
-@Override
+
+    @Override
     public boolean doAction(String inputs) {
-        
-        
-        switch(inputs) {
+
+        switch (inputs) {
             case "1":
                 RiverCrossingView riverCrossingView = new RiverCrossingView();
                 riverCrossingView.display();
@@ -49,19 +51,19 @@ public class TestView extends View{
                 GeneralStoreView generalStoreView = new GeneralStoreView();
                 generalStoreView.display();
                 break;
-            case"5":
+            case "5":
                 FortTownSceneView fortTownSceneView = new FortTownSceneView();
                 fortTownSceneView.display();
                 break;
-            case"6":
+            case "6":
                 MapView mapView = new MapView();
                 mapView.display();
                 break;
-            case"7":
+            case "7":
                 DailyRestView dailyRestView = new DailyRestView();
                 dailyRestView.display();
                 break;
-            case"8":
+            case "8":
                 HuntingView huntingView = new HuntingView();
                 huntingView.display();
                 break;
@@ -70,7 +72,7 @@ public class TestView extends View{
                 dailyTrailStopSceneView.display();
                 break;
         }
-           
+
         return true;
     }
 }

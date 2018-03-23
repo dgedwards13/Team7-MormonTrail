@@ -14,25 +14,24 @@ import java.util.Scanner;
  *
  * @author Shaw-Laptop
  */
-       
 public class MainMenuView extends View {
-    
-    public MainMenuView(){
-        super( "\n"
-            +"\n================================================================================"
-            +"\n==                                 Main Menu                                  =="
-            +"\n================================================================================"
-            +"\n\n1| Start game"
-            +"\n2| Help Menu"
-            +"\n3| Save Game"
-            +"\n4| Load Game"
-            +"\n5| Exit", 5, true);
+
+    public MainMenuView() {
+        super("\n"
+                + "\n================================================================================"
+                + "\n==                                 Main Menu                                  =="
+                + "\n================================================================================"
+                + "\n\n1| Start game"
+                + "\n2| Help Menu"
+                + "\n3| Save Game"
+                + "\n4| Load Game"
+                + "\n5| Exit", 5, true);
     }
-   
-@Override
+
+    @Override
     public boolean doAction(String inputs) {
-        
-        switch(inputs) {
+
+        switch (inputs) {
             case "1":
                 InventoryControl.setInventory();
                 HotelControl.setCharacter();
@@ -56,24 +55,24 @@ public class MainMenuView extends View {
                     Scanner keyboard = new Scanner(System.in);
                     System.out.println("Are you sure you want to exit? (y/n)");
                     in = keyboard.nextLine();
-            
+
                     in = in.trim();
-            
-                    if(in.length() < 1){
+
+                    if (in.length() < 1) {
                         System.out.println("You must enter a non-blank value");
                         continue;
                     }
-                
+
                     boolean v = in.equalsIgnoreCase("y") || in.equalsIgnoreCase("n");
-                    
-                    if(v != true) {
-                       System.out.println("You must enter 'Y' or 'N'");
-                      continue;
+
+                    if (v != true) {
+                        System.out.println("You must enter 'Y' or 'N'");
+                        continue;
                     }
-                    
+
                     valid = true;
                 }
-                if(in.equalsIgnoreCase("y")) {
+                if (in.equalsIgnoreCase("y")) {
                     System.out.println("Thank you for playing!");
                     System.exit(0);
                 } else {
@@ -81,15 +80,10 @@ public class MainMenuView extends View {
                     mainMenuView.display();
                 }
                 break;
-                
+
         }
-           
+
         return true;
     }
 
-    
 }
-
-        
-        
- 

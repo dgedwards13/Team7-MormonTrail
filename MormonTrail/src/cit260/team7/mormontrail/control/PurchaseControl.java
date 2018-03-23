@@ -13,6 +13,7 @@ import java.util.Scanner;
  * @author dgedw
  */
 public class PurchaseControl {
+
     public static String PurchaseOxen() throws InventoryException {
         boolean valid = false;
         int numInput = 0;
@@ -31,7 +32,7 @@ public class PurchaseControl {
             System.out.println("You currently have $" + InventoryControl.countItem("money") + ", and " + InventoryControl.countItem("oxen") + " Oxen.");
             String in = keyboard.nextLine();
             in = in.trim();
-            if(in.length() < 1){
+            if (in.length() < 1) {
                 System.out.println("You must enter a non-blank value");
                 continue;
             }
@@ -50,8 +51,8 @@ public class PurchaseControl {
             throw new InventoryException("Transaction failed. Please try again.");
         }
     }
-    
-    public static String PurchaseWagon() throws InventoryException{
+
+    public static String PurchaseWagon() throws InventoryException {
         boolean valid = false;
         int numInput = 0;
         while (valid == false) {
@@ -71,7 +72,7 @@ public class PurchaseControl {
             System.out.println("3 | Large (Holds 2500lbs");
             String in = keyboard.nextLine();
             in = in.trim();
-            if(in.length() < 1){
+            if (in.length() < 1) {
                 throw new InventoryException("You must enter a non-blank value");
             }
             try {
@@ -107,8 +108,8 @@ public class PurchaseControl {
             throw new InventoryException("Transaction failed. Please try again.");
         }
     }
-    
-    public static String PurchaseFood() throws InventoryException{
+
+    public static String PurchaseFood() throws InventoryException {
         boolean valid = false;
         int numInput = 0;
         while (valid == false) {
@@ -126,7 +127,7 @@ public class PurchaseControl {
             System.out.println("You currently have $" + InventoryControl.countItem("money") + ", and " + InventoryControl.countItem("food") + " lbs of food.");
             String in = keyboard.nextLine();
             in = in.trim();
-            if(in.length() < 1){
+            if (in.length() < 1) {
                 System.out.println("You must enter a non-blank value");
                 continue;
             }
@@ -138,15 +139,15 @@ public class PurchaseControl {
                 continue;
             }
         }
-            String buy = InventoryControl.changeInventory("Food", numInput, true);
-            if (buy.equalsIgnoreCase("success!")) {
-                return "Success!";
-            } else {
-                throw new InventoryException("Transaction failed. Please try again.");
-            }
+        String buy = InventoryControl.changeInventory("Food", numInput, true);
+        if (buy.equalsIgnoreCase("success!")) {
+            return "Success!";
+        } else {
+            throw new InventoryException("Transaction failed. Please try again.");
+        }
     }
-    
-    public static String PurchaseParts() throws InventoryException{
+
+    public static String PurchaseParts() throws InventoryException {
         boolean valid = false;
         int numInput = 0;
         while (valid == false) {
@@ -164,7 +165,7 @@ public class PurchaseControl {
             System.out.println("You currently have $" + InventoryControl.countItem("money") + ", and " + InventoryControl.countItem("spare parts") + " spare parts.");
             String in = keyboard.nextLine();
             in = in.trim();
-            if(in.length() < 1){
+            if (in.length() < 1) {
                 System.out.println("You must enter a non-blank value");
                 continue;
             }
@@ -176,15 +177,15 @@ public class PurchaseControl {
                 continue;
             }
         }
-    String buy = InventoryControl.changeInventory("Spare Parts", numInput, true);
-            if (buy.equalsIgnoreCase("success!")) {
-                return "Success!";
-            } else {
-                throw new InventoryException("Transaction failed. Please try again.");
-            }
+        String buy = InventoryControl.changeInventory("Spare Parts", numInput, true);
+        if (buy.equalsIgnoreCase("success!")) {
+            return "Success!";
+        } else {
+            throw new InventoryException("Transaction failed. Please try again.");
+        }
     }
-    
-    public static String purchaseAmmo() throws InventoryException{
+
+    public static String purchaseAmmo() throws InventoryException {
         boolean valid = false;
         int numInput = 0;
         while (valid == false) {
@@ -202,7 +203,7 @@ public class PurchaseControl {
             System.out.println("You currently have $" + InventoryControl.countItem("money") + ", and " + InventoryControl.countItem("ammunition") + " cases of ammunition.");
             String in = keyboard.nextLine();
             in = in.trim();
-            if(in.length() < 1){
+            if (in.length() < 1) {
                 System.out.println("You must enter a non-blank value");
                 continue;
             }
@@ -214,12 +215,12 @@ public class PurchaseControl {
                 continue;
             }
         }
-    
+
         String buy = InventoryControl.changeInventory("Ammunition", numInput, true);
         if (buy.equalsIgnoreCase("success!")) {
-                return "Success!";
-            } else {
-                throw new InventoryException("Transaction failed. Please try again.");
-            }
+            return "Success!";
+        } else {
+            throw new InventoryException("Transaction failed. Please try again.");
+        }
     }
 }

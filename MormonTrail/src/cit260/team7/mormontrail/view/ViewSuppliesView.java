@@ -10,33 +10,34 @@ import cit260.team7.mormontrail.exception.InventoryException;
 import cit260.team7.mormontrail.model.InventoryItem;
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  *
  * @author dgedw
  */
 public class ViewSuppliesView extends View {
-    public ViewSuppliesView(){
+
+    public ViewSuppliesView() {
         super("\n"
-            + "\n================================================================================"
-            + "\n==                               Your Supplies                                =="
-            + "\n================================================================================"
-            + "\n\n" + InventoryControl.buildInvMenu("generalstore")
-            + "\nYou currently have $" + InventoryControl.countItem("money")
-            + "\nWhich item (if any) would you like to sell?", InventoryControl.countInvMenu("generalstore"), true);
+                + "\n================================================================================"
+                + "\n==                               Your Supplies                                =="
+                + "\n================================================================================"
+                + "\n\n" + InventoryControl.buildInvMenu("generalstore")
+                + "\nYou currently have $" + InventoryControl.countItem("money")
+                + "\nWhich item (if any) would you like to sell?", InventoryControl.countInvMenu("generalstore"), true);
     }
 
-        
-@Override
+    @Override
     public boolean doAction(String inputs) {
         InventoryItem[] inventoryArray = InventoryControl.getInventory();
         List<InventoryItem> ownedArray = new ArrayList<>();
         for (InventoryItem inv : inventoryArray) {
-                    if(inv.getAmount() > 0 && !inv.getItem().equalsIgnoreCase("money")) {
-                        ownedArray.add(inv);
-                    }
-                }
+            if (inv.getAmount() > 0 && !inv.getItem().equalsIgnoreCase("money")) {
+                ownedArray.add(inv);
+            }
+        }
         int convert = Integer.parseInt(inputs);
-        int num = convert -1;
+        int num = convert - 1;
         if (num == ownedArray.size()) {
             GeneralStoreView generalStoreView = new GeneralStoreView();
             generalStoreView.display();

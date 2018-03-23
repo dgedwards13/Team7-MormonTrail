@@ -12,14 +12,14 @@ import java.util.Objects;
  *
  * @author Astley Shaw, Savannah Fish, Daniel Edwards
  */
-public class RiverCrossing extends RegularSceneType implements Serializable{
-    
+public class RiverCrossing extends RegularSceneType implements Serializable {
+
     private double depth;
 
-    public RiverCrossing(){
-        
+    public RiverCrossing() {
+
     }
-    
+
     public double getDepth() {
         return depth;
     }
@@ -57,6 +57,5 @@ public class RiverCrossing extends RegularSceneType implements Serializable{
     public String toString() {
         return "RiverCrossing{" + "depth=" + depth + '}';
     }
-    
-    
+
 }

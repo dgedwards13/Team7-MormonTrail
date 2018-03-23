@@ -9,24 +9,24 @@ package cit260.team7.mormontrail.view;
  *
  * @author dgedw
  */
-public class HelpMenuView extends View{
-    
-    public HelpMenuView(){
-         super( "\n"
-            +"\n================================================================================"
-            +"\n==                                 Help Menu                                  =="
-            +"\n================================================================================"
-            +"\n\n1 | Game Objective"
-            +"\n2 | How to Move"
-            +"\n3 | Tips"   
-            +"\n4 | Return to Previous Menu", 4, true);
+public class HelpMenuView extends View {
+
+    public HelpMenuView() {
+        super("\n"
+                + "\n================================================================================"
+                + "\n==                                 Help Menu                                  =="
+                + "\n================================================================================"
+                + "\n\n1 | Game Objective"
+                + "\n2 | How to Move"
+                + "\n3 | Tips"
+                + "\n4 | Return to Previous Menu", 4, true);
     }
-    
-   @Override
+
+    @Override
 
     public boolean doAction(String inputs) {
-        
-        switch(inputs) {
+
+        switch (inputs) {
             case "1":
                 System.out.println("Objective");
                 System.out.println("You are a Mormon pioneer and will begin your journey in Nauvoo, Illinois. Your destination is Salt Lake Valley.");
@@ -55,9 +55,8 @@ public class HelpMenuView extends View{
                 mainMenuView.display();
                 break;
         }
-           
+
         return true;
     }
-    
-    
+
 }

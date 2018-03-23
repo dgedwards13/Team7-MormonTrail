@@ -12,7 +12,6 @@ import cit260.team7.mormontrail.model.Game;
  *
  * @author Astley Shaw, Savannah Fish, Daniel Edwards
  */
-
 //import cit260.team7.mormontrail.model.Character;
 //import cit260.team7.mormontrail.model.Event;
 //import cit260.team7.mormontrail.model.GeneralStoreItem;
@@ -22,9 +21,8 @@ import cit260.team7.mormontrail.model.Game;
 //import cit260.team7.mormontrail.model.RegularSceneType;
 //import cit260.team7.mormontrail.control.InventoryControl;
 //import java.util.Arrays;
-
-
 public class MormonTrail {
+
     public static Game game;
 
     public static Game getGame() {
@@ -35,41 +33,26 @@ public class MormonTrail {
         MormonTrail.game = game;
     }
 
-
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args){
-        try{
-        GrabNameView grabNameView = new GrabNameView();
-        grabNameView.display();
+    public static void main(String[] args) {
+        try {
+            GrabNameView grabNameView = new GrabNameView();
+            grabNameView.display();
+        } catch (Throwable e) {
+            System.out.println("An error has occurred");
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+            System.exit(0);
         }
-        catch(Throwable e){
-          System.out.println("An error has occurred"); 
-          System.out.println(e.getMessage());
-          e.printStackTrace();
-          System.exit(0);
-        }
-    } 
-      
+    }
+
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************TEST FOR METHOD*************************/
-
+/**
+ * ****************************TEST FOR METHOD************************
+ */
 //Character characterOne = new Character();
 //        
 //         characterOne.setName("Savannah Fish");

@@ -14,7 +14,7 @@ import cit260.team7.mormontrail.model.TrailStopScene;
  * @author Savannah
  */
 public class MapControl {
-    
+
     static FortTown loc1;
     static TrailStopScene loc2;
     static RiverCrossing loc3;
@@ -41,12 +41,12 @@ public class MapControl {
     static RiverCrossing loc24;
     static TrailStopScene loc25;
     static FortTown loc26;
-    
+
     public static String getLoc() {
         return "\n=  |        F  ^  ^ R              F R ^  F   R     T  T   R     T  T         X=";
     }
-    
-    public static void setLocation(){
+
+    public static void setLocation() {
         loc1 = new FortTown();
         loc2 = new TrailStopScene();
         loc3 = new RiverCrossing();

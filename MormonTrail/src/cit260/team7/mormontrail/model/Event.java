@@ -12,8 +12,8 @@ import java.util.Objects;
  *
  * @author Astley Shaw, Savannah Fish, Daniel Edwards
  */
-public class Event implements Serializable{
-    
+public class Event implements Serializable {
+
     private String description;
     private String charImpact;
     private double charHealthImpact;
@@ -22,12 +22,12 @@ public class Event implements Serializable{
     private double inventoryAmountImpact;
     private int distanceImpact;
     private double paceImpact;
-    
-    public Event(){
-        
+
+    public Event() {
+
     }
-    
-    public Event(String d, String cI, double cHI, double oHI, String iI, double iAI, int dI, double pI){
+
+    public Event(String d, String cI, double cHI, double oHI, String iI, double iAI, int dI, double pI) {
         this.description = d;
         this.charImpact = cI;
         this.charHealthImpact = cHI;
@@ -160,5 +160,4 @@ public class Event implements Serializable{
         return "Event{" + "description=" + description + ", charImpact=" + charImpact + ", charHealthImpact=" + charHealthImpact + ", oxenHealthImpact=" + oxenHealthImpact + ", inventoryImpact=" + inventoryImpact + ", inventoryAmountImpact=" + inventoryAmountImpact + ", distanceImpact=" + distanceImpact + ", paceImpact=" + paceImpact + '}';
     }
 
-    
 }

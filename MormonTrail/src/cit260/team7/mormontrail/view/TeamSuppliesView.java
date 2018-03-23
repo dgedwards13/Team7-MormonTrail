@@ -8,32 +8,31 @@ package cit260.team7.mormontrail.view;
 import cit260.team7.mormontrail.control.InventoryControl;
 import cit260.team7.mormontrail.exception.InventoryException;
 
-
-
 /**
  *
  * @author Shaw-Laptop
  */
 public class TeamSuppliesView extends View {
-    public TeamSuppliesView() throws InventoryException{
-     super( "\n"
-            +"\n================================================================================"
-            +"\n==                             Team Supplies                                  =="    
-            +"\n================================================================================"
-            +"\n" + InventoryControl.order()
-            + "\n1 | return to game play"
-            , 1, true);
+
+    public TeamSuppliesView() throws InventoryException {
+        super("\n"
+                + "\n================================================================================"
+                + "\n==                             Team Supplies                                  =="
+                + "\n================================================================================"
+                + "\n" + InventoryControl.order()
+                + "\n1 | return to game play",
+                1, true);
     }
-    
+
     @Override
-    public boolean doAction(String inputs){
-        switch(inputs) {
+    public boolean doAction(String inputs) {
+        switch (inputs) {
             case "1":
                 GamePlayView gamePlayView = new GamePlayView();
                 gamePlayView.display();
-                break; 
-      
+                break;
+
+        }
+        return true;
     }
-      return true;
-}
 }

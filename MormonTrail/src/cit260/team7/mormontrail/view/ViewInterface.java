@@ -10,7 +10,10 @@ package cit260.team7.mormontrail.view;
  * @author Shaw-Laptop
  */
 public interface ViewInterface {
+
     public void display();
+
     public String getInputs(int numOfInputs);
+
     public boolean doAction(String value);
 }

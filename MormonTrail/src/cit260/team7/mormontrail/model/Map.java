@@ -13,11 +13,11 @@ import java.util.Objects;
  *
  * @author Astley Shaw, Savannah Fish, Daniel Edwards
  */
-public class Map implements Serializable{
-    
+public class Map implements Serializable {
+
     private ArrayList locations;
-    
-    public Map(){
+
+    public Map() {
     }
 
     public ArrayList getLocations() {
@@ -58,5 +58,4 @@ public class Map implements Serializable{
         return "Map{" + "locations=" + locations + '}';
     }
 
-   
 }

@@ -10,11 +10,13 @@ import static cit260.team7.mormontrail.control.InventoryControl.getInventory;
 import cit260.team7.mormontrail.model.InventoryItem;
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  *
  * @author Savannah
  */
 public class EventControl {
+
     static Event event1;
     static Event event2;
     static Event event3;
@@ -29,8 +31,8 @@ public class EventControl {
     static Event event12;
     static Event event13;
     static Event event14;
-            
-    public static void setEvents(){
+
+    public static void setEvents() {
         event1 = new Event("It's a miracle! You found a water spring.", "", 0, 0, "", 0, 0, 1);
         event2 = new Event("It's a miracle! You found bread nearby a tree.", "", 0, 0, "", 0, 0, 1);
         event3 = new Event("It's a miracle! You found money along the trail.", "", 0, 0, "", 0, 0, 1);
@@ -46,9 +48,9 @@ public class EventControl {
         event13 = new Event("Oh no! You got malaria.", "", 0, 0, "", 0, 0, 1);
         event14 = new Event("Oh no! You died of consumption.", "", 0, 0, "", 0, 0, 1);
     }
-    
-    public static Event[] getEvents(){
- 
+
+    public static Event[] getEvents() {
+
         Event[] eventArray = new Event[14];
 
         eventArray[0] = event1;
@@ -65,41 +67,38 @@ public class EventControl {
         eventArray[11] = event12;
         eventArray[12] = event13;
         eventArray[13] = event14;
-   
-        
+
         return eventArray;
-        
+
     }
-    
+
 //    public static int getRandomEvent(Event[] eventArray){
 //        int rnd = new Random().nextInt(array.length);
 //        return eventArray[rnd];
 //    }
-    
     //if eventArray[10]{
-        public static String indianRaid(){
-            InventoryItem[] inventoryArray = InventoryControl.getInventory();
-            List<InventoryItem> ownedArray = new ArrayList<>();
-            for (InventoryItem inv : inventoryArray) {
-                    if(inv.getAmount() > 0 && !inv.getItem().equalsIgnoreCase("money")) {
-                        ownedArray.add(inv);
-                    }
-                }
-            InventoryItem stolen = inventoryArray[5];
-            //Get Max Value Item
-            int invLength = ownedArray.size();
-            double maxPrice = 0;
-            maxPrice = Integer.MIN_VALUE;
-            for(int i=0; i < invLength; i++){
-                double price = ownedArray.get(i).getPrice();
-                if( price > maxPrice){
-                    stolen = ownedArray.get(i);
-                    maxPrice = price;
-                }
+    public static String indianRaid() {
+        InventoryItem[] inventoryArray = InventoryControl.getInventory();
+        List<InventoryItem> ownedArray = new ArrayList<>();
+        for (InventoryItem inv : inventoryArray) {
+            if (inv.getAmount() > 0 && !inv.getItem().equalsIgnoreCase("money")) {
+                ownedArray.add(inv);
             }
-            //get rid of item stolen
-            stolen.setAmount(0);
-            return "The indian's stole your " + stolen.getItem();
         }
+        InventoryItem stolen = inventoryArray[5];
+        //Get Max Value Item
+        int invLength = ownedArray.size();
+        double maxPrice = 0;
+        maxPrice = Integer.MIN_VALUE;
+        for (int i = 0; i < invLength; i++) {
+            double price = ownedArray.get(i).getPrice();
+            if (price > maxPrice) {
+                stolen = ownedArray.get(i);
+                maxPrice = price;
+            }
+        }
+        //get rid of item stolen
+        stolen.setAmount(0);
+        return "The indian's stole your " + stolen.getItem();
+    }
 }
-

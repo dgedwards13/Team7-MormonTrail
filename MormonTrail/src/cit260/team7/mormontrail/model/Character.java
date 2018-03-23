@@ -7,12 +7,13 @@ package cit260.team7.mormontrail.model;
 
 import java.io.Serializable;
 import java.util.Objects;
+
 /**
  *
  * @author Astley Shaw, Savannah Fish, Daniel Edwards
  */
-public class Character implements Serializable{
- 
+public class Character implements Serializable {
+
     private String name;
     private double money;
     private double huntingSkill;
@@ -20,8 +21,7 @@ public class Character implements Serializable{
     private double dailyStaminaDraw;
     private double currentHealth;
 
-    
-    public Character(String charName, double charMoney, double charHuntingSkill, double charGatheringSkill, double charDailyStaminaDraw, double charCurrentHealth){
+    public Character(String charName, double charMoney, double charHuntingSkill, double charGatheringSkill, double charDailyStaminaDraw, double charCurrentHealth) {
         name = charName;
         money = charMoney;
         huntingSkill = charHuntingSkill;
@@ -29,7 +29,7 @@ public class Character implements Serializable{
         dailyStaminaDraw = charDailyStaminaDraw;
         currentHealth = charCurrentHealth;
     }
-    
+
     public String getName() {
         return name;
     }
@@ -37,7 +37,7 @@ public class Character implements Serializable{
     public void setName(String name) {
         this.name = name;
     }
-    
+
     public double getMoney() {
         return money;
     }
@@ -128,7 +128,4 @@ public class Character implements Serializable{
         return "Character{" + "name=" + name + ", money=" + money + ", huntingSkill=" + huntingSkill + ", gatheringSkill=" + gatheringSkill + ", dailyStaminaDraw=" + dailyStaminaDraw + ", currentHealth=" + currentHealth + '}';
     }
 
-    
-    
 }
-

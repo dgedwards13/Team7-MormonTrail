@@ -5,30 +5,30 @@
  */
 package cit260.team7.mormontrail.view;
 
-
 /**
  *
  * @author dgedw
  */
 public class GeneralStoreView extends View {
+
     public GeneralStoreView() {
         super("\n"
-            + "\n================================================================================"
-            + "\n==                               GENERAL STORE                                =="
-            + "\n==                                                                            =="
-            + "\n==  Welcome to the General Store! We have all the supplies that you may need  =="
-            + "\n==   for your journey! Stock up now, because you never know when you'll get   =="
-            + "\n==                              another chance!                               =="
-            + "\n================================================================================"
-            + "\n\n"
-            + "\n1 | View or Sell Current Supplies"
-            + "\n2 | Buy Supplies"
-            + "\n3 | Exit Store", 3, true);
+                + "\n================================================================================"
+                + "\n==                               GENERAL STORE                                =="
+                + "\n==                                                                            =="
+                + "\n==  Welcome to the General Store! We have all the supplies that you may need  =="
+                + "\n==   for your journey! Stock up now, because you never know when you'll get   =="
+                + "\n==                              another chance!                               =="
+                + "\n================================================================================"
+                + "\n\n"
+                + "\n1 | View or Sell Current Supplies"
+                + "\n2 | Buy Supplies"
+                + "\n3 | Exit Store", 3, true);
     }
-    
-@Override
+
+    @Override
     public boolean doAction(String inputs) {
-           switch(inputs) {
+        switch (inputs) {
             case "1":
                 ViewSuppliesView viewSuppliesView = new ViewSuppliesView();
                 viewSuppliesView.display();
@@ -45,4 +45,3 @@ public class GeneralStoreView extends View {
         return true;
     }
 }
-

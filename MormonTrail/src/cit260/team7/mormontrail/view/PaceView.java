@@ -11,23 +11,22 @@ import cit260.team7.mormontrail.control.GameControl;
  *
  * @author Shaw-Laptop
  */
-public class PaceView extends View{
-    
-    public PaceView(){
-      super( "\n"
-            + "\n================================================================================"
-            + "\n==                            Set Team Pace                                   =="
-            + "\n==                                                                            =="
-            + "\n==                       How fast would you like to go?                       =="
-            + "\n==                  (You may type \"slow\" \"medium\" or \"fast\")                  =="
-            + "\n================================================================================",0, false); 
-    }
-    
+public class PaceView extends View {
 
-@Override
+    public PaceView() {
+        super("\n"
+                + "\n================================================================================"
+                + "\n==                            Set Team Pace                                   =="
+                + "\n==                                                                            =="
+                + "\n==                       How fast would you like to go?                       =="
+                + "\n==                  (You may type \"slow\" \"medium\" or \"fast\")                  =="
+                + "\n================================================================================", 0, false);
+    }
+
+    @Override
     public boolean doAction(String inputs) {
-        
-        switch(inputs) {
+
+        switch (inputs) {
             case "slow":
                 GameControl.setPace(1);
                 System.out.println("pace set to slow");
@@ -47,13 +46,8 @@ public class PaceView extends View{
                 gamePlayView.display();
                 break;
         }
-           
+
         return true;
     }
 
-   
 }
-
-        
-        
- 

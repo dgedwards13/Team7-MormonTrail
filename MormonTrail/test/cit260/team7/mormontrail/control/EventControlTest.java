@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
  * @author Savannah
  */
 public class EventControlTest {
-    
+
     public EventControlTest() {
     }
 
@@ -26,7 +26,7 @@ public class EventControlTest {
         System.out.println("setEvents");
         EventControl.setEvents();
         // TODO review the generated test code and remove the default call to fail.
-        }
+    }
 
     /**
      * Test of getEvents method, of class EventControl.
@@ -38,7 +38,7 @@ public class EventControlTest {
         Event[] result = EventControl.getEvents();
         assertArrayEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        
+
     }
 
     /**
@@ -52,5 +52,5 @@ public class EventControlTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     }
-    
+
 }

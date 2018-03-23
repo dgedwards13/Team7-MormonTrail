@@ -13,12 +13,12 @@ import java.util.Objects;
  *
  * @author Astley Shaw, Savannah Fish, Daniel Edwards
  */
-public class Hotel implements Serializable{
-    
+public class Hotel implements Serializable {
+
     private Character[] availableCharaters;
-    
-    public Hotel(){
-        
+
+    public Hotel() {
+
     }
 
     public Character[] getAvailableCharaters() {
@@ -58,6 +58,5 @@ public class Hotel implements Serializable{
     public String toString() {
         return "Hotel{" + "availableCharaters=" + availableCharaters + '}';
     }
-    
-    
+
 }

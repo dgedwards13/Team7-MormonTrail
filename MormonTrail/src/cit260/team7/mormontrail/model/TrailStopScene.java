@@ -12,15 +12,15 @@ import java.util.Objects;
  *
  * @author Astley Shaw, Savannah Fish, Daniel Edwards
  */
-public class TrailStopScene extends RegularSceneType implements Serializable{
-    
+public class TrailStopScene extends RegularSceneType implements Serializable {
+
     private boolean hasNearbyTown;
     private String nearbyTownName;
     private boolean hasNearbyFort;
     private String nearbyFortName;
-    
-    public TrailStopScene(){
-        
+
+    public TrailStopScene() {
+
     }
 
     public boolean isHasNearbyTown() {
@@ -96,6 +96,5 @@ public class TrailStopScene extends RegularSceneType implements Serializable{
     public String toString() {
         return "TrailStopScene{" + "hasNearbyTown=" + hasNearbyTown + ", nearbyTownName=" + nearbyTownName + ", hasNearbyFort=" + hasNearbyFort + ", nearbyFortName=" + nearbyFortName + '}';
     }
-    
-    
+
 }

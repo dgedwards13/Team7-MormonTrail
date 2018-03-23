@@ -13,11 +13,8 @@ import java.util.Objects;
  *
  * @author Astley Shaw, Savannah Fish, Daniel Edwards
  */
+public class Game implements Serializable {
 
-
-public class Game implements Serializable{
-    
-     
     private double dayOnTrail;
     private double pace;
     private double milesTraveled;
@@ -25,8 +22,8 @@ public class Game implements Serializable{
     private InventoryItem[] InventoryArray;
     private Event[] EventArray;
 
-    public Game(){
-        
+    public Game() {
+
     }
 
     public double getDayOnTrail() {
@@ -127,7 +124,4 @@ public class Game implements Serializable{
         return "Game{" + "dayOnTrail=" + dayOnTrail + ", pace=" + pace + ", milesTraveled=" + milesTraveled + ", player=" + player + ", InventoryArray=" + InventoryArray + ", EventArray=" + EventArray + '}';
     }
 
-   
-
-   
 }

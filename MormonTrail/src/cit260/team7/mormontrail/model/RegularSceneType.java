@@ -12,14 +12,14 @@ import java.util.Objects;
  *
  * @author Astley Shaw, Savannah Fish, Daniel Edwards
  */
-public class RegularSceneType implements Serializable{
-    
+public class RegularSceneType implements Serializable {
+
     private String name;
     private String description;
     private double coordinates;
-    
-    public RegularSceneType(){
-        
+
+    public RegularSceneType() {
+
     }
 
     public String getDescription() {
@@ -79,12 +79,9 @@ public class RegularSceneType implements Serializable{
         return true;
     }
 
-   
-
     @Override
     public String toString() {
         return "RegularSceneType{" + "description=" + description + ", name=" + name + ", coordinates=" + coordinates + '}';
     }
-    
-    
+
 }

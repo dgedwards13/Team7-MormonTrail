@@ -13,42 +13,41 @@ import cit260.team7.mormontrail.exception.InventoryException;
  * @author dgedw
  */
 public class GamePlayView extends View {
-    
-    public GamePlayView(){
-        
-        super( "\n"
-            +"\n================================================================================"
-            +"\n==                             Game Menu                                      ==" 
-//            This function will get the play information and display it.    
-            + GameControl.playerData()    
-            +"\n================================================================================"
-            + "\n"
-            + "\n1 | Team Status"
-            + "\n2 | Team Supplies"
-            + "\n3 | Set Team Pace"
-            + "\n4 | Main Menu"
-            + "\n5 | Help Menu"
-            + "\n6 | View map"
-            + "\n7 | Test menu"    
-            , 7, true);
+
+    public GamePlayView() {
+
+        super("\n"
+                + "\n================================================================================"
+                + "\n==                             Game Menu                                      =="
+                //            This function will get the play information and display it.    
+                + GameControl.playerData()
+                + "\n================================================================================"
+                + "\n"
+                + "\n1 | Team Status"
+                + "\n2 | Team Supplies"
+                + "\n3 | Set Team Pace"
+                + "\n4 | Main Menu"
+                + "\n5 | Help Menu"
+                + "\n6 | View map"
+                + "\n7 | Test menu",
+                7, true);
     }
-    
-@Override
+
+    @Override
     public boolean doAction(String inputs) {
-        
-        
-        switch(inputs) {
+
+        switch (inputs) {
             case "1":
                 TeamStatusView teamStatusView = new TeamStatusView();
                 teamStatusView.display();
                 break;
             case "2":
                 TeamSuppliesView teamSuppliesView = null;
-        try {
-            teamSuppliesView = new TeamSuppliesView();
-        } catch (InventoryException e) {
-            System.out.println(e.getMessage());
-        }
+                try {
+                    teamSuppliesView = new TeamSuppliesView();
+                } catch (InventoryException e) {
+                    System.out.println(e.getMessage());
+                }
                 teamSuppliesView.display();
                 break;
             case "3":
@@ -59,19 +58,19 @@ public class GamePlayView extends View {
                 MainMenuView mainMenuView = new MainMenuView();
                 mainMenuView.display();
                 break;
-            case"5":
+            case "5":
                 HelpMenuView helpMenuView = new HelpMenuView();
                 helpMenuView.display();
                 break;
-            case"6":
+            case "6":
                 MapView mapView = new MapView();
                 mapView.display();
                 break;
-            case"7":
+            case "7":
                 TestView testView = new TestView();
                 testView.display();
         }
-           
+
         return true;
     }
 }

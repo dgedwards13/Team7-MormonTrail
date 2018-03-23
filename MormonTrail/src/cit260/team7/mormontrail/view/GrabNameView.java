@@ -9,15 +9,16 @@ package cit260.team7.mormontrail.view;
  *
  * @author Savannah
  */
-public class GrabNameView extends View{
-    
-    public GrabNameView(){
+public class GrabNameView extends View {
+
+    public GrabNameView() {
         super("\n"
-                +"Please enter your name" ,0 ,false
+                + "Please enter your name", 0, false
         );
     }
+
     @Override
-    public boolean doAction(String inputs){
+    public boolean doAction(String inputs) {
         StartProgramView startProgramView = new StartProgramView(inputs);
         startProgramView.display();
         return true;
