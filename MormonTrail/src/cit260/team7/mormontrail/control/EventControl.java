@@ -8,6 +8,7 @@ package cit260.team7.mormontrail.control;
 import cit260.team7.mormontrail.model.Event;
 import static cit260.team7.mormontrail.control.InventoryControl.getInventory;
 import cit260.team7.mormontrail.model.InventoryItem;
+import cit260.team7.mormontrail.exception.EventException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +16,7 @@ import java.util.List;
  *
  * @author Savannah
  */
+
 public class EventControl {
 
     static Event event1;
@@ -77,7 +79,7 @@ public class EventControl {
 //        return eventArray[rnd];
 //    }
     //if eventArray[10]{
-    public static String indianRaid() {
+    public static String indianRaid() throws EventException{
         InventoryItem[] inventoryArray = InventoryControl.getInventory();
         List<InventoryItem> ownedArray = new ArrayList<>();
         for (InventoryItem inv : inventoryArray) {
@@ -95,10 +97,16 @@ public class EventControl {
             if (price > maxPrice) {
                 stolen = ownedArray.get(i);
                 maxPrice = price;
-            }
+            }  
         }
-        //get rid of item stolen
+        if(maxPrice !=0){
+            //get rid of item stolen
         stolen.setAmount(0);
         return "The indian's stole your " + stolen.getItem();
+        }
+        else{
+        throw new EventException("What did you do wrong? You should never see this message.");
+        }
+        
     }
 }

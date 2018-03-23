@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package cit260.team7.mormontrail.view;
-
+import cit260.team7.mormontrail.exception.EventException;
 import cit260.team7.mormontrail.control.EventControl;
 
 /**
@@ -13,7 +13,7 @@ import cit260.team7.mormontrail.control.EventControl;
  */
 public class TestView extends View {
 
-    public TestView() {
+    public TestView() throws EventException {
         super("\n"
                 + "\n================================================================================"
                 + "\n==                             Test Menu                                      =="
