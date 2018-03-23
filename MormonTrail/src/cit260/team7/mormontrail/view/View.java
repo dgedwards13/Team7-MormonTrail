@@ -6,7 +6,6 @@
 package cit260.team7.mormontrail.view;
 
 import java.util.Scanner;
-import cit260.team7.mormontrail.exception.ViewException;
 
 /**
  *
