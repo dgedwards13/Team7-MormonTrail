@@ -28,6 +28,7 @@ public class HuntingView extends View {
 
     @Override
     public boolean doAction(String inputs) {
+        try{
         String hunting = HarvestAndHunterControl.hunt();
         if (inputs.equals(hunting)) {
             //success
@@ -41,5 +42,9 @@ public class HuntingView extends View {
             dailyTrailStop.display();
         }
         return true;
+        }catch(HarvestAndHunterException e){
+            System.out.println(e.getMessage());
+            return false;
+        }
     }
 }

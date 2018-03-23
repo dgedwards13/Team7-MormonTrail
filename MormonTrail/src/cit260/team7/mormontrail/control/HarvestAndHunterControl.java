@@ -4,21 +4,20 @@
  * and open the template in the editor.
  */
 package cit260.team7.mormontrail.control;
-
+import cit260.team7.mormontrail.exception.HarvestAndHunterException;
 /**
  *
  * @author Savannah
  */
 public class HarvestAndHunterControl {
 
-    public static double calCarryingCapacity(double wagonCapacity, double currentWeight, double huntGatheredItem) {
+    public static double calCarryingCapacity(double wagonCapacity, double currentWeight, double huntGatheredItem) throws HarvestAndHunterException {
         double carryCapacity;
 //Get wagonCapacity
 //Check the currentWeight
 //If invalid return error message
-        if (currentWeight < 0 || currentWeight > wagonCapacity) {
-            carryCapacity = -1;
-            return carryCapacity;
+        if (currentWeight < 0 || currentWeight > wagonCapacity){
+            throw new HarvestAndHunterException("Error: Please restart game.");
         }
 ////Get space available
         double spaceAvailable = wagonCapacity - currentWeight;
