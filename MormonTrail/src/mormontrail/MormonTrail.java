@@ -44,8 +44,11 @@ public class MormonTrail {
         GrabNameView grabNameView = new GrabNameView();
         grabNameView.display();
         }
-        catch(){
-            
+        catch(Throwable e){
+          System.out.println("An error has occurred"); 
+          System.out.println(e.getMessage());
+          e.printStackTrace();
+          System.exit(0);
         }
     } 
       

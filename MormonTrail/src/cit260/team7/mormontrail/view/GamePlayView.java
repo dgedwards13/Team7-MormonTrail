@@ -6,6 +6,8 @@
 package cit260.team7.mormontrail.view;
 
 import cit260.team7.mormontrail.control.GameControl;
+import cit260.team7.mormontrail.exception.InventoryException;
+
 /**
  *
  * @author dgedw
@@ -41,7 +43,12 @@ public class GamePlayView extends View {
                 teamStatusView.display();
                 break;
             case "2":
-                TeamSuppliesView teamSuppliesView = new TeamSuppliesView();
+                TeamSuppliesView teamSuppliesView = null;
+        try {
+            teamSuppliesView = new TeamSuppliesView();
+        } catch (InventoryException e) {
+            System.out.println(e.getMessage());
+        }
                 teamSuppliesView.display();
                 break;
             case "3":
