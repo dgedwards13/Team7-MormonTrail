@@ -35,8 +35,13 @@ public class PurchaseControl {
                 System.out.println("You must enter a non-blank value");
                 continue;
             }
-            numInput = Integer.parseInt(in);
-            valid = true;
+            try {
+                numInput = Integer.parseInt(in);
+                valid = true;
+            } catch (NumberFormatException e) {
+                System.out.println("\nYou must enter a valid number");
+                continue;
+            }
         }
         String buy = InventoryControl.changeInventory("Oxen", numInput, true);
         if (buy.equalsIgnoreCase("success!")) {
@@ -69,8 +74,13 @@ public class PurchaseControl {
             if(in.length() < 1){
                 throw new InventoryException("You must enter a non-blank value");
             }
-            numInput = Integer.parseInt(in);
-            valid = true;
+            try {
+                numInput = Integer.parseInt(in);
+                valid = true;
+            } catch (NumberFormatException e) {
+                System.out.println("\nYou must enter a valid number");
+                continue;
+            }
         }
         if (numInput == 1) {
             String buy = InventoryControl.changeInventory("Small Wagon", 1, true);
@@ -96,5 +106,120 @@ public class PurchaseControl {
         } else {
             throw new InventoryException("Transaction failed. Please try again.");
         }
+    }
+    
+    public static String PurchaseFood() throws InventoryException{
+        boolean valid = false;
+        int numInput = 0;
+        while (valid == false) {
+            Scanner keyboard = new Scanner(System.in);
+            System.out.println("================================================================================");
+            System.out.println("==                               GENERAL STORE                                ==");
+            System.out.println("==                                                                            ==");
+            System.out.println("==                                 -- FOOD --                                 ==");
+            System.out.println("==            How many pounds of food would you like to purchase?             ==");
+            System.out.println("==           We reccommend at least 50lbs per person in your party.           ==");
+            System.out.println("==                                                                            ==");
+            System.out.println("================================================================================");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("You currently have $" + InventoryControl.countItem("money") + ", and " + InventoryControl.countItem("food") + " lbs of food.");
+            String in = keyboard.nextLine();
+            in = in.trim();
+            if(in.length() < 1){
+                System.out.println("You must enter a non-blank value");
+                continue;
+            }
+            try {
+                numInput = Integer.parseInt(in);
+                valid = true;
+            } catch (NumberFormatException e) {
+                System.out.println("\nYou must enter a valid number");
+                continue;
+            }
+        }
+            String buy = InventoryControl.changeInventory("Food", numInput, true);
+            if (buy.equalsIgnoreCase("success!")) {
+                return "Success!";
+            } else {
+                throw new InventoryException("Transaction failed. Please try again.");
+            }
+    }
+    
+    public static String PurchaseParts() throws InventoryException{
+        boolean valid = false;
+        int numInput = 0;
+        while (valid == false) {
+            Scanner keyboard = new Scanner(System.in);
+            System.out.println("================================================================================");
+            System.out.println("==                               GENERAL STORE                                ==");
+            System.out.println("==                                                                            ==");
+            System.out.println("==                             -- SPARE PARTS --                              ==");
+            System.out.println("==             How many spare parts would you like to purchase?               ==");
+            System.out.println("==        We reccommend having a couple extra. Better safe than sorry!        ==");
+            System.out.println("==                                                                            ==");
+            System.out.println("================================================================================");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("You currently have $" + InventoryControl.countItem("money") + ", and " + InventoryControl.countItem("spare parts") + " spare parts.");
+            String in = keyboard.nextLine();
+            in = in.trim();
+            if(in.length() < 1){
+                System.out.println("You must enter a non-blank value");
+                continue;
+            }
+            try {
+                numInput = Integer.parseInt(in);
+                valid = true;
+            } catch (NumberFormatException e) {
+                System.out.println("\nYou must enter a valid number");
+                continue;
+            }
+        }
+    String buy = InventoryControl.changeInventory("Spare Parts", numInput, true);
+            if (buy.equalsIgnoreCase("success!")) {
+                return "Success!";
+            } else {
+                throw new InventoryException("Transaction failed. Please try again.");
+            }
+    }
+    
+    public static String purchaseAmmo() throws InventoryException{
+        boolean valid = false;
+        int numInput = 0;
+        while (valid == false) {
+            Scanner keyboard = new Scanner(System.in);
+            System.out.println("================================================================================");
+            System.out.println("==                               GENERAL STORE                                ==");
+            System.out.println("==                                                                            ==");
+            System.out.println("==                              -- AMMUNITION --                              ==");
+            System.out.println("==         How many cases of ammunition would you like to purchase?           ==");
+            System.out.println("==         We reccommend at least 1 case per day you plan to travel.          ==");
+            System.out.println("==                                                                            ==");
+            System.out.println("================================================================================");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("You currently have $" + InventoryControl.countItem("money") + ", and " + InventoryControl.countItem("ammunition") + " cases of ammunition.");
+            String in = keyboard.nextLine();
+            in = in.trim();
+            if(in.length() < 1){
+                System.out.println("You must enter a non-blank value");
+                continue;
+            }
+            try {
+                numInput = Integer.parseInt(in);
+                valid = true;
+            } catch (NumberFormatException e) {
+                System.out.println("\nYou must enter a valid number");
+                continue;
+            }
+        }
+    
+        String buy = InventoryControl.changeInventory("Ammunition", numInput, true);
+        if (buy.equalsIgnoreCase("success!")) {
+                return "Success!";
+            } else {
+                throw new InventoryException("Transaction failed. Please try again.");
+            }
     }
 }
