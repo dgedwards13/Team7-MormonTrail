@@ -5,6 +5,8 @@
  */
 package cit260.team7.mormontrail.control;
 
+import cit260.team7.mormontrail.exception.LocationException;
+
 /**
  *
  * @author rherrerajr
@@ -15,7 +17,7 @@ public class LocationControl {
         return "fort";
     }
 
-    public static String fortTown() {
+    public static String fortTown() throws LocationException {
         String nearby = nearby();
         String output = "";
         if (nearby.equals("town")) {
@@ -30,6 +32,7 @@ public class LocationControl {
             output += "\n\n1 | Visit the General Store";
             output += "\n2 | Return to the Trail";
             output += "\n3 | Back to GamePlayView";
+            throw new LocationException("We encountered an error. Please restart.");
         }
         return output;
     }

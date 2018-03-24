@@ -5,6 +5,7 @@
  */
 package cit260.team7.mormontrail.control;
 
+import cit260.team7.mormontrail.exception.HotelException;
 import cit260.team7.mormontrail.model.Character;
 
 /**
@@ -49,7 +50,7 @@ public class HotelControl {
         return characterArray;
     }
 
-    public static String characterHealth() {
+    public static String characterHealth() throws HotelException {
         Character[] characterArray = HotelControl.getCharacter();
         String list = "";
         for (int i = 0; i < characterArray.length; i++) {
@@ -59,6 +60,7 @@ public class HotelControl {
                     tmp = characterArray[i];
                     characterArray[i] = characterArray[j];
                     characterArray[j] = tmp;
+                    throw new HotelException("Unable to continue. Please restart game.");
                 }
 
             }
