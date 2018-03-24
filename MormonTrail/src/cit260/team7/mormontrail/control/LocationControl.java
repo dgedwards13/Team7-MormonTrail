@@ -32,7 +32,7 @@ public class LocationControl {
             output += "\n\n1 | Visit the General Store";
             output += "\n2 | Return to the Trail";
             output += "\n3 | Back to GamePlayView";
-            throw new LocationException("We encountered an error. Please restart.");
+            throw new LocationException("You have encountered and error.");
         }
         return output;
     }

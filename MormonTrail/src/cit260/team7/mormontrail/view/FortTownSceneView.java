@@ -6,6 +6,9 @@
 package cit260.team7.mormontrail.view;
 
 import cit260.team7.mormontrail.control.LocationControl;
+import cit260.team7.mormontrail.exception.LocationException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -14,7 +17,7 @@ import cit260.team7.mormontrail.control.LocationControl;
  */
 public class FortTownSceneView extends View {
 
-    public FortTownSceneView() {
+    public FortTownSceneView() throws LocationException {
         super("\n"
                 + "\n================================================================================"
                 + LocationControl.fortTown(),
@@ -24,7 +27,13 @@ public class FortTownSceneView extends View {
 
     @Override
     public boolean doAction(String inputs) {
-        String fortTown = LocationControl.fortTown();
+        String fortTown = null;
+        try {
+            fortTown = LocationControl.fortTown();
+        } catch (LocationException ex) {
+            System.out.println(ex.getMessage());
+            return false;
+        }
         if (fortTown.equals("town")) {
             switch (inputs) {
                 case "1":

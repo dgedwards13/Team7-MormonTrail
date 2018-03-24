@@ -8,6 +8,9 @@ import cit260.team7.mormontrail.exception.EventException;
 import cit260.team7.mormontrail.control.EventControl;
 import cit260.team7.mormontrail.control.HarvestAndHunterControl;
 import cit260.team7.mormontrail.exception.HarvestAndHunterException;
+import cit260.team7.mormontrail.exception.LocationException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -15,7 +18,7 @@ import cit260.team7.mormontrail.exception.HarvestAndHunterException;
  */
 public class TestView extends View {
 
-    public TestView() throws EventException, HarvestAndHunterException {
+    public TestView() throws EventException, HarvestAndHunterException, LocationException {
         super("\n"
                 + "\n================================================================================"
                 + "\n==                             Test Menu                                      =="
@@ -29,6 +32,7 @@ public class TestView extends View {
                 + "\n7 | Daily Rest View"
                 + "\n8 | Hunting View"
                 + "\n9 | indianRaid Test"
+                + "\n10 | Hotel View"
                 + "\n" + EventControl.indianRaid()
                 + "\nHarvestAndHunterControl Test"
                 + "\n" + HarvestAndHunterControl.calCarryingCapacity(1500, 300, 20),
@@ -56,7 +60,13 @@ public class TestView extends View {
                 generalStoreView.display();
                 break;
             case "5":
-                FortTownSceneView fortTownSceneView = new FortTownSceneView();
+                FortTownSceneView fortTownSceneView = null;
+        try {
+            fortTownSceneView = new FortTownSceneView();
+        } catch (LocationException ex) {
+            System.out.println(ex.getMessage());
+            return false;
+        }
                 fortTownSceneView.display();
                 break;
             case "6":
@@ -75,6 +85,9 @@ public class TestView extends View {
                 dailyTrailStopSceneView = new DailyTrailStopSceneView();
                 dailyTrailStopSceneView.display();
                 break;
+            case "10":
+                HotelSceneView hotelSceneView = new HotelSceneView();
+                hotelSceneView.display();
         }
 
         return true;

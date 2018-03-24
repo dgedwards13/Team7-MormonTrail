@@ -60,7 +60,7 @@ public class HotelControl {
                     tmp = characterArray[i];
                     characterArray[i] = characterArray[j];
                     characterArray[j] = tmp;
-                    throw new HotelException("Unable to continue. Please restart game.");
+                    throw new HotelException("We were unable to process the request.");
                 }
 
             }

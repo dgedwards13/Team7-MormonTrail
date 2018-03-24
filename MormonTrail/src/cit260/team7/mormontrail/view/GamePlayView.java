@@ -8,7 +8,10 @@ package cit260.team7.mormontrail.view;
 import cit260.team7.mormontrail.control.GameControl;
 import cit260.team7.mormontrail.exception.EventException;
 import cit260.team7.mormontrail.exception.HarvestAndHunterException;
+import cit260.team7.mormontrail.exception.HotelException;
 import cit260.team7.mormontrail.exception.InventoryException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -41,7 +44,13 @@ public class GamePlayView extends View {
 
         switch (inputs) {
             case "1":
-                TeamStatusView teamStatusView = new TeamStatusView();
+                TeamStatusView teamStatusView = null;
+        try {
+            teamStatusView = new TeamStatusView();
+        } catch (HotelException ex) {
+            System.out.println(ex.getMessage());
+            return false;
+        }
                 teamStatusView.display();
                 break;
             case "2":

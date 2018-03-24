@@ -5,9 +5,10 @@
  */
 package cit260.team7.mormontrail.view;
 
-import cit260.team7.mormontrail.control.CharacterControl;
+//import cit260.team7.mormontrail.control.CharacterControl;
 import cit260.team7.mormontrail.control.HotelControl;
-import cit260.team7.mormontrail.exception.CharacterException;
+//import cit260.team7.mormontrail.exception.CharacterException;
+import cit260.team7.mormontrail.exception.HotelException;
 
 /**
  *
@@ -15,7 +16,7 @@ import cit260.team7.mormontrail.exception.CharacterException;
  */
 public class TeamStatusView extends View {
 
-    public TeamStatusView() {
+    public TeamStatusView() throws HotelException {
 
         super("\n"
                 + "\n================================================================================"

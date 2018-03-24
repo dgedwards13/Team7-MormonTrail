@@ -5,6 +5,10 @@
  */
 package cit260.team7.mormontrail.view;
 
+import cit260.team7.mormontrail.exception.LocationException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author dgedw
@@ -38,7 +42,13 @@ public class GeneralStoreView extends View {
                 buySuppliesView.display();
                 break;
             case "3":
-                FortTownSceneView fortTownSceneView = new FortTownSceneView();
+                FortTownSceneView fortTownSceneView = null;
+        try {
+            fortTownSceneView = new FortTownSceneView();
+        } catch (LocationException ex) {
+            System.out.println(ex.getMessage());
+            return false;
+        }
                 fortTownSceneView.display();
                 break;
         }
