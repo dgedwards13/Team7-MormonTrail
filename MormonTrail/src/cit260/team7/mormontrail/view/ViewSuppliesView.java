@@ -36,19 +36,25 @@ public class ViewSuppliesView extends View {
                 ownedArray.add(inv);
             }
         }
-        int convert = Integer.parseInt(inputs);
-        int num = convert - 1;
-        if (num == ownedArray.size()) {
-            GeneralStoreView generalStoreView = new GeneralStoreView();
-            generalStoreView.display();
-        } else {
+        {
             try {
-                InventoryControl.changeInventory(ownedArray.get(num).getItem(), -1, true);
-                ViewSuppliesView viewSuppliesView = new ViewSuppliesView();
-                viewSuppliesView.display();
-            } catch (InventoryException e) {
-                System.out.println(e.getMessage());
-                return false;
+                int convert = Integer.parseInt(inputs);
+                int num = convert - 1;
+                if (num == ownedArray.size()) {
+                    GeneralStoreView generalStoreView = new GeneralStoreView();
+                    generalStoreView.display();
+                } else {
+                    try {
+                        InventoryControl.changeInventory(ownedArray.get(num).getItem(), -1, true);
+                        ViewSuppliesView viewSuppliesView = new ViewSuppliesView();
+                        viewSuppliesView.display();
+                    } catch (InventoryException e) {
+                        System.out.println(e.getMessage());
+                        return false;
+                    }
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("You must enter a valid number");
             }
         }
         return true;
