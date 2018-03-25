@@ -5,9 +5,11 @@
  */
 package cit260.team7.mormontrail.control;
 
+import cit260.team7.mormontrail.exception.MapException;
 import cit260.team7.mormontrail.model.FortTown;
 import cit260.team7.mormontrail.model.RiverCrossing;
 import cit260.team7.mormontrail.model.TrailStopScene;
+import java.util.ArrayList;
 
 /**
  *
@@ -73,6 +75,41 @@ public class MapControl {
         loc24 = new RiverCrossing();
         loc25 = new TrailStopScene();
         loc26 = new FortTown();
+    }
+    
+    public static ArrayList getLocations() throws MapException{
+        ArrayList locs = new ArrayList(); 
+        locs.add(loc1);
+        locs.add(loc2);
+        locs.add(loc3);
+        locs.add(loc4);
+        locs.add(loc5);
+        locs.add(loc6);
+        locs.add(loc7);
+        locs.add(loc8);
+        locs.add(loc9);
+        locs.add(loc10);
+        locs.add(loc11);
+        locs.add(loc12);
+        locs.add(loc13);
+        locs.add(loc14);
+        locs.add(loc15);
+        locs.add(loc16);
+        locs.add(loc17);
+        locs.add(loc18);
+        locs.add(loc19);
+        locs.add(loc20);
+        locs.add(loc21);
+        locs.add(loc22);
+        locs.add(loc23);
+        locs.add(loc24);
+        locs.add(loc25);
+        locs.add(loc26);
+        if (locs.isEmpty()) {
+            throw new MapException("There has been an error.");
+        } else {
+            return locs;
+        }
     }
 
 }

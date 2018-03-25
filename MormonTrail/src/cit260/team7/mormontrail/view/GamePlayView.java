@@ -10,6 +10,7 @@ import cit260.team7.mormontrail.exception.EventException;
 import cit260.team7.mormontrail.exception.HarvestAndHunterException;
 import cit260.team7.mormontrail.exception.HotelException;
 import cit260.team7.mormontrail.exception.InventoryException;
+import cit260.team7.mormontrail.exception.LocationException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -85,6 +86,8 @@ public class GamePlayView extends View {
         } catch (EventException e) {
             System.out.println(e.getMessage());
         } catch (HarvestAndHunterException e) {
+            System.out.println(e.getMessage());
+        } catch (LocationException e) {
             System.out.println(e.getMessage());
         }
                 testView.display();

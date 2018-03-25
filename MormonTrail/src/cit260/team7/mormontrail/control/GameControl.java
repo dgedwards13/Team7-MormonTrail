@@ -5,6 +5,7 @@
  */
 package cit260.team7.mormontrail.control;
 
+import cit260.team7.mormontrail.exception.MapException;
 import cit260.team7.mormontrail.model.Game;
 import cit260.team7.mormontrail.model.Map;
 import cit260.team7.mormontrail.view.MainMenuView;
@@ -19,7 +20,7 @@ import mormontrail.MormonTrail;
 public class GameControl {
 
     // void will be changed to String
-    public static void startNewGame(String name) {
+    public static void startNewGame(String name) throws MapException {
         //game
         Game game = new Game();
         MormonTrail.setGame(game);
@@ -37,6 +38,7 @@ public class GameControl {
         game.setEventArray(EventControl.getEvents());
         Map map = new Map();
         MapControl.setLocation();
+        map.setLocations(MapControl.getLocations());
 
         //event
         //map

@@ -33,8 +33,7 @@ public class PurchaseControl {
             String in = keyboard.nextLine();
             in = in.trim();
             if (in.length() < 1) {
-                System.out.println("You must enter a non-blank value");
-                continue;
+                throw new InventoryException("You must enter a non-blank value");
             }
             try {
                 numInput = Integer.parseInt(in);
@@ -128,8 +127,7 @@ public class PurchaseControl {
             String in = keyboard.nextLine();
             in = in.trim();
             if (in.length() < 1) {
-                System.out.println("You must enter a non-blank value");
-                continue;
+                throw new InventoryException("You must enter a non-blank value");
             }
             try {
                 numInput = Integer.parseInt(in);
@@ -166,8 +164,7 @@ public class PurchaseControl {
             String in = keyboard.nextLine();
             in = in.trim();
             if (in.length() < 1) {
-                System.out.println("You must enter a non-blank value");
-                continue;
+                throw new InventoryException("You must enter a non-blank value");
             }
             try {
                 numInput = Integer.parseInt(in);
@@ -204,8 +201,7 @@ public class PurchaseControl {
             String in = keyboard.nextLine();
             in = in.trim();
             if (in.length() < 1) {
-                System.out.println("You must enter a non-blank value");
-                continue;
+                throw new InventoryException("You must enter a non-blank value");
             }
             try {
                 numInput = Integer.parseInt(in);
