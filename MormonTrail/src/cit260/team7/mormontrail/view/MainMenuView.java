@@ -27,6 +27,11 @@ public class MainMenuView extends View {
                 + "\n4| Load Game"
                 + "\n5| Exit", 5, true);
     }
+    
+    private void saveGame() {
+        SaveGameView saveGameView = new SaveGameView();
+        saveGameView.display();
+    }
 
     @Override
     public boolean doAction(String inputs) {

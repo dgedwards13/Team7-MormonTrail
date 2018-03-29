@@ -72,6 +72,14 @@ public class GameControl {
         System.out.println("Game Saved.");
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.display();
+//        public static void saveGame(Game game, String filePath) {
+//        if invalid a game or filePath is passed to the method then
+//        throw a new GameControlException
+//        endIf
+//        create a new FileOutputStream for the filePath
+//        create a new ObjectOutputStream from the FileOutputStream
+//        write the game object to the ObjectOutputStream
+//}
     }
 
     public static void setPace(int pace) {
