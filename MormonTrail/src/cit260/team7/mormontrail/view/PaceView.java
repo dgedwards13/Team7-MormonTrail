@@ -29,19 +29,19 @@ public class PaceView extends View {
         switch (inputs) {
             case "slow":
                 GameControl.setPace(1);
-                System.out.println("pace set to slow");
+                this.console.println("pace set to slow");
                 GamePlayView gamePlayView = new GamePlayView();
                 gamePlayView.display();
                 break;
             case "medium":
                 GameControl.setPace(2);
-                System.out.println("pace set to medium");
+                this.console.println("pace set to medium");
                 gamePlayView = new GamePlayView();
                 gamePlayView.display();
                 break;
             case "fast":
                 GameControl.setPace(3);
-                System.out.println("pace set to fast");
+                this.console.println("pace set to fast");
                 gamePlayView = new GamePlayView();
                 gamePlayView.display();
                 break;

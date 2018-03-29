@@ -38,7 +38,7 @@ public class BuySuppliesView extends View {
                 try {
                     PurchaseControl.PurchaseOxen();
                 } catch (InventoryException e) {
-                    System.out.println(e.getMessage());
+                    this.console.println(e.getMessage());
                     return false;
                 }
             }
@@ -49,7 +49,7 @@ public class BuySuppliesView extends View {
                 try {
                     PurchaseControl.PurchaseWagon();
                 } catch (InventoryException e) {
-                    System.out.println(e.getMessage());
+                    this.console.println(e.getMessage());
                     return false;
                 }
             }
@@ -60,7 +60,7 @@ public class BuySuppliesView extends View {
                 try {
                     PurchaseControl.PurchaseFood();
                 } catch (InventoryException e) {
-                    System.out.println(e.getMessage());
+                    this.console.println(e.getMessage());
                     return false;
                 }
             }
@@ -71,7 +71,7 @@ public class BuySuppliesView extends View {
                 try {
                     PurchaseControl.PurchaseParts();
                 } catch (InventoryException e) {
-                    System.out.println(e.getMessage());
+                    this.console.println(e.getMessage());
                     return false;
                 }
             }
@@ -82,7 +82,7 @@ public class BuySuppliesView extends View {
                 try {
                     PurchaseControl.purchaseAmmo();
                 } catch (InventoryException e) {
-                    System.out.println(e.getMessage());
+                    this.console.println(e.getMessage());
                     return false;
                 }
             }

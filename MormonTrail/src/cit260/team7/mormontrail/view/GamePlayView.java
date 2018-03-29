@@ -49,7 +49,7 @@ public class GamePlayView extends View {
         try {
             teamStatusView = new TeamStatusView();
         } catch (HotelException ex) {
-            System.out.println(ex.getMessage());
+            this.console.println(ex.getMessage());
             return false;
         }
                 teamStatusView.display();
@@ -59,7 +59,7 @@ public class GamePlayView extends View {
                 try {
                     teamSuppliesView = new TeamSuppliesView();
                 } catch (InventoryException e) {
-                    System.out.println(e.getMessage());
+                    this.console.println(e.getMessage());
                 }
                 teamSuppliesView.display();
                 break;
@@ -84,11 +84,11 @@ public class GamePlayView extends View {
         try {
             testView = new TestView();
         } catch (EventException e) {
-            System.out.println(e.getMessage());
+            this.console.println(e.getMessage());
         } catch (HarvestAndHunterException e) {
-            System.out.println(e.getMessage());
+            this.console.println(e.getMessage());
         } catch (LocationException e) {
-            System.out.println(e.getMessage());
+            this.console.println(e.getMessage());
         }
                 testView.display();
         }

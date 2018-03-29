@@ -6,6 +6,7 @@
 package cit260.team7.mormontrail.control;
 
 import cit260.team7.mormontrail.exception.InventoryException;
+import cit260.team7.mormontrail.view.ErrorView;
 import java.util.Scanner;
 
 /**
@@ -16,9 +17,11 @@ public class PurchaseControl {
 
     public static String PurchaseOxen() throws InventoryException {
         boolean valid = false;
+        String selection = null;
         int numInput = 0;
         while (valid == false) {
-            Scanner keyboard = new Scanner(System.in);
+            
+            selection = this.keyboard.readLine();
             System.out.println("================================================================================");
             System.out.println("==                               GENERAL STORE                                ==");
             System.out.println("==                                                                            ==");
@@ -30,16 +33,17 @@ public class PurchaseControl {
             System.out.println("");
             System.out.println("");
             System.out.println("You currently have $" + InventoryControl.countItem("money") + ", and " + InventoryControl.countItem("oxen") + " Oxen.");
-            String in = keyboard.nextLine();
-            in = in.trim();
-            if (in.length() < 1) {
+//            String selection = keyboard.nextLine();
+            selection = selection.trim();
+            if (selection.length() < 1) {
                 throw new InventoryException("You must enter a non-blank value");
+                ErrorView.display(this.getClass().getName(), "\nYou must enter a valid number");
             }
             try {
-                numInput = Integer.parseInt(in);
+                numInput = Integer.parseInt(selection);
                 valid = true;
             } catch (NumberFormatException e) {
-                System.out.println("\nYou must enter a valid number");
+                ErrorView.display(this.getClass().getName(), "Error reading input" + e.getMessage());
                 continue;
             }
         }
@@ -53,9 +57,10 @@ public class PurchaseControl {
 
     public static String PurchaseWagon() throws InventoryException {
         boolean valid = false;
+        String selection = null;
         int numInput = 0;
         while (valid == false) {
-            Scanner keyboard = new Scanner(System.in);
+            selection = this.keyboard.readLine();
             System.out.println("================================================================================");
             System.out.println("==                               GENERAL STORE                                ==");
             System.out.println("==                                                                            ==");
@@ -69,16 +74,17 @@ public class PurchaseControl {
             System.out.println("1 | Small (Holds 1500lbs)");
             System.out.println("2 | Medium (Holds 2000lbs)");
             System.out.println("3 | Large (Holds 2500lbs");
-            String in = keyboard.nextLine();
-            in = in.trim();
-            if (in.length() < 1) {
+//            String selection = keyboard.nextLine();
+            selection = selection.trim();
+            if (selection.length() < 1) {
+                ErrorView.display(this.getClass().getName(), "\nYou must enter a valid number"); 
                 throw new InventoryException("You must enter a non-blank value");
             }
             try {
-                numInput = Integer.parseInt(in);
+                numInput = Integer.parseInt(selection);
                 valid = true;
             } catch (NumberFormatException e) {
-                System.out.println("\nYou must enter a valid number");
+                 ErrorView.display(this.getClass().getName(), "Error reading input:" + e.getMessage());
                 continue;
             }
         }
@@ -110,9 +116,10 @@ public class PurchaseControl {
 
     public static String PurchaseFood() throws InventoryException {
         boolean valid = false;
+        String selection = null;
         int numInput = 0;
         while (valid == false) {
-            Scanner keyboard = new Scanner(System.in);
+            selection = this.keyboard.readLine();
             System.out.println("================================================================================");
             System.out.println("==                               GENERAL STORE                                ==");
             System.out.println("==                                                                            ==");
@@ -124,16 +131,17 @@ public class PurchaseControl {
             System.out.println("");
             System.out.println("");
             System.out.println("You currently have $" + InventoryControl.countItem("money") + ", and " + InventoryControl.countItem("food") + " lbs of food.");
-            String in = keyboard.nextLine();
-            in = in.trim();
-            if (in.length() < 1) {
+//            String selection = keyboard.nextLine();
+            selection = selection.trim();
+            if (selection.length() < 1) {
                 throw new InventoryException("You must enter a non-blank value");
+                ErrorView.display(this.getClass().getName(), "\nYou must enter a valid number");
             }
             try {
-                numInput = Integer.parseInt(in);
+                numInput = Integer.parseInt(selection);
                 valid = true;
             } catch (NumberFormatException e) {
-                System.out.println("\nYou must enter a valid number");
+                ErrorView.display(this.getClass().getName(), "Error reading input" + e.getMessage());
                 continue;
             }
         }
@@ -147,9 +155,10 @@ public class PurchaseControl {
 
     public static String PurchaseParts() throws InventoryException {
         boolean valid = false;
+        String selection = null;
         int numInput = 0;
         while (valid == false) {
-            Scanner keyboard = new Scanner(System.in);
+            selection = this.keyboard.readLine();
             System.out.println("================================================================================");
             System.out.println("==                               GENERAL STORE                                ==");
             System.out.println("==                                                                            ==");
@@ -161,16 +170,17 @@ public class PurchaseControl {
             System.out.println("");
             System.out.println("");
             System.out.println("You currently have $" + InventoryControl.countItem("money") + ", and " + InventoryControl.countItem("spare parts") + " spare parts.");
-            String in = keyboard.nextLine();
-            in = in.trim();
-            if (in.length() < 1) {
+//            String selection = keyboard.nextLine();
+            selection = selection.trim();
+            if (selection.length() < 1) {
                 throw new InventoryException("You must enter a non-blank value");
+                ErrorView.display(this.getClass().getName(), "\nYou must enter a valid number");
             }
             try {
-                numInput = Integer.parseInt(in);
+                numInput = Integer.parseInt(selection);
                 valid = true;
             } catch (NumberFormatException e) {
-                System.out.println("\nYou must enter a valid number");
+                ErrorView.display(this.getClass().getName(), "Error reading input" + e.getMessage());
                 continue;
             }
         }
@@ -184,9 +194,10 @@ public class PurchaseControl {
 
     public static String purchaseAmmo() throws InventoryException {
         boolean valid = false;
+        String selection = null;
         int numInput = 0;
         while (valid == false) {
-            Scanner keyboard = new Scanner(System.in);
+            selection = this.keyboard.readLine();
             System.out.println("================================================================================");
             System.out.println("==                               GENERAL STORE                                ==");
             System.out.println("==                                                                            ==");
@@ -198,16 +209,19 @@ public class PurchaseControl {
             System.out.println("");
             System.out.println("");
             System.out.println("You currently have $" + InventoryControl.countItem("money") + ", and " + InventoryControl.countItem("ammunition") + " cases of ammunition.");
-            String in = keyboard.nextLine();
-            in = in.trim();
-            if (in.length() < 1) {
+//            String selection = keyboard.nextLine();
+            selection = selection.trim();
+            if (selection.length() < 1) {
                 throw new InventoryException("You must enter a non-blank value");
+                ErrorView.display(this.getClass().getName(), "\nYou must enter a valid number");
+                
+                
             }
             try {
-                numInput = Integer.parseInt(in);
+                numInput = Integer.parseInt(selection);
                 valid = true;
             } catch (NumberFormatException e) {
-                System.out.println("\nYou must enter a valid number");
+                ErrorView.display(this.getClass().getName(), "Error reading input" + e.getMessage());
                 continue;
             }
         }

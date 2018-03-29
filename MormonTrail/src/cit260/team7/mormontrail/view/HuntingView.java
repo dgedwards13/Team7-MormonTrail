@@ -31,12 +31,12 @@ public class HuntingView extends View {
         String hunting = HarvestAndHunterControl.hunt();
         if (inputs.equals(hunting)) {
             //success
-            System.out.println("You were successful!");
+            this.console.println("You were successful!");
             DailyTrailStopSceneView dailyTrailStop = new DailyTrailStopSceneView();
             dailyTrailStop.display();
         } else {
             //display try again
-            System.out.println("You were not successful, try again.");
+            this.console.println("You were not successful, try again.");
             DailyTrailStopSceneView dailyTrailStop = new DailyTrailStopSceneView();
             dailyTrailStop.display();
         }

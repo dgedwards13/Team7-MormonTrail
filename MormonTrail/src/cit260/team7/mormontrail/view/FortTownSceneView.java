@@ -31,7 +31,7 @@ public class FortTownSceneView extends View {
         try {
             fortTown = LocationControl.fortTown();
         } catch (LocationException ex) {
-            System.out.println(ex.getMessage());
+            this.console.println(ex.getMessage());
             return false;
         }
         if (fortTown.equals("town")) {

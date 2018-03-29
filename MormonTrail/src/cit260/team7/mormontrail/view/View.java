@@ -5,15 +5,23 @@
  */
 package cit260.team7.mormontrail.view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import mormontrail.MormonTrail;
 
 /**
  *
  * @author Shaw-Laptop
  */
 public abstract class View implements ViewInterface {
+   
 
     protected String displayMessage;
+    
+    protected final BufferedReader keyboard = MormonTrail.getInFile();
+    protected final PrintWriter console = MormonTrail.getOutFile();
+    
     protected int numInputs;
     protected boolean isMenu;
 
@@ -44,34 +52,37 @@ public abstract class View implements ViewInterface {
     public String getInputs(int numInputs) {
         String inputs = "";
         boolean valid = false;
+        String selection = null;
 
         while (valid == false) {
+            
+            selection = this.keyboard.readLine();
 
-            Scanner keyboard = new Scanner(System.in);
+//            Scanner keyboard = new Scanner(System.in);
 
-            System.out.println(displayMessage);
-            String in = keyboard.nextLine();
-            in = in.trim();
+            this.console.println(displayMessage);
+//            String in = keyboard.nextLine();
+            selection = selection.trim();
 
-            if (in.length() < 1) {
-                System.out.println("You must enter a non-blank value");
+            if (selection.length() < 1) {
+                this.console.println("You must enter a non-blank value");
                 continue;
             }
             if (isMenu) {
                 try {
-                    int convert = Integer.parseInt(in);
+                    int convert = Integer.parseInt(selection);
                     boolean v = convert > 0 && convert < numInputs + 1;
                     if (v != true) {
-                        System.out.println("The number entered must correlate with the available options.");
+                        this.console.println("The number entered must correlate with the available options.");
                         continue;
                     }
                 } catch (NumberFormatException e) {
-                    System.out.println("\nYou must enter a valid menu number");
+                    this.console.println("\nYou must enter a valid menu number");
                     continue;
                 }
             }
 
-            inputs = in;
+            inputs = selection;
             valid = true;
         }
         return inputs;

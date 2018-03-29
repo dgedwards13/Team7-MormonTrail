@@ -33,17 +33,17 @@ public class RiverCrossingView extends View {
 
         switch (inputs) {
             case "1":
-                System.out.println("Cross river");
+                this.console.println("Cross river");
                 CrossRiverView crossRiverView = new CrossRiverView();
                 crossRiverView.display();
                 break;
             case "2":
-                System.out.println("Go back and think about it");
+                this.console.println("Go back and think about it");
 //                DailyTrailStopSceneView dailyTrailStopSceneView = new DailyTrailStopSceneView();
 //                dailyTrailStopSceneView.display();
                 break;
             case "3":
-                System.out.println("Drop Supplies");
+                this.console.println("Drop Supplies");
                 DropSuppliesView dropSuppliesView = new DropSuppliesView();
                 dropSuppliesView.display();
                 break;

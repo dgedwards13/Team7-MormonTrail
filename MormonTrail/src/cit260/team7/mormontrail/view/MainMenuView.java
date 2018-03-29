@@ -51,29 +51,30 @@ public class MainMenuView extends View {
             case "5":
                 String in = "";
                 boolean valid = false;
+                String selection = null;
                 while (valid == false) {
-                    Scanner keyboard = new Scanner(System.in);
-                    System.out.println("Are you sure you want to exit? (y/n)");
-                    in = keyboard.nextLine();
+                    selection = this.keyboard.readLine();
+                    this.console.println("Are you sure you want to exit? (y/n)");
+//                    selection = keyboard.nextLine();
 
-                    in = in.trim();
+                    selection = selection.trim();
 
-                    if (in.length() < 1) {
-                        System.out.println("You must enter a non-blank value");
+                    if (selection.length() < 1) {
+                        this.console.println("You must enter a non-blank value");
                         continue;
                     }
 
-                    boolean v = in.equalsIgnoreCase("y") || in.equalsIgnoreCase("n");
+                    boolean v = selection.equalsIgnoreCase("y") || selection.equalsIgnoreCase("n");
 
                     if (v != true) {
-                        System.out.println("You must enter 'Y' or 'N'");
+                        this.console.println("You must enter 'Y' or 'N'");
                         continue;
                     }
 
                     valid = true;
                 }
-                if (in.equalsIgnoreCase("y")) {
-                    System.out.println("Thank you for playing!");
+                if (selection.equalsIgnoreCase("y")) {
+                    this.console.println("Thank you for playing!");
                     System.exit(0);
                 } else {
                     MainMenuView mainMenuView = new MainMenuView();

@@ -7,6 +7,12 @@ package mormontrail;
 
 import cit260.team7.mormontrail.view.GrabNameView;
 import cit260.team7.mormontrail.model.Game;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -24,7 +30,13 @@ import cit260.team7.mormontrail.model.Game;
 public class MormonTrail {
 
     public static Game game;
-
+    
+    private static PrintWriter logFile = null;
+    
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+    
+    
     public static Game getGame() {
         return game;
     }
@@ -33,11 +45,40 @@ public class MormonTrail {
         MormonTrail.game = game;
     }
 
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        MormonTrail.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        MormonTrail.inFile = inFile;
+    }
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        MormonTrail.logFile = logFile;
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         try {
+            MormonTrail.inFile = new BufferedReader(new InputStreamReader(System.in));
+            MormonTrail.outFile = new PrintWriter(System.out, true);
+            logFile = new PrintWriter("logfile.txt");
+            
             GrabNameView grabNameView = new GrabNameView();
             grabNameView.display();
         } catch (Throwable e) {
@@ -45,8 +86,27 @@ public class MormonTrail {
             System.out.println(e.getMessage());
             e.printStackTrace();
             System.exit(0);
+            
+        }
+        
+        finally {
+            try {
+                if(MormonTrail.inFile !=null)
+                   MormonTrail.inFile.close();
+                   
+                if(MormonTrail.outFile !=null);
+                   MormonTrail.outFile.close();
+                if (logFile != null) {
+                    logFile.close();
+                }
+                
+            } catch (IOException ex) {
+                System.out.println("Error closing files");
+                return;
+            }
         }
     }
+    
 
 }
 

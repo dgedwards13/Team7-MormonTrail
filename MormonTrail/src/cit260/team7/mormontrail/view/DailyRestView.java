@@ -27,10 +27,10 @@ public class DailyRestView extends View {
     public boolean doAction(String inputs) {
 
         int result = Integer.parseInt(inputs);
-        System.out.println(result);
+        this.console.println(result);
 
         GameControl.setDailyRest(result);
-        System.out.println("Successful rest day");
+        this.console.println("Successful rest day");
         return true;
     }
 

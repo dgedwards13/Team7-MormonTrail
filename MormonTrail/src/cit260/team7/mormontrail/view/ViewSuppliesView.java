@@ -49,12 +49,12 @@ public class ViewSuppliesView extends View {
                         ViewSuppliesView viewSuppliesView = new ViewSuppliesView();
                         viewSuppliesView.display();
                     } catch (InventoryException e) {
-                        System.out.println(e.getMessage());
+                        this.console.println(e.getMessage());
                         return false;
                     }
                 }
             } catch (NumberFormatException e) {
-                System.out.println("You must enter a valid number");
+                this.console.println("You must enter a valid number");
             }
         }
         return true;

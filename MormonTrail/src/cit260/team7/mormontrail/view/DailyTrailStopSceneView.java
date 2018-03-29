@@ -33,26 +33,26 @@ public class DailyTrailStopSceneView extends View {
 
         switch (inputs) {
             case "1":
-                System.out.println("Visit the " + LocationControl.nearby());
-                System.out.println("Welcome to " + LocationControl.nearby());
+                this.console.println("Visit the " + LocationControl.nearby());
+                this.console.println("Welcome to " + LocationControl.nearby());
                 DailyTrailStopSceneView dailyTrailStop = new DailyTrailStopSceneView();
                 dailyTrailStop.display();
                 break;
             case "2":
-                System.out.println("Rest for the Day");
-                System.out.println("Resting for the day restores the parties health.");
+                this.console.println("Rest for the Day");
+                this.console.println("Resting for the day restores the parties health.");
                 DailyRestView dailyRestView = new DailyRestView();
                 dailyRestView.display();
                 break;
             case "3":
-                System.out.println("Go Hunting");
-                System.out.println("Hunt for meat to feed your party.");
+                this.console.println("Go Hunting");
+                this.console.println("Hunt for meat to feed your party.");
                 HuntingView huntingView = new HuntingView();
                 huntingView.display();
                 break;
             case "4":
-                System.out.println("Look for Edible Plants");
-                System.out.println("Find edible plants to feed your party.");
+                this.console.println("Look for Edible Plants");
+                this.console.println("Find edible plants to feed your party.");
                 dailyTrailStop = new DailyTrailStopSceneView();
                 dailyTrailStop.display();
                 break;

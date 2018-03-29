@@ -28,25 +28,25 @@ public class HelpMenuView extends View {
 
         switch (inputs) {
             case "1":
-                System.out.println("Objective");
-                System.out.println("You are a Mormon pioneer and will begin your journey in Nauvoo, Illinois. Your destination is Salt Lake Valley.");
-                System.out.println("Your party will use your resources to purchase supplies and tools for your adventure. Any remaining money can be used along the way.");
-                System.out.println("Your survival depends on your skills, traits and decisions  as you face random events as well as obstacles. Success means reaching Salt Lake Valley.");
+                this.console.println("Objective");
+                this.console.println("You are a Mormon pioneer and will begin your journey in Nauvoo, Illinois. Your destination is Salt Lake Valley.");
+                this.console.println("Your party will use your resources to purchase supplies and tools for your adventure. Any remaining money can be used along the way.");
+                this.console.println("Your survival depends on your skills, traits and decisions  as you face random events as well as obstacles. Success means reaching Salt Lake Valley.");
                 HelpMenuView helpMenuView = new HelpMenuView();
                 helpMenuView.display();
                 break;
             case "2":
-                System.out.println("How to Move");
-                System.out.println("Follow the on screen prompts and you will continue your journey to Zion.");
+                this.console.println("How to Move");
+                this.console.println("Follow the on screen prompts and you will continue your journey to Zion.");
                 helpMenuView = new HelpMenuView();
                 helpMenuView.display();
                 break;
             case "3":
-                System.out.println("Tips");
-                System.out.println("Tip 1");
-                System.out.println("Tip 2");
-                System.out.println("Tip 3");
-                System.out.println("Tip 4");
+                this.console.println("Tips");
+                this.console.println("Tip 1");
+                this.console.println("Tip 2");
+                this.console.println("Tip 3");
+                this.console.println("Tip 4");
                 helpMenuView = new HelpMenuView();
                 helpMenuView.display();
                 break;

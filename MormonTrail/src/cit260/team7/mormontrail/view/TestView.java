@@ -64,7 +64,7 @@ public class TestView extends View {
         try {
             fortTownSceneView = new FortTownSceneView();
         } catch (LocationException ex) {
-            System.out.println(ex.getMessage());
+            this.console.println(ex.getMessage());
             return false;
         }
                 fortTownSceneView.display();

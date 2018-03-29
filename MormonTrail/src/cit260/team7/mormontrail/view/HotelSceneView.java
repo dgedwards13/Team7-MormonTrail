@@ -34,11 +34,11 @@ public class HotelSceneView extends View {
 
         switch (inputs) {
             case "1":
-                System.out.println("These are the characters who are willing to journey with you!");
+                this.console.println("These are the characters who are willing to journey with you!");
                 Character[] characterArray = HotelControl.getCharacter();
                 int i = 1;
                 for (Character ch : characterArray) {
-                    System.out.println(i + " | " + ch.getName() + "\n\t Character Money: " + ch.getMoney() + "\n\t Character Hunting Skill: " + ch.getHuntingSkill() + "\n\t Character Gathering Skill" + ch.getGatheringSkill() + "\n\t Character Stamina: " + ch.getDailyStaminaDraw() + "\n\t Character Health: " + ch.getCurrentHealth());
+                    this.console.println(i + " | " + ch.getName() + "\n\t Character Money: " + ch.getMoney() + "\n\t Character Hunting Skill: " + ch.getHuntingSkill() + "\n\t Character Gathering Skill" + ch.getGatheringSkill() + "\n\t Character Stamina: " + ch.getDailyStaminaDraw() + "\n\t Character Health: " + ch.getCurrentHealth());
                     i++;
                 }
                 break;
@@ -47,7 +47,7 @@ public class HotelSceneView extends View {
         try {
             fortTownSceneView = new FortTownSceneView();
         } catch (LocationException ex) {
-            System.out.println(ex.getMessage());
+            this.console.println(ex.getMessage());
         }
                 fortTownSceneView.display();
                 break;
