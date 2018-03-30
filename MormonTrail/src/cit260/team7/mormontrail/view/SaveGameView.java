@@ -13,16 +13,8 @@ import cit260.team7.mormontrail.exception.GameControlException;
  */
 public class SaveGameView extends View{
 
-//    private String[] getInputs() {
-//    inputs = new String array one element long
-//    Display instructions to save the game
-//    input1 = getInput(thePromptMessage)
-//    save a reference to input1 in the inputs array
-//    return inputs
-//    } 
-    
 
-//    filePath = get first value in inputs array
+
 //    game = get the currentGame in the main class
 //    try
 //    call the saveGame(game)control method
@@ -34,16 +26,17 @@ public class SaveGameView extends View{
 //    file was saved
 //    return true to end the view
 
-//    @Override
-//    private boolean doAction(String [] inputs) {
-//    try{
-//    } catch (GameControlException e){
-//        this.console.println("\nUnable to save game");
-//        return false;
-//    }
-//    this.console.println("File was saved");
-//    return true;
-//    }    
+    @Override
+    public boolean doAction(String inputs) {
+    try{
+        
+    } catch (GameControlException e){
+        this.console.println("\nUnable to save game");
+        return false;
+    }
+    this.console.println("File was saved");
+    return true;
+    }    
     
 }
 
