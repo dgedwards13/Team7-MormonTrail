@@ -5,8 +5,6 @@
  */
 package cit260.team7.mormontrail.view;
 
-import cit260.team7.mormontrail.control.PurchaseControl;
-import cit260.team7.mormontrail.exception.InventoryException;
 
 /**
  *
@@ -34,63 +32,28 @@ public class BuySuppliesView extends View {
     @Override
     public boolean doAction(String inputs) {
         switch (inputs) {
-            case "1": {
-                try {
-                    PurchaseControl.PurchaseOxen();
-                } catch (InventoryException e) {
-                    this.console.println(e.getMessage());
-                    return false;
-                }
-            }
-            GeneralStoreView generalStoreView = new GeneralStoreView();
-            generalStoreView.display();
-            break;
-            case "2": {
-                try {
-                    PurchaseControl.PurchaseWagon();
-                } catch (InventoryException e) {
-                    this.console.println(e.getMessage());
-                    return false;
-                }
-            }
-            generalStoreView = new GeneralStoreView();
-            generalStoreView.display();
-            break;
-            case "3": {
-                try {
-                    PurchaseControl.PurchaseFood();
-                } catch (InventoryException e) {
-                    this.console.println(e.getMessage());
-                    return false;
-                }
-            }
-            generalStoreView = new GeneralStoreView();
-            generalStoreView.display();
-            break;
-            case "4": {
-                try {
-                    PurchaseControl.PurchaseParts();
-                } catch (InventoryException e) {
-                    this.console.println(e.getMessage());
-                    return false;
-                }
-            }
-            generalStoreView = new GeneralStoreView();
-            generalStoreView.display();
-            break;
-            case "5": {
-                try {
-                    PurchaseControl.purchaseAmmo();
-                } catch (InventoryException e) {
-                    this.console.println(e.getMessage());
-                    return false;
-                }
-            }
-            generalStoreView = new GeneralStoreView();
-            generalStoreView.display();
-            break;
+            case "1": 
+                PurchaseOxenView purchaseOxenView = new PurchaseOxenView();
+                purchaseOxenView.display();
+                break;
+            case "2":
+                PurchaseWagonView purchaseWagonView = new PurchaseWagonView();
+                purchaseWagonView.display();
+                break;
+            case "3":
+                PurchaseFoodView purchaseFoodView = new PurchaseFoodView();
+                purchaseFoodView.display();
+                break;
+            case "4":
+                PurchasePartsView purchasePartsView = new PurchasePartsView();
+                purchasePartsView.display();
+                break;
+            case "5":
+                PurchaseAmmunitionView purchaseAmmunitionView = new PurchaseAmmunitionView();
+                purchaseAmmunitionView.display();
+                break;
             case "6":
-                generalStoreView = new GeneralStoreView();
+                GeneralStoreView generalStoreView = new GeneralStoreView();
                 generalStoreView.display();
                 break;
         }
