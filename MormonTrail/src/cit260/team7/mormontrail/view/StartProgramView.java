@@ -6,6 +6,8 @@
 package cit260.team7.mormontrail.view;
 
 import cit260.team7.mormontrail.control.GameControl;
+import cit260.team7.mormontrail.exception.MapException;
+
 
 /**
  * z
@@ -40,7 +42,11 @@ public class StartProgramView extends View {
     public boolean doAction(String inputs) {
 
         if (inputs.equalsIgnoreCase("1")) {
-            GameControl.startNewGame(name);
+            try {
+                GameControl.startNewGame(name);
+            } catch (MapException ex) {
+                this.console.println("error");
+            }
             return true;
         }
 

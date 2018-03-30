@@ -5,12 +5,18 @@
  */
 package cit260.team7.mormontrail.control;
 
+import cit260.team7.mormontrail.exception.GameException;
 import cit260.team7.mormontrail.exception.MapException;
 import cit260.team7.mormontrail.model.Game;
 import cit260.team7.mormontrail.model.Map;
 import cit260.team7.mormontrail.view.MainMenuView;
 //import cit260.team7.mormontrail.model.Character;
 import cit260.team7.mormontrail.model.Hotel;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import mormontrail.MormonTrail;
 
 /**
@@ -62,24 +68,54 @@ public class GameControl {
         return game;
     }
 
-    public static void loadGame() {
-        System.out.println("Game Loaded.");
-        MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.display();
-    }
+    public static Game loadGame( String filePath) throws GameException{
+        Game game = null;
+        if (filePath == null){
+            throw new GameException();
+        }
+        try(ObjectInputStream in = new ObjectInputStream(new FileInputStream (filePath))){
+            
+            game = (Game) in.readObject();
+            MormonTrail.setGame(game);
+            
+        }
+        catch(IOException e){
+            throw new GameException("error code" + e.getMessage());
+        }
+        catch(ClassNotFoundException e){
+        }
+        return game;
+      
+//public static Game getGame(String filePath) {
+// if the filePath is null then
+// throw a new GameControlException
+// endIf
+// create a new FileInputStream for the filePath
+// create a new ObjectInputStream from the FileOutputStream
+// game = call ObjectInputStream’s readObject() method
+// set the currentGame attribute in the main class to the
+// game object
+// set the player attribute in the main class to the
+// player object saved in the game object
+// return game
+}
+    
 
-    public static void saveGame() {
-        System.out.println("Game Saved.");
-        MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.display();
-//        public static void saveGame(Game game, String filePath) {
-//        if invalid a game or filePath is passed to the method then
-//        throw a new GameControlException
-//        endIf
-//        create a new FileOutputStream for the filePath
-//        create a new ObjectOutputStream from the FileOutputStream
-//        write the game object to the ObjectOutputStream
-//}
+    public static void saveGame(Game game, String filePath) throws GameException {
+//        System.out.println("Game Saved.");
+//        MainMenuView mainMenuView = new MainMenuView();
+//        mainMenuView.display();
+        if(game == null || filePath == null || filePath.length() < 1 ){
+            throw new GameException("Invaild path or save game");
+        }
+        try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream (filePath))){
+            out.writeObject(game);
+        }
+        catch(IOException e){
+            System.out.println("\nUnable to save game" + "\n error code" + e.getMessage());
+
+        }
+       
     }
 
     public static void setPace(int pace) {

@@ -14,7 +14,7 @@ import mormontrail.MormonTrail;
  */
 public class ErrorView {
     //getOutFile?
-    private static PrintWriter console = MormonTrail.getOutput();
+    private static PrintWriter console = MormonTrail.getOutFile();
     private static PrintWriter log = MormonTrail.getLogFile();
     
     public static void display(String className, String errorMessage) {

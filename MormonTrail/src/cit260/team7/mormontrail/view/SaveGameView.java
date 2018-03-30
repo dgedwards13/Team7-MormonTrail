@@ -5,38 +5,39 @@
  */
 package cit260.team7.mormontrail.view;
 
-import cit260.team7.mormontrail.exception.GameControlException;
+import cit260.team7.mormontrail.control.GameControl;
+import cit260.team7.mormontrail.exception.GameException;
+import cit260.team7.mormontrail.model.Game;
+import mormontrail.MormonTrail;
 
 /**
  *
  * @author rherrerajr
  */
-public class SaveGameView extends View{
+public class SaveGameView extends View {
 
-
-
-//    game = get the currentGame in the main class
-//    try
-//    call the saveGame(game)control method
-//    catch GameControlException
-//    Print error passed with the exception
-//    return false to repeat the view
-//    endTry
-//    Print a success message indicating where the
-//    file was saved
-//    return true to end the view
+    public SaveGameView() {
+        super("\n"
+                + "\n================================================================================"
+                + "\n==                             Save Game                                      =="
+                + "\n==                  Where would you like to save this file?                   ==" 
+                + "\n================================================================================"
+                ,
+                0, false);
+    }
 
     @Override
     public boolean doAction(String inputs) {
-    try{
-        
-    } catch (GameControlException e){
-        this.console.println("\nUnable to save game");
-        return false;
+        String filePath = inputs;
+        Game game = MormonTrail.getGame();
+        try {
+            GameControl.saveGame(game, filePath);
+        } catch (GameException e) {
+            this.console.println("\nUnable to save game" + "\n error code" + e.getMessage());
+            return false;
+        }
+        this.console.println("File was saved");
+        return true;
     }
-    this.console.println("File was saved");
-    return true;
-    }    
-    
-}
 
+}

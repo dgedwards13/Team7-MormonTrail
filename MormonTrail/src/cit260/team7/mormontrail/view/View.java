@@ -6,8 +6,8 @@
 package cit260.team7.mormontrail.view;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Scanner;
 import mormontrail.MormonTrail;
 
 /**
@@ -56,7 +56,11 @@ public abstract class View implements ViewInterface {
 
         while (valid == false) {
             
-            selection = this.keyboard.readLine();
+            try {
+                selection = this.keyboard.readLine();
+            } catch (IOException e) {
+                this.console.println("error" + e.getMessage());
+            }
 
 //            Scanner keyboard = new Scanner(System.in);
 
