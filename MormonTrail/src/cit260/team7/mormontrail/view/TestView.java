@@ -9,8 +9,6 @@ import cit260.team7.mormontrail.control.EventControl;
 import cit260.team7.mormontrail.control.HarvestAndHunterControl;
 import cit260.team7.mormontrail.exception.HarvestAndHunterException;
 import cit260.team7.mormontrail.exception.LocationException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *

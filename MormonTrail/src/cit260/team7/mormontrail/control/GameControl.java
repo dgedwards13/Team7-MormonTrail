@@ -68,12 +68,12 @@ public class GameControl {
         return game;
     }
 
-    public static Game loadGame( String filePath) throws GameException{
+    public static Game loadGame( String logfile) throws GameException{
         Game game = null;
-        if (filePath == null){
+        if (logfile == null){
             throw new GameException();
         }
-        try(ObjectInputStream in = new ObjectInputStream(new FileInputStream (filePath))){
+        try(ObjectInputStream in = new ObjectInputStream(new FileInputStream (logfile))){
             
             game = (Game) in.readObject();
             MormonTrail.setGame(game);
@@ -101,14 +101,14 @@ public class GameControl {
 }
     
 
-    public static void saveGame(Game game, String filePath) throws GameException {
+    public static void saveGame(Game game, String logfile) throws GameException {
 //        System.out.println("Game Saved.");
 //        MainMenuView mainMenuView = new MainMenuView();
 //        mainMenuView.display();
-        if(game == null || filePath == null || filePath.length() < 1 ){
+        if(game == null || logfile == null || logfile.length() < 1 ){
             throw new GameException("Invaild path or save game");
         }
-        try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream (filePath))){
+        try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream (logfile))){
             out.writeObject(game);
         }
         catch(IOException e){

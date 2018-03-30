@@ -8,8 +8,7 @@ package cit260.team7.mormontrail.view;
 import cit260.team7.mormontrail.control.HotelControl;
 import cit260.team7.mormontrail.exception.LocationException;
 import cit260.team7.mormontrail.model.Character;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  *

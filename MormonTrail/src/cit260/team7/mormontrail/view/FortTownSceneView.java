@@ -7,8 +7,7 @@ package cit260.team7.mormontrail.view;
 
 import cit260.team7.mormontrail.control.LocationControl;
 import cit260.team7.mormontrail.exception.LocationException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  *
