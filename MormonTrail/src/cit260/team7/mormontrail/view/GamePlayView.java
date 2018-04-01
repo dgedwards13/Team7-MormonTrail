@@ -45,12 +45,11 @@ public class GamePlayView extends View {
         switch (inputs) {
             case "1":
                 TeamStatusView teamStatusView = null;
-        try {
-            teamStatusView = new TeamStatusView();
-        } catch (HotelException ex) {
-            this.console.println(ex.getMessage());
-            return false;
-        }
+                try {
+                    teamStatusView = new TeamStatusView();
+                } catch (HotelException e) {
+                    this.console.println(e.getMessage());
+                }
                 teamStatusView.display();
                 break;
             case "2":
