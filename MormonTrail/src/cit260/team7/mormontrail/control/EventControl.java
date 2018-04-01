@@ -11,6 +11,8 @@ import cit260.team7.mormontrail.model.InventoryItem;
 import cit260.team7.mormontrail.exception.EventException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+import java.io.*;
 
 /**
  *
@@ -55,6 +57,7 @@ public class EventControl {
 
         Event[] eventArray = new Event[14];
 
+
         eventArray[0] = event1;
         eventArray[1] = event2;
         eventArray[2] = event3;
@@ -73,7 +76,27 @@ public class EventControl {
         return eventArray;
 
     }
+    
+    private static PrintWriter createFile(String fileName){
+        try{
+            File listOfEvents = new File(fileName);
+            PrintWriter infoToWrite = new PrintWriter(
+                    new BufferedWriter(
+                            new FileWriter(listOfEvents)));
+        }catch(IOException e){   
+            System.out.println("Failed to Write" + "\n Error code:" + e.getMessage());
+            System.exit(0);
+//            return false;
+        }
+//        this.console.println("File Successfully Written");
+        return null;
+    }
 
+    public static int getRandomEvent(Event[] eventArray) throws EventException{
+        int index = ThreadLocalRandom.current().nextInt(15);
+        return index;
+    }
+    
 //    public static int getRandomEvent(Event[] eventArray){
 //        int rnd = new Random().nextInt(array.length);
 //        return eventArray[rnd];
@@ -107,6 +130,5 @@ public class EventControl {
         else{
         throw new EventException("What did you do wrong? You should never see this message.");
         }
-        
     }
 }
