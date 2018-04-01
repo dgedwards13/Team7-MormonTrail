@@ -159,5 +159,4 @@ public class Event implements Serializable {
     public String toString() {
         return "Event{" + "description=" + description + ", charImpact=" + charImpact + ", charHealthImpact=" + charHealthImpact + ", oxenHealthImpact=" + oxenHealthImpact + ", inventoryImpact=" + inventoryImpact + ", inventoryAmountImpact=" + inventoryAmountImpact + ", distanceImpact=" + distanceImpact + ", paceImpact=" + paceImpact + '}';
     }
-
 }
