@@ -8,6 +8,7 @@ package mormontrail;
 import cit260.team7.mormontrail.view.GrabNameView;
 import cit260.team7.mormontrail.model.Game;
 import java.io.BufferedReader;
+import java.io.FileNotFoundException; // recommended addition by netbeans
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -80,10 +81,11 @@ public class MormonTrail {
             
             GrabNameView grabNameView = new GrabNameView();
             grabNameView.display();
-        } catch (Throwable e) {
+        } catch (FileNotFoundException e) { // Netbeans recommended fix from /*} catch (Throwable e) {*/
             System.out.println("An error has occurred");
             System.out.println(e.getMessage());
-            e.printStackTrace();
+            //Netbeans recommended removal
+//            e.printStackTrace();
             System.exit(0);
             
         }

@@ -60,7 +60,8 @@ public class HotelControl {
                     tmp = characterArray[i];
                     characterArray[i] = characterArray[j];
                     characterArray[j] = tmp;
-                    throw new HotelException("We were unable to process the request.");
+                    // throw statement causing error on Run
+                    /*throw new HotelException("We were unable to process the request.");*/
                 }
 
             }

@@ -61,7 +61,7 @@ public class TeamSuppliesPrintView extends View{
      PrintWriter invOutput = createFile("teamSupplies.txt");
      
      for (InventoryItem inv : inventoryArray){
-     inv =+ "\n" + inventoryArray[].getitem()+ inventoryArray[].getAmount();
+//     d
      }
         return true;
        
