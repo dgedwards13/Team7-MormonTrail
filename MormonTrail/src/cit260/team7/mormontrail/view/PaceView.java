@@ -45,6 +45,9 @@ public class PaceView extends View {
                 gamePlayView = new GamePlayView();
                 gamePlayView.display();
                 break;
+            default:
+                this.console.println("You must enter \"slow\" \"medium\" or \"fast\"");
+                return false;
         }
 
         return true;

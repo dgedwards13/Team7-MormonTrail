@@ -38,12 +38,13 @@ public class TeamStatusView extends View {
                 boolean valid = false;
                 String selection = null;
                 while (valid == false) {
+                    this.console.println("Print report? (y/n)");
             try {
                 selection = this.keyboard.readLine();
             } catch (IOException e) {
                 this.console.println("error");
             }
-                    this.console.println("Print report? (y/n)");
+                    
 //                    selection = keyboard.nextLine();
 
                     selection = selection.trim();
