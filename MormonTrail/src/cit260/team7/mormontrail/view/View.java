@@ -40,6 +40,7 @@ public abstract class View implements ViewInterface {
 
         boolean endOfView = false;
         do {
+            this.console.println(displayMessage);
             String inputs = this.getInputs(numInputs);
             if (inputs == null || inputs.length() < 1) {
                 return;
@@ -64,7 +65,7 @@ public abstract class View implements ViewInterface {
 
 //            Scanner keyboard = new Scanner(System.in);
 
-            this.console.println(displayMessage);
+            
 //            String in = keyboard.nextLine();
             selection = selection.trim();
 
