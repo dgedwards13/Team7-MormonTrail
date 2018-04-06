@@ -1,8 +1,8 @@
-Character{name=Susan, money=10.0, huntingSkill=5.0, gatheringSkill=400.0, dailyStaminaDraw=2.0, currentHealth=2.0}
-Character{name=Sam, money=10.0, huntingSkill=6.0, gatheringSkill=600.0, dailyStaminaDraw=2.0, currentHealth=4.0}
-Character{name=Joseph, money=10.0, huntingSkill=7.0, gatheringSkill=100.0, dailyStaminaDraw=2.0, currentHealth=3.0}
-Character{name=Ricardo, money=10.0, huntingSkill=8.0, gatheringSkill=680.0, dailyStaminaDraw=2.0, currentHealth=6.0}
-Character{name=Savannah, money=10.0, huntingSkill=8.0, gatheringSkill=680.0, dailyStaminaDraw=2.0, currentHealth=1.0}
-Character{name=Daniel, money=10.0, huntingSkill=8.0, gatheringSkill=680.0, dailyStaminaDraw=2.0, currentHealth=5.0}
-Character{name=Astley, money=10.0, huntingSkill=8.0, gatheringSkill=680.0, dailyStaminaDraw=2.0, currentHealth=7.0}
-Character{name=Rachel, money=10.0, huntingSkill=5.0, gatheringSkill=500.0, dailyStaminaDraw=2.0, currentHealth=8.0}
+Susan 2.0
+Sam 4.0
+Joseph 3.0
+Ricardo 6.0
+Savannah 1.0
+Daniel 5.0
+Astley 7.0
+Rachel 8.0

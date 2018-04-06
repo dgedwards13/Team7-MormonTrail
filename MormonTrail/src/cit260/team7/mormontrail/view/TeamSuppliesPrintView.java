@@ -39,7 +39,7 @@ public class TeamSuppliesPrintView extends View {
 
             InventoryItem[] inventoryArray = InventoryControl.getInventory();
             for (int i = 0; i < inventoryArray.length; i++) {
-                infoToWrite.write("\n" + inventoryArray[i].getItem() + " " + inventoryArray[i].getAmount()+ "  ");
+                infoToWrite.write( inventoryArray[i].getItem() + " " + inventoryArray[i].getAmount() + " \n");
             }
             infoToWrite.close();
             
