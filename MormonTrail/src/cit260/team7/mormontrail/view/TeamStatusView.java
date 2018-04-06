@@ -10,6 +10,8 @@ import cit260.team7.mormontrail.control.HotelControl;
 //import cit260.team7.mormontrail.exception.CharacterException;
 import cit260.team7.mormontrail.exception.HotelException;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -32,45 +34,17 @@ public class TeamStatusView extends View {
     public boolean doAction(String inputs) {
 
         switch (inputs) {
-            case "1":
-                //Select the report menu option and call a View Layer function that is responsible for printing the report.
-                String in = "";
-                boolean valid = false;
-                String selection = null;
-                while (valid == false) {
-                    this.console.println("Print report? (y/n)");
-            try {
-                selection = this.keyboard.readLine();
-            } catch (IOException e) {
-                this.console.println("error");
-            }
-                    
-//                    selection = keyboard.nextLine();
-
-                    selection = selection.trim();
-
-                    if (selection.length() < 1) {
-                        this.console.println("You must enter a non-blank value");
-                        continue;
-                    }
-
-                    boolean v = selection.equalsIgnoreCase("y") || selection.equalsIgnoreCase("n");
-
-                    if (v != true) {
-                        this.console.println("You must enter 'Y' or 'N'");
-                        continue;
-                    }
-
-                    valid = true;
-                }
-                if (selection.equalsIgnoreCase("y")) {
-                    this.console.println("Enter File name");
-//                    
-                } else {
-                    GamePlayView gamePlayView = new GamePlayView();
-                    gamePlayView.display();
-                }
+            case "1":         
+                
+                PrintStatusView printStatusView = null;
+        try {
+            printStatusView = new PrintStatusView();
+        } catch (HotelException ex) {
+            Logger.getLogger(TeamStatusView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                printStatusView.display();
                 break;
+            
             case "2":
                 GamePlayView gamePlayView = new GamePlayView();
                 gamePlayView.display();

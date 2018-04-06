@@ -8,6 +8,11 @@ package cit260.team7.mormontrail.view;
 import cit260.team7.mormontrail.control.HotelControl;
 import cit260.team7.mormontrail.exception.LocationException;
 import cit260.team7.mormontrail.model.Character;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 
 /**
@@ -26,6 +31,21 @@ public class HotelSceneView extends View {
                 + "\n\n1 | List of available travelers"
                 + "\n2 | Exit hotel", 2, true
         );
+    }
+    
+    public static PrintWriter writeFile(String fileName){
+        try{
+            File characterStatus = new File(fileName);
+            PrintWriter infoToWrite = new PrintWriter(
+                    new BufferedWriter(
+                            new FileWriter(characterStatus)));
+        }catch(IOException e){   
+            System.out.println("Failed to Write" + "\n Error code:" + e.getMessage());
+            System.exit(0);
+//            return false;
+        }
+//        this.console.println("File Successfully Written");
+        return null;
     }
 
     @Override

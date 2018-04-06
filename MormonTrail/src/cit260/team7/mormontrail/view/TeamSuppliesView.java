@@ -21,18 +21,15 @@ public class TeamSuppliesView extends View {
                 + "\n==                             Team Supplies                                  =="
                 + "\n================================================================================"
                 + "\n" + InventoryControl.order()
-                + "\n1 | return to game play"
-                + "\n2 | Print Supply list", 2, true);
+                + "\n1 | Print Supply list"
+                + "\n2 | return to game play" , 2, true);
+                
     }
 
     @Override
     public boolean doAction(String inputs) {
         switch (inputs) {
-            case "1":
-                GamePlayView gamePlayView = new GamePlayView();
-                gamePlayView.display();
-                break;
-            case"2":
+            case"1":
                 TeamSuppliesPrintView teamSuppliesPrintView = null;
         try {
             teamSuppliesPrintView = new TeamSuppliesPrintView();
@@ -40,6 +37,10 @@ public class TeamSuppliesView extends View {
            this.console.println(e.getMessage());
         }
                 teamSuppliesPrintView.display();
+                break;
+            case "2":
+                GamePlayView gamePlayView = new GamePlayView();
+                gamePlayView.display();
                 break;
         }
         return true;

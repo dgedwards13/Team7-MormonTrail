@@ -40,8 +40,7 @@ public class TeamSuppliesPrintView extends View{
             PrintWriter infoToWrite = new PrintWriter( 
                     new BufferedWriter(
                     new FileWriter(listOfItems)));
-            
-             
+    
         }
         catch(IOException e){
             System.out.println("Error");

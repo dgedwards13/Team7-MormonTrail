@@ -81,11 +81,12 @@ public class MormonTrail {
             
             GrabNameView grabNameView = new GrabNameView();
             grabNameView.display();
+            
         } catch (FileNotFoundException e) { // Netbeans recommended fix from /*} catch (Throwable e) {*/
             System.out.println("An error has occurred");
             System.out.println(e.getMessage());
             //Netbeans recommended removal
-//            e.printStackTrace();
+            e.printStackTrace();
             System.exit(0);
             
         }
