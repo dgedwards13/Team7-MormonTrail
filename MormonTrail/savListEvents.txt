@@ -1,0 +1,42 @@
+{ Event: It's a miracle! You found a water spring. Character Impact:  Character Health Impact: 0.0 Oxen Health Impact: 0.0 Inventory Impact:  Inventory Amount Impact: 0.0Distance Impact: 0 Pace Impact: 1.0 }
+
+
+{ Event: It's a miracle! You found bread nearby a tree. Character Impact:  Character Health Impact: 0.0 Oxen Health Impact: 0.0 Inventory Impact:  Inventory Amount Impact: 0.0Distance Impact: 0 Pace Impact: 1.0 }
+
+
+{ Event: It's a miracle! You found money along the trail. Character Impact:  Character Health Impact: 0.0 Oxen Health Impact: 0.0 Inventory Impact:  Inventory Amount Impact: 0.0Distance Impact: 0 Pace Impact: 1.0 }
+
+
+{ Event: It's a miracle! A friendly indian led you to a shortcut. Character Impact:  Character Health Impact: 0.0 Oxen Health Impact: 0.0 Inventory Impact:  Inventory Amount Impact: 0.0Distance Impact: 0 Pace Impact: 1.0 }
+
+
+{ Event: It's a miracle! You found a berry bush not far from the campsite. Character Impact:  Character Health Impact: 0.0 Oxen Health Impact: 0.0 Inventory Impact:  Inventory Amount Impact: 0.0Distance Impact: 0 Pace Impact: 1.0 }
+
+
+{ Event: It's a miracle! You found spare supplies. Character Impact:  Character Health Impact: 0.0 Oxen Health Impact: 0.0 Inventory Impact:  Inventory Amount Impact: 0.0Distance Impact: 0 Pace Impact: 1.0 }
+
+
+{ Event: It's a miracle! You were sick, but after a priesthood blessing you were restored to full health. Character Impact:  Character Health Impact: 0.0 Oxen Health Impact: 0.0 Inventory Impact:  Inventory Amount Impact: 0.0Distance Impact: 0 Pace Impact: 1.0 }
+
+
+{ Event: Oh no! You passed by a snake and were bitten. Character Impact:  Character Health Impact: 0.0 Oxen Health Impact: 0.0 Inventory Impact:  Inventory Amount Impact: 0.0Distance Impact: 0 Pace Impact: 1.0 }
+
+
+{ Event: Oh no! You got run over by a wagon and broke your leg. Character Impact:  Character Health Impact: 0.0 Oxen Health Impact: 0.0 Inventory Impact:  Inventory Amount Impact: 0.0Distance Impact: 0 Pace Impact: 1.0 }
+
+
+{ Event: Oh no! Your ox is ill. Character Impact:  Character Health Impact: 0.0 Oxen Health Impact: 0.0 Inventory Impact:  Inventory Amount Impact: 0.0Distance Impact: 0 Pace Impact: 1.0 }
+
+
+{ Event: Oh no! You were raided by indians. Check your inventory to see what they stole. Character Impact:  Character Health Impact: 0.0 Oxen Health Impact: 0.0 Inventory Impact:  Inventory Amount Impact: 0.0Distance Impact: 0 Pace Impact: 1.0 }
+
+
+{ Event: Oh no! Your sister lost faith and left the company. Character Impact:  Character Health Impact: 0.0 Oxen Health Impact: 0.0 Inventory Impact:  Inventory Amount Impact: 0.0Distance Impact: 0 Pace Impact: 1.0 }
+
+
+{ Event: Oh no! You got malaria. Character Impact:  Character Health Impact: 0.0 Oxen Health Impact: 0.0 Inventory Impact:  Inventory Amount Impact: 0.0Distance Impact: 0 Pace Impact: 1.0 }
+
+
+{ Event: Oh no! You died of consumption. Character Impact:  Character Health Impact: 0.0 Oxen Health Impact: 0.0 Inventory Impact:  Inventory Amount Impact: 0.0Distance Impact: 0 Pace Impact: 1.0 }
+
+
