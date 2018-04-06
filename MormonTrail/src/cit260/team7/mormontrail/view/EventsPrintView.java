@@ -28,7 +28,7 @@ public class EventsPrintView extends View{
 
         public static PrintWriter createFile(String fileName){
         try{
-            FileWriter fw = new FileWriter("sav5ListEvents.txt");
+            FileWriter fw = new FileWriter("sav5List6Events.txt");
             Event[] eventArray = EventControl.getEvents();
             
             for (int i=0; i < eventArray.length; i++) {
@@ -60,8 +60,8 @@ public class EventsPrintView extends View{
     @Override
     public boolean doAction(String inputs){
         
-        Event[] eventArray = EventControl.getEvents();
-        PrintWriter eventOutput = createFile("eventfile.txt");
+                Event[] eventArray = EventControl.getEvents();
+                PrintWriter eventOutput = createFile("logfile.txt");
         
         GamePlayView gamePlayView = new GamePlayView();
         gamePlayView.display();
