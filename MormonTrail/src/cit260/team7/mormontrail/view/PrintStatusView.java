@@ -8,13 +8,9 @@ package cit260.team7.mormontrail.view;
 import cit260.team7.mormontrail.control.HotelControl;
 import cit260.team7.mormontrail.exception.HotelException;
 import cit260.team7.mormontrail.model.Character;
-import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -39,7 +35,7 @@ public class PrintStatusView extends View {
     Character[] characterArray = HotelControl.getCharacter();
 
     for (int i = 0; i < characterArray.length; i++) {
-      fw.write(characterArray[i].getName()+ " " + characterArray[i].getCurrentHealth() + "\n");
+      fw.write(characterArray[i].getName()+ " new " + characterArray[i].getCurrentHealth() + "\n");
     }
     fw.close();
 
