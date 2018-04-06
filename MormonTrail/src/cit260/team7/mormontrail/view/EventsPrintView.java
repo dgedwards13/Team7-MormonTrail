@@ -28,7 +28,7 @@ public class EventsPrintView extends View{
 
         public static PrintWriter createFile(String fileName){
         try{
-            FileWriter fw = new FileWriter("savListEvents.txt");
+            FileWriter fw = new FileWriter("sav5ListEvents.txt");
             Event[] eventArray = EventControl.getEvents();
             
             for (int i=0; i < eventArray.length; i++) {
