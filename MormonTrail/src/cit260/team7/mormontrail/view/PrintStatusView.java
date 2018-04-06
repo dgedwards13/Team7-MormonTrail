@@ -35,7 +35,7 @@ public class PrintStatusView extends View {
     Character[] characterArray = HotelControl.getCharacter();
 
     for (int i = 0; i < characterArray.length; i++) {
-      fw.write(characterArray[i].getName()+ " new " + characterArray[i].getCurrentHealth() + "\n");
+      fw.write(characterArray[i].getName()+ " " + characterArray[i].getCurrentHealth() + "\n");
     }
     fw.close();
 
