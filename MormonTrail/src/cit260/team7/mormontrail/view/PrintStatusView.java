@@ -42,15 +42,6 @@ public class PrintStatusView extends View {
       fw.write(characterArray[i].getName()+ " " + characterArray[i].getCurrentHealth() + "\n");
     }
     fw.close();
-            
-            
-            
-            
-            File characterStatus = new File(filePath);
-
-            PrintWriter infoToWrite = new PrintWriter(
-                    new BufferedWriter(
-                            new FileWriter(characterStatus)));
 
         } catch (IOException e) {
             System.out.println("Error");
@@ -59,7 +50,6 @@ public class PrintStatusView extends View {
             try {
                 printStatusView = new PrintStatusView();
             } catch (HotelException ex) {
-                Logger.getLogger(PrintStatusView.class.getName()).log(Level.SEVERE, null, ex);
             }
             printStatusView.display();
 
