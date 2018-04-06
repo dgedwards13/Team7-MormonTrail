@@ -8,6 +8,8 @@ package cit260.team7.mormontrail.view;
 import cit260.team7.mormontrail.control.HotelControl;
 import cit260.team7.mormontrail.exception.HotelException;
 import cit260.team7.mormontrail.model.Character;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -37,9 +39,18 @@ public class PrintStatusView extends View {
     Character[] characterArray = HotelControl.getCharacter();
 
     for (int i = 0; i < characterArray.length; i++) {
-      fw.write(characterArray[i] + "\n");
+      fw.write(characterArray[i].getName()+ " " + characterArray[i].getCurrentHealth() + "\n");
     }
     fw.close();
+            
+            
+            
+            
+            File characterStatus = new File(filePath);
+
+            PrintWriter infoToWrite = new PrintWriter(
+                    new BufferedWriter(
+                            new FileWriter(characterStatus)));
 
         } catch (IOException e) {
             System.out.println("Error");
@@ -48,6 +59,7 @@ public class PrintStatusView extends View {
             try {
                 printStatusView = new PrintStatusView();
             } catch (HotelException ex) {
+                Logger.getLogger(PrintStatusView.class.getName()).log(Level.SEVERE, null, ex);
             }
             printStatusView.display();
 
@@ -61,6 +73,8 @@ public class PrintStatusView extends View {
     public boolean doAction(String inputs) {
 
         Character[] characterArray = HotelControl.getCharacter();
+        
+        PrintWriter statusOutput = setFileName("characterHealthStatus.txt");
 
         for (Character status : characterArray) {
         }
