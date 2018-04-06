@@ -18,6 +18,7 @@ import java.io.PrintWriter;
 
 
 
+
 /**
  *
  * @author Shaw-Laptop
@@ -26,10 +27,9 @@ public class TeamSuppliesPrintView extends View{
         public TeamSuppliesPrintView() throws InventoryException {
         super("\n"
                 + "\n================================================================================"
-                + "\n==                             Team Supplies                                  =="
+                + "\n==                    Printing Team Supplies                                  =="
                 + "\n================================================================================"
-                + "\n" + InventoryControl.order()
-                + "\n1 | return to game play", 1, true);
+                + "\n", 0, false);
     }
 
     private static PrintWriter createFile(String fileName){
@@ -60,12 +60,20 @@ public class TeamSuppliesPrintView extends View{
      
      PrintWriter invOutput = createFile("teamSupplies.txt");
      
-     
      //Untested
-     String inv = "";
-     for (InventoryItem item : inventoryArray){
-        inv += "\n" + item.getItem() + item.getAmount();
-     }
+     String list = "";
+     for (InventoryItem inventoryArray1 : inventoryArray) {
+            list += "\n" + inventoryArray1.getItem();
+        }
+     
+     TeamSuppliesView teamSuppliesView= null;
+            try {
+                teamSuppliesView = new TeamSuppliesView();
+            } catch (InventoryException e) {
+            this.console.println(e.getMessage());
+            return false;
+            }
+            teamSuppliesView.display();
         return true;
        
     }
