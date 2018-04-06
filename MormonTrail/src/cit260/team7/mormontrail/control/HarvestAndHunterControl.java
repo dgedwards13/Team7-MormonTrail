@@ -33,9 +33,6 @@ public class HarvestAndHunterControl {
     }
 
     public static String hunt() {
-        
-        //create random function for hunting success from user input
-        
         return "2";
     }
 }
