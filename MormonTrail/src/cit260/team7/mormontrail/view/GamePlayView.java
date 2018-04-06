@@ -35,8 +35,9 @@ public class GamePlayView extends View {
                 + "\n4 | Main Menu"
                 + "\n5 | Help Menu"
                 + "\n6 | View map"
-                + "\n7 | Test menu",
-                7, true);
+                + "\n7 | Test menu"
+                + "\n8 | Print Possible Events",
+                8, true);
     }
 
     @Override
@@ -89,6 +90,10 @@ public class GamePlayView extends View {
             this.console.println(e.getMessage());
         }
                 testView.display();
+            case "8":
+                EventsPrintView eventsPrintView = new EventsPrintView();
+                eventsPrintView.display();
+                break;
         }
 
         return true;
