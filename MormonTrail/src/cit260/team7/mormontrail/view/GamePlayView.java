@@ -26,7 +26,7 @@ public class GamePlayView extends View {
                 + "\n================================================================================"
                 + "\n==                             Game Menu                                      =="
                 //            This function will get the play information and display it.    
-                + GameControl.playerData()
+                //+ GameControl.playerData()
                 + "\n================================================================================"
                 + "\n"
                 + "\n1 | Team Status"
@@ -35,8 +35,9 @@ public class GamePlayView extends View {
                 + "\n4 | Main Menu"
                 + "\n5 | Help Menu"
                 + "\n6 | View map"
-                + "\n7 | Test menu",
-                7, true);
+                + "\n7 | Test menu"
+                + "\n8 | Print Possible Events",
+                8, true);
     }
 
     @Override
@@ -79,16 +80,29 @@ public class GamePlayView extends View {
                 break;
             case "7":
                 TestView testView = null;
-        try {
-            testView = new TestView();
-        } catch (EventException e) {
-            this.console.println(e.getMessage());
-        } catch (HarvestAndHunterException e) {
-            this.console.println(e.getMessage());
-        } catch (LocationException e) {
-            this.console.println(e.getMessage());
-        }
+                    try {
+                        testView = new TestView();
+                    } catch (EventException e) {
+                        this.console.println(e.getMessage());
+                    } catch (HarvestAndHunterException e) {
+                        this.console.println(e.getMessage());
+                    } catch (LocationException e) {
+                        this.console.println(e.getMessage());
+                    }
                 testView.display();
+            break;
+            
+            case "8":
+                EventsPrintView eventsPrintView = null;
+                
+                try {
+                    eventsPrintView = new EventsPrintView();
+                } catch (EventException ex){
+                    System.out.println(ex.getMessage());
+                }
+                
+                eventsPrintView.display();
+                break;
         }
 
         return true;
