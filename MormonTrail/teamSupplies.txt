@@ -1,0 +1,9 @@
+
+Money 3500.0  
+Oxen 0.0  
+Small Wagon 0.0  
+Medium Wagon 0.0  
+Large Wagon 0.0  
+Food 0.0  
+Spare Parts 0.0  
+Ammunition 0.0  

@@ -5,7 +5,6 @@
  */
 package cit260.team7.mormontrail.view;
 
-
 import cit260.team7.mormontrail.control.InventoryControl;
 import cit260.team7.mormontrail.exception.InventoryException;
 import cit260.team7.mormontrail.model.InventoryItem;
@@ -15,71 +14,60 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-
-
-
-
 /**
  *
  * @author Shaw-Laptop
  */
-public class TeamSuppliesPrintView extends View{
-        public TeamSuppliesPrintView() throws InventoryException {
+public class TeamSuppliesPrintView extends View {
+
+    public TeamSuppliesPrintView() throws InventoryException {
         super("\n"
                 + "\n================================================================================"
                 + "\n==                    Printing Team Supplies                                  =="
                 + "\n================================================================================"
-                + "\n", 0, false);
+                + "\n1 return to game play", 1, true);
     }
 
-    private static PrintWriter createFile(String fileName){
-     try{
-            
+    private static PrintWriter createFile(String fileName) {
+        try {
+
             File listOfItems = new File(fileName);
-            
-            PrintWriter infoToWrite = new PrintWriter( 
+
+            PrintWriter infoToWrite = new PrintWriter(
                     new BufferedWriter(
-                    new FileWriter(listOfItems)));
-    
-        }
-        catch(IOException e){
+                            new FileWriter(listOfItems)));
+
+            InventoryItem[] inventoryArray = InventoryControl.getInventory();
+            for (int i = 0; i < inventoryArray.length; i++) {
+                infoToWrite.write("\n" + inventoryArray[i].getItem() + " " + inventoryArray[i].getAmount()+ "  ");
+            }
+            infoToWrite.close();
+            
+        } catch (IOException e) {
             System.out.println("Error");
-            System.exit(0);
-        
+
+            TeamSuppliesPrintView teamSuppliesPrintView = null;
+            try {
+                teamSuppliesPrintView = new TeamSuppliesPrintView();
+            } catch (InventoryException ex) {
+            }
+            teamSuppliesPrintView.display();
+
         }
-        
+
         return null;
-        
     }
 
     @Override
-    public boolean doAction(String inputs){
-     
-     InventoryItem[] inventoryArray = InventoryControl.getInventory(); 
-     
-     PrintWriter invOutput = createFile("teamSupplies.txt");
-     
-     //Untested
-     String list = "";
-     for (InventoryItem inventoryArray1 : inventoryArray) {
-            list += "\n" + inventoryArray1.getItem();
-        }
-     
-     TeamSuppliesView teamSuppliesView= null;
-            try {
-                teamSuppliesView = new TeamSuppliesView();
-            } catch (InventoryException e) {
-            this.console.println(e.getMessage());
-            return false;
-            }
-            teamSuppliesView.display();
+    public boolean doAction(String inputs) {
+
+        PrintWriter invOutput = createFile("teamSupplies.txt");
+
+        GamePlayView gamePlayView = new GamePlayView();
+        gamePlayView.display();
+
         return true;
-       
+
     }
 
-   
 }
-      
-        
-    
-
