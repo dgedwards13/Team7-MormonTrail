@@ -5,6 +5,7 @@
  */
 package cit260.team7.mormontrail.control;
 
+import cit260.team7.mormontrail.exception.EventException;
 import cit260.team7.mormontrail.model.Event;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -45,7 +46,7 @@ public class EventControlTest {
      * Test of indianRaid method, of class EventControl.
      */
     @Test
-    public void testIndianRaid() {
+    public void testIndianRaid() throws EventException {
         System.out.println("indianRaid");
         String expResult = "money";
         String result = EventControl.indianRaid();

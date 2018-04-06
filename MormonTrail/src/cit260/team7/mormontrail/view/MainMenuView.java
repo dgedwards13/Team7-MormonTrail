@@ -5,11 +5,9 @@
  */
 package cit260.team7.mormontrail.view;
 
-
 import cit260.team7.mormontrail.control.InventoryControl;
 import cit260.team7.mormontrail.control.HotelControl;
 import java.io.IOException;
-
 
 /**
  *
@@ -28,7 +26,7 @@ public class MainMenuView extends View {
                 + "\n4| Load Game"
                 + "\n5| Exit", 5, true);
     }
-    
+
     private void saveGame() {
         SaveGameView saveGameView = new SaveGameView();
         saveGameView.display();
@@ -61,14 +59,14 @@ public class MainMenuView extends View {
                 boolean valid = false;
                 String selection = null;
                 while (valid == false) {
-            try {
-                selection = this.keyboard.readLine();
-            } catch (IOException e) {
-                this.console.println("error");
-            }
                     this.console.println("Are you sure you want to exit? (y/n)");
-//                    selection = keyboard.nextLine();
+                    try {
+                        selection = this.keyboard.readLine();
+                    } catch (IOException e) {
+                        this.console.println("error");
+                    }
 
+//                    selection = keyboard.nextLine();
                     selection = selection.trim();
 
                     if (selection.length() < 1) {
