@@ -1,8 +1,0 @@
-Susan 2.0
-Sam 4.0
-Joseph 3.0
-Ricardo 6.0
-Savannah 1.0
-Daniel 5.0
-Astley 7.0
-Rachel 8.0
