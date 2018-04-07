@@ -7,6 +7,7 @@ package cit260.team7.mormontrail.view;
 import cit260.team7.mormontrail.control.EventControl;
 import cit260.team7.mormontrail.exception.EventException;
 import cit260.team7.mormontrail.model.Event;
+import java.util.Scanner;
 import java.io.*;
 import java.lang.String;
 
@@ -23,12 +24,27 @@ public class EventsPrintView extends View{
                 + "\n================================================================================"
                 + "\n\n1 | Print List of Events"
                 , 1, true);
-    }
+            }
+    
     
 
         public static PrintWriter createFile(String fileName){
         try{
-            FileWriter fw = new FileWriter("sav5List6Events.txt");
+            
+            
+//down vote
+//Firstly you should ask the user the input the filename. Then just replace the "numbersonnumbers.txt" in your code to the variable that you set for the user input.
+//
+//Scanner in = new Scanner(System.in);
+//System.out.println("What is the filename?");
+//String input = in.nextLine();
+//File file = new File(input);
+
+            Scanner in = new Scanner(System.in);
+            System.out.println("What is the file name?");
+            String input = in.nextLine();
+            FileWriter fw = new FileWriter(input);
+            
             Event[] eventArray = EventControl.getEvents();
             
             for (int i=0; i < eventArray.length; i++) {
