@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package cit260.team7.mormontrail.view;
+
 import cit260.team7.mormontrail.exception.EventException;
 import cit260.team7.mormontrail.control.EventControl;
 import cit260.team7.mormontrail.control.HarvestAndHunterControl;
@@ -34,7 +35,7 @@ public class TestView extends View {
                 + "\n" + EventControl.indianRaid()
                 + "\nHarvestAndHunterControl Test"
                 + "\n" + HarvestAndHunterControl.calCarryingCapacity(1500, 300, 20),
-                8, true);
+                10, true);
     }
 
     @Override
@@ -59,12 +60,12 @@ public class TestView extends View {
                 break;
             case "5":
                 FortTownSceneView fortTownSceneView = null;
-        try {
-            fortTownSceneView = new FortTownSceneView();
-        } catch (LocationException ex) {
-            this.console.println(ex.getMessage());
-            return false;
-        }
+                try {
+                    fortTownSceneView = new FortTownSceneView();
+                } catch (LocationException ex) {
+                    this.console.println(ex.getMessage());
+                    return false;
+                }
                 fortTownSceneView.display();
                 break;
             case "6":
