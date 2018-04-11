@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Scanner;
 
 /**
  *
@@ -25,12 +26,13 @@ public class TeamSuppliesPrintView extends View {
                 + "\n================================================================================"
                 + "\n==                    Printing Team Supplies                                  =="
                 + "\n================================================================================"
+                + "\n The file's name is teamSupplies.txt"
                 + "\n1 return to game play", 1, true);
     }
 
     private static PrintWriter createFile(String fileName) {
         try {
-
+            
             File listOfItems = new File(fileName);
 
             PrintWriter infoToWrite = new PrintWriter(
@@ -39,12 +41,12 @@ public class TeamSuppliesPrintView extends View {
 
             InventoryItem[] inventoryArray = InventoryControl.getInventory();
             for (int i = 0; i < inventoryArray.length; i++) {
-                infoToWrite.write( inventoryArray[i].getItem() + " " + inventoryArray[i].getAmount() + " \n");
+                infoToWrite.write(inventoryArray[i].getItem() + " " + inventoryArray[i].getAmount() + " \n");
             }
             infoToWrite.close();
-            
+
         } catch (IOException e) {
-            System.out.println("Error");
+            System.out.println("Invaild input");
 
             TeamSuppliesPrintView teamSuppliesPrintView = null;
             try {
