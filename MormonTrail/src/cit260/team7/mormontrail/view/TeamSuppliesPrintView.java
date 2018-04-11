@@ -26,12 +26,27 @@ public class TeamSuppliesPrintView extends View {
                 + "\n================================================================================"
                 + "\n==                    Printing Team Supplies                                  =="
                 + "\n================================================================================"
-                + "\n The file's name is teamSupplies.txt"
-                + "\n1 return to game play", 1, true);
+                + "\n1 Print Supplies List", 1, true);
     }
 
     private static PrintWriter createFile(String fileName) {
         try {
+            
+            Scanner in = new Scanner(System.in);
+            System.out.println("Give your file a name");
+            String input = in.nextLine();
+            
+            FileWriter wow = new FileWriter(input);
+            
+            wow.write("Team Supplies"+"\n");
+            wow.write("\n");
+            wow.write("Inventory Name" +"   "+ "Inventory Amounts"+"\n");
+            InventoryItem[] inventoryArray = InventoryControl.getInventory();
+            for (int i = 0; i < inventoryArray.length; i++) {
+                
+                wow.write(inventoryArray[i].getItem() + "           " + inventoryArray[i].getAmount() + " \n");
+            }
+            wow.close();
             
             File listOfItems = new File(fileName);
 
@@ -39,11 +54,6 @@ public class TeamSuppliesPrintView extends View {
                     new BufferedWriter(
                             new FileWriter(listOfItems)));
 
-            InventoryItem[] inventoryArray = InventoryControl.getInventory();
-            for (int i = 0; i < inventoryArray.length; i++) {
-                infoToWrite.write(inventoryArray[i].getItem() + " " + inventoryArray[i].getAmount() + " \n");
-            }
-            infoToWrite.close();
 
         } catch (IOException e) {
             System.out.println("Invaild input");
@@ -63,6 +73,7 @@ public class TeamSuppliesPrintView extends View {
     @Override
     public boolean doAction(String inputs) {
 
+        InventoryItem[] inventoryArray = InventoryControl.getInventory();
         PrintWriter invOutput = createFile("teamSupplies.txt");
 
         GamePlayView gamePlayView = new GamePlayView();
